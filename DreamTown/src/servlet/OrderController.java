@@ -133,7 +133,7 @@ public class OrderController extends BaseServlet {
 			}
 		}
 	}
-
+//确定结算后
 	public void placeOrder(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		Object data=session.getAttribute("order");
