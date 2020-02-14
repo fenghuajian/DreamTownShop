@@ -1,0 +1,38 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Dream:war exploded">
+    <output-path>C:/Dulk/Desktop/IdeaProjectField/out/artifacts/Dream_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Dream/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Dream" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mail.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/ojdbc6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/jstl-impl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/gson-2.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/druid-1.0.9.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/log4j-1.2.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/java-mail-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-io-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/fastjson-1.2.58.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/javax.mail-1.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-fileupload-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/javax.servlet.jsp.jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-beanutils-1.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-tx-5.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-core-5.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-jdbc-5.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-beans-5.0.0.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mchange-commons-java-0.2.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mysql-connector-java-5.1.37-bin.jar" />
+          <element id="library" level="module" name="dom4j-1.6.1" module-name="Dream" />
+          <element id="library" level="module" name="JUnit4" module-name="Dream" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

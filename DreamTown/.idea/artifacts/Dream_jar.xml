@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Dream:jar">
+    <output-path>C:/Dulk/Desktop/IdeaProjectField/out/artifacts/Dream_jar</output-path>
+    <root id="archive" name="Dream.jar">
+      <element id="module-output" name="Dream" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mail.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/ojdbc6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/jstl-impl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/gson-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/druid-1.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/log4j-1.2.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/java-mail-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-io-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/fastjson-1.2.58.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/javax.mail-1.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-fileupload-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/javax.servlet.jsp.jstl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/commons-beanutils-1.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-tx-5.0.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-core-5.0.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-jdbc-5.0.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/spring-beans-5.0.0.RELEASE.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mchange-commons-java-0.2.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dream/web/WEB-INF/lib/mysql-connector-java-5.1.37-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
