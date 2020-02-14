@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border:0px;
+    position: relative;
+}
+#up{
+    font-size: 13px;
+    position: absolute;
+    width: 100%;
+    height: 31px;
+    background-color: rgb(227,228,229);
+    list-style-type: none;
+    color: reb(153,173,199);
+}
+
+#JDlogo{
+    float: left;
+    margin-left: 240px;
+    position: absolute;
+    margin-top: 35px;
+}
+#cast1{
+    float: left;
+    margin-left: 400px;
+    position: absolute;
+    margin-top:78px;
+
+}
+#search{
+    height: 100px;;
+    position: absolute;
+    float: left;
+    margin-top:65px;
+    margin-left: 800px; 
+    
+}
+#key{
+    border: 2px solid red;     
+}
+#search1{
+    border: 2px solid red;
+}
+#id{
+    border: red;
+   
+}
+#cast2{
+    margin-top: 205px;
+    margin-left:460px;
+    position: absolute;
+}
+#hint1{
+    position: absolute;
+    font-size: 14px;
+    margin-top:220px;
+    margin-left:550px;
+}
+#extra{
+    position: absolute;
+    font-size: 13px;
+    margin-left: 250px;
+    margin-top: 390px;
+
+}
+#center1{
+    margin-top:420px;
+    margin-left: 250px;
+    position: absolute;
+    
+}
+#center1 li{
+    position: relative;
+    list-style: none;
+    float: left;
+    border: 1px dashed #cacaca;
+    text-align: center;
+    padding: 20px 10px 55px 10px;
+}
+#center1 li img{
+    position: relative;
+    margin: auto;
+}
+#center1 li a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+#center2{
+    margin-top:420px;
+    margin-left: 250px;
+    position: absolute;
+    
+}
+#center2 li{
+    position: relative;
+    list-style: none;
+    float: left;
+    border: 1px dashed #cacaca;
+    text-align: center;
+    padding: 20px 12px 55px 12px;
+    display: none;
+}
+#center2 li img{
+    position: relative;
+    margin: auto;
+}
+#center2 li a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../css/ListProduct.css" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript" src="../js/listProduct.js"></script>
+<script type="text/javascript" src="../js/Popup.js"></script>
+</head>
+<body>
+	<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
+		<div id="sfmtop"><label>搜索</label></div>
+		<form id="searchfm">
+	        <div id="sfmouter">
+	        	<div id="sfminner">
+	        	商品ID：<input type="text" name="scategoryId" id="scategoryId" style="width:370px;">
+	        	</div>
+	        </div>
+	    </form>
+	    <div id="sbt">
+			<button onclick="search()">查询</button>&emsp;<button onclick="addProduct()">新增</button>
+		</div>
+	</div>
+	
+	<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
+		<table id="productTb" style="height:100%;width:100%;">
+	        <tr>
+	            <th>商品ID</th>
+	            <th>种类ID</th>
+	            <th>商品名称</th>
+	            <th>价格</th>
+	            <th>上架日期</th>
+	            <th>描述</th>
+	            <th>图片</th>
+	            <th>操作</th>
+	        </tr>
+	    </table>
+	    <div style="margin:1% 0 0 41% ;position:absolute">
+		    <button type="button" onclick="goFirst()" id="first">首页</button>
+			<button type="button" onclick="goPrev()" id="prev">上一页</button>
+			<button type="button" onclick="goNext()" id="next">下一页</button>
+			<button type="button" onclick="goLast()" id="last">末页</button>
+		</div>
+	</div>
+    <div class="bg"></div>
+    <div class="content">
+		<form id="table" method="POST"> <br><br>
+			<input type="hidden" name="productid" id="productid">
+			种类ID<input type="text" name="categoryId" id="categoryId" alias="种类ID"><br><br>
+			商品名称<input type="text" name="name" id="productName" alias="商品名称"><br> <br>
+			价格<input type="text" name="price" id="price" alias="价格"><br><br>
+			上架日期<input type="text" name="onlineDate" id="onlineDate" alias="上架日期"><br>(格式：yyyy-mm-dd)<br><br>
+			描述 <textarea name="descInfo" cols="30" rows="3" id="descInfo" alias="描述"></textarea><br><br>
+			图片<input type="file" name="picURL" id="picURL" alias="图片"><br><br>
+			是否精选	<select name="isJingXuan" class="select">
+						<option value="true">是</option>
+						<option value="false">否</option>
+					</select><br><br>
+			是否热卖	<select name="isReMai" class="select">
+						<option value="true">是</option>
+						<option value="false">否</option>
+					</select><br><br>
+			是否下架	<select name="isXiaJia" class="select">
+						<option value="true">是</option>
+						<option value="false">否</option>
+					</select>
+			<br><br>
+			<button type="button" id="insertbt">添加</button>
+			<button id="savebt" style="display:none">保存</button>
+			&nbsp;<button type="button" id="cancel">取消</button>	<br><br>
+		</form>
+	</div>
+</body>
+</html>
