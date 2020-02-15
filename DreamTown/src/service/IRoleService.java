@@ -8,5 +8,5 @@ public interface IRoleService {
 
 	void saveRole(Roles role);
 	List<Roles> getAll();
-	void saveGrant(String roleId,String permissionIds[]);
+	void saveGrant(String roleId, String permissionIds[]);
 }

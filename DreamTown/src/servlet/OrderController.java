@@ -142,6 +142,7 @@ public class OrderController extends BaseServlet {
 		order=order.substring(2,order.lastIndexOf("]")-1);
 		//System.out.println(order);
 		/*orderInfo.ordersId=uuid().replace(/-/g,'');*/
+		/*太难了*/
 		Orders orders=new Orders();
 		String order1=request.getParameter("order");
 		try {

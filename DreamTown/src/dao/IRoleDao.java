@@ -4,9 +4,9 @@ import bean.Roles;
 
 public interface IRoleDao extends IBaseDao<Roles>{
     /**
-     * ½ÇÉ«ÊÚÈ¨
-     * @param roleId ±»ÊÚÈ¨µÄ½ÇÉ«ID
-     * @param permissionIds ¼´½«¸³Óè½ÇÉ«µÄÈ¨ÏÞID
+     * ï¿½ï¿½É«ï¿½ï¿½È¨
+     * @param roleId ï¿½ï¿½ï¿½ï¿½È¨ï¿½Ä½ï¿½É«ID
+     * @param permissionIds ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½È¨ï¿½ï¿½ID
      */
-    void saveGrant(String roleId,String permissionIds[]);
+    void saveGrant(String roleId, String permissionIds[]);
 }

@@ -9,14 +9,14 @@ import java.util.Set;
 
 public interface IUserService {
 		void saveUser(Users user);
-		Users login(String username,String password);
+		Users login(String username, String password);
 		Set<Permission> getPermission(String username);
 		PageModel<Users> getAllUser(int currentPage);
-		void saveGrant(String userId,String roleId);
+		void saveGrant(String userId, String roleId);
 		/**
 		 *
-		 * @param userId ¸ù¾ÝuserIdÀ´É¾³ý¼ÇÂ¼
-		 * @return ·µ»Ø1»ò0£»1±íÊ¾É¾³ý³É¹¦¡¢0±íÊ¾É¾³ýÊ§°Ü
+		 * @param userId ï¿½ï¿½ï¿½ï¿½userIdï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Â¼
+		 * @return ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½0ï¿½ï¿½1ï¿½ï¿½Ê¾É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¾É¾ï¿½ï¿½Ê§ï¿½ï¿½
 		 */
 		int deleteUser(String userId);
 	}

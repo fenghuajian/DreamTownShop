@@ -74,7 +74,7 @@ function view(currentPage){
             .append($("<td>").text(obj.price))
             .append($("<td>").text(obj.onlineDate))
             .append($("<td>").text(obj.descInfo))
-           .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/upload/'+obj.picURL+'"/>'))
+           .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.picURL+'"/>'))
                // .append($("<td>").html('<img width="50" height="50" src="http://localhost://'+obj.picURL+'"/>'))
             var td=$("<td>").html('</a> <a href="javascript:void(0)" onclick="modifyProduct(this)">修改</a> ' +
 				'<a href="javascript:void(0)" onclick="deleteProduct(this)">删除</a>');
