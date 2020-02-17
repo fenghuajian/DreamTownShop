@@ -1,5 +1,6 @@
 package service.impl;
 
+import bean.Orderinfo;
 import util.PageModel;
 
 import bean.Orders;
@@ -15,8 +16,8 @@ public class OrderServiceImpl implements IOrderService {
 	}
 
 	@Override
-	public void saveOrder(Orders order) {
-		orderDao.save(order);
+	public void saveOrder(Orderinfo orderinfo) {
+		orderDao.saveOrder(orderinfo);
 	}
 
 	@Override

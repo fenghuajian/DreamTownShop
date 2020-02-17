@@ -1,5 +1,6 @@
 package servlet;
 
+import bean.Orderinfo;
 import bean.Orders;
 import bean.carinfo;
 import com.alibaba.fastjson.JSON;
@@ -30,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Servlet implementation class OrderController
@@ -135,15 +137,17 @@ public class OrderController extends BaseServlet {
 	}
 //确定结算后
 	public void placeOrder(HttpServletRequest request, HttpServletResponse response) {
+		//拿到订单商品信息
 		HttpSession session = request.getSession();
 		Object data=session.getAttribute("order");
 		Gson gson=new Gson();
 		String order=gson.toJson(data).replace("\\", "");
 		order=order.substring(2,order.lastIndexOf("]")-1);
+
 		//System.out.println(order);
 		/*orderInfo.ordersId=uuid().replace(/-/g,'');*/
-		/*太难了*/
 		Orders orders=new Orders();
+		//拿到订单的下单状态和买家信息
 		String order1=request.getParameter("order");
 		try {
 			order1 = new String(order1.getBytes("ISO-8859-1"), "UTF-8");
@@ -151,11 +155,6 @@ public class OrderController extends BaseServlet {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		List<carinfo> carinfolist= JSONObject.parseArray(order,carinfo.class);
-		    for (carinfo carinfo : carinfolist) {
-			        System.out.println(carinfo.getName());
-			   }
-
 		//System.out.println("订单详情："+order);
 		System.out.println("提交来的order:"+order1);
 
@@ -163,42 +162,63 @@ public class OrderController extends BaseServlet {
 		JsonObject jo = jp.parse(request.getParameter("order")).getAsJsonObject();
 
 		String street=jo.get("street").getAsString();
+		String bname=jo.get("buyerInfo").getAsString();
 		try {
 			street= new String(street.getBytes("ISO-8859-1"), "UTF-8");
+			bname=new String(bname.getBytes("ISO-8859-1"), "UTF-8");
+
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		street=street.substring(0, street.length() - 1);
 		String temp[]=street.split("\\(");
-
 		System.out.println("地址:"+temp[0]);
 		System.out.println("邮编:"+temp[1]);
-		orders.setOrdersId(jo.get("ordersId").getAsString());
-		orders.setCustomerId(jo.get("customerId").getAsString());
-		orders.setAmount(Float.parseFloat(jo.get("amount").getAsString()));
-		//orders.setStatus(jo.get("status").getAsString());
-		orders.setBuyerInfo(jo.get("buyerInfo").getAsString());
-
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date date;
+		Date date = null;
 		try {
 			date = sdf.parse(sdf.format(new Date()));
 			System.out.println(sdf.format(new Date()));
-			System.out.println(date.getTime());
+			System.out.println("time:"+date.getTime());
 			orders.setOrderDate(new Timestamp(date.getTime()));
 
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		List<carinfo> carinfolist= JSONObject.parseArray(order,carinfo.class);
+		IOrderService orderService=new OrderServiceImpl();
+		for (carinfo carinfo : carinfolist) {
+			Orderinfo orderinfo=new Orderinfo();
+			orderinfo.setBaddr(temp[0]);
+			orderinfo.setBname(bname);
+			orderinfo.setBphone(jo.get("phone").getAsString());
+			orderinfo.setCustomerid(jo.get("customerId").getAsString());
+			orderinfo.setNum(carinfo.getNum());
+			orderinfo.setOrderdate(new Timestamp(date.getTime()));
+			orderinfo.setOrderid(UUID.randomUUID().toString().replace("-", ""));
+			orderinfo.setExpress("已付款");
+			orderinfo.setPic(carinfo.getPicURL());
+			orderinfo.setPinfo(carinfo.getDescInfo());
+			orderinfo.setPname(carinfo.getName());
+			orderinfo.setPrice(carinfo.getPrice());
+			orderinfo.setProductid(carinfo.getProductId());
+			//orderService.saveOrder(orderinfo);
 
+
+		}
+		/*orders.setOrdersId(jo.get("ordersId").getAsString());
+		orders.setCustomerId(jo.get("customerId").getAsString());
+		orders.setAmount(Float.parseFloat(jo.get("amount").getAsString()));*/
+		//orders.setStatus(jo.get("status").getAsString());
+		/*orders.setBuyerInfo(jo.get("buyerInfo").getAsString());*/
 	//	orders.setCashInfo(jo.get("cashInfo").getAsString());
 	//	orders.setExpressInfo(jo.get("expressInfo").getAsString());
 
-		IOrderService orderService=new OrderServiceImpl();
-		//orderService.saveOrder(orders);
-		System.out.println("orders:"+orders);
-		System.out.println(orders.getOrderDate());
 
+		//orderService.saveOrder(orders);
+		/*System.out.println("orders:"+orders);
+		System.out.println(orders.getOrderDate());
+*/
 		response.setContentType("text/plain;charset=UTF-8");
 		PrintWriter out;
 		try {

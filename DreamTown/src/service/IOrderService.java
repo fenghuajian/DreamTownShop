@@ -1,11 +1,12 @@
 package service;
 
+import bean.Orderinfo;
 import util.PageModel;
 
 import bean.Orders;
 
 public interface IOrderService {
-	void saveOrder(Orders order);
+	void saveOrder(Orderinfo orderinfo);
 
 	PageModel<Orders> getAllProduct(int parseInt);
 
