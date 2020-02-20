@@ -14,4 +14,5 @@ public interface IOrderService {
 	
 	void delete(String productId);
 
+	void updataCar(Orderinfo orderinfo);
 }

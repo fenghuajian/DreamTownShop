@@ -34,4 +34,9 @@ public class OrderServiceImpl implements IOrderService {
 	public void delete(String productId) {
 		orderDao.deleteOrder(productId);
 	}
+
+	@Override
+	public void updataCar(Orderinfo orderinfo) {
+		orderDao.updateCar(orderinfo);
+	}
 }

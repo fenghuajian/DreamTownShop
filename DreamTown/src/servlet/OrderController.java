@@ -202,9 +202,9 @@ public class OrderController extends BaseServlet {
 			orderinfo.setPname(carinfo.getName());
 			orderinfo.setPrice(carinfo.getPrice());
 			orderinfo.setProductid(carinfo.getProductId());
-			//orderService.saveOrder(orderinfo);
+			orderService.saveOrder(orderinfo);
 
-
+			orderService.updataCar(orderinfo);
 		}
 		/*orders.setOrdersId(jo.get("ordersId").getAsString());
 		orders.setCustomerId(jo.get("customerId").getAsString());
