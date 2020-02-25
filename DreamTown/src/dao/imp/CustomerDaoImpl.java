@@ -57,4 +57,38 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 		
 	}
 
+	@Override
+	public void updateCustomer(Customer customer) {
+		String sql="update customer set username=?,defaultname=?,password=?," +
+				"phone=?,defaultphone=?,defaultaddr=?,mailbox=? where customerid=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, customer.getUsername());
+			pstmt.setString(2, customer.getDefaultName());
+			pstmt.setString(3, customer.getPassword());
+			pstmt.setString(4, customer.getPhone());
+			pstmt.setString(5, customer.getDefaultPhone());
+			pstmt.setString(6, customer.getDefaultAddr());
+			pstmt.setString(7, customer.getMailBox());
+			pstmt.setString(8, customer.getCustomerId());
+			pstmt.executeUpdate();
+			System.out.println("已经修改用户信息！");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		finally {
+
+			DBConnection.closeConn(conn);
+		}
+
+
+
+	}
+
 }

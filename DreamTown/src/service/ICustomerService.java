@@ -7,4 +7,6 @@ public interface ICustomerService {
 	void save(Customer customer);
 	int isExist(String account);
 	String verify(String customerName, String password);
+
+	void updateCustomer(Customer customer);
 }

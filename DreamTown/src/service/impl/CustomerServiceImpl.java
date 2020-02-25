@@ -27,4 +27,9 @@ public class CustomerServiceImpl implements ICustomerService {
 	public String verify(String customerName, String password) {
 		return customerDao.verify(customerName, password);
 	}
+
+	@Override
+	public void updateCustomer(Customer customer) {
+		customerDao.updateCustomer(customer);
+	}
 }

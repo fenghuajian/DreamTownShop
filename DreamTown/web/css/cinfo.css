@@ -1,0 +1,26 @@
+#center1{
+    position: absolute;
+    top:231px;
+    background-color: white;
+    width: 400px;
+    left: 285px;
+    border: 1px solid rgb(227,228,229);
+    /*height: 550px;*/
+}
+
+#grxx{
+    background-color: rgb(229, 219, 66);
+    position: absolute;
+    width:60px;
+    height: 24px;
+    left: 1px;
+
+    border: 1px solid rgb(227,228,229);
+    text-align: center;
+}
+#grxx a{
+    font-size: 14px;
+    color:black;
+    text-decoration: none;
+    line-height: 24px;
+}

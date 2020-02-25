@@ -2,6 +2,7 @@ package servlet;
 
 import bean.Customer;
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import service.ICustomerService;
 import service.impl.CustomerServiceImpl;
 import servlet.base.BaseServlet;
@@ -14,12 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 @WebServlet("/customer")
 public class CustomerController extends BaseServlet {
 	private static final long serialVersionUID = 1L;
-//ÓÃ»§µÇÂ¼
+//ï¿½Ã»ï¿½ï¿½ï¿½Â¼
 	public void login(HttpServletRequest request, HttpServletResponse response) {
 		String customerName=request.getParameter("username");
 		String password=request.getParameter("password");
@@ -47,7 +49,7 @@ public class CustomerController extends BaseServlet {
 		}
 
 	}
-//»ñÈ¡ÓÃ»§ÐÅÏ¢
+//ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
 	public void getInfo(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String customerId=(String) session.getAttribute("customerId");
@@ -59,10 +61,73 @@ public class CustomerController extends BaseServlet {
 		PrintWriter out;
 		try {
 			out = response.getWriter();
+			System.out.println(JSON.toJSONString(customer));
 			out.write(JSON.toJSONString(customer));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		}
+		String cid=request.getParameter("cid");
+		System.out.println("cid:"+cid);
+
+		String cname=request.getParameter("cname");
+		System.out.println("cname:"+cname);
+
+		String dname=request.getParameter("dname");
+		dname = new String(dname.getBytes("ISO-8859-1"), "UTF-8");
+		System.out.println("dname:"+dname);
+
+		String pwd=request.getParameter("pwd");
+		System.out.println("pwd:"+pwd);
+
+		String phone=request.getParameter("phone");
+		System.out.println("phone:"+phone);
+
+		String mail=request.getParameter("mail");
+		System.out.println("phone:"+phone);
+
+		String dphone=request.getParameter("dphone");
+		System.out.println("mail:"+mail);
+
+		String addr=request.getParameter("addr");
+		addr = new String(addr.getBytes("ISO-8859-1"), "UTF-8");
+		System.out.println("addr:"+addr);
+
+		Customer customer=new Customer();
+		customer.setUsername(cname);
+		customer.setPassword(pwd);
+		customer.setPhone(phone);
+		customer.setDefaultName(dname);
+		customer.setCustomerId(cid);
+		customer.setMailBox(mail);
+		customer.setDefaultPhone(dphone);
+		customer.setDefaultAddr(addr);
+
+		ICustomerService customerService=new CustomerServiceImpl() ;
+
+		if(cid !=null &&pwd !=null) {
+			customerService.updateCustomer(customer);
+			response.setContentType("text/plain;charset=UTF-8");
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.write("OK");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+
 	}
 
 	public void sendVerifyCode(HttpServletRequest request, HttpServletResponse response){

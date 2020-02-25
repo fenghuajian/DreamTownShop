@@ -135,7 +135,7 @@ public class OrderController extends BaseServlet {
 			}
 		}
 	}
-//确定结算后
+//确定结算后提交订单并更新购物车
 	public void placeOrder(HttpServletRequest request, HttpServletResponse response) {
 		//拿到订单商品信息
 		HttpSession session = request.getSession();
@@ -206,19 +206,7 @@ public class OrderController extends BaseServlet {
 
 			orderService.updataCar(orderinfo);
 		}
-		/*orders.setOrdersId(jo.get("ordersId").getAsString());
-		orders.setCustomerId(jo.get("customerId").getAsString());
-		orders.setAmount(Float.parseFloat(jo.get("amount").getAsString()));*/
-		//orders.setStatus(jo.get("status").getAsString());
-		/*orders.setBuyerInfo(jo.get("buyerInfo").getAsString());*/
-	//	orders.setCashInfo(jo.get("cashInfo").getAsString());
-	//	orders.setExpressInfo(jo.get("expressInfo").getAsString());
 
-
-		//orderService.saveOrder(orders);
-		/*System.out.println("orders:"+orders);
-		System.out.println(orders.getOrderDate());
-*/
 		response.setContentType("text/plain;charset=UTF-8");
 		PrintWriter out;
 		try {
