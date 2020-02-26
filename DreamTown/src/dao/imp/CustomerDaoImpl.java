@@ -91,4 +91,32 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 
 	}
 
+	@Override
+	public void addShop(String customerid, String shopid, String shopname) {
+		String sql="insert into shop values (?,?,?)";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, customerid);
+			pstmt.setString(2, shopid);
+			pstmt.setString(3, shopname);
+
+			pstmt.executeUpdate();
+			System.out.println("已经添加商店："+shopname+"!");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		finally {
+
+			DBConnection.closeConn(conn);
+		}
+
+
+
+	}
+
 }

@@ -21,8 +21,8 @@
 
     <link href="./css/style3.css" rel="stylesheet">
 
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/cinfo.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/cinfo.js"></script>
 </head>
 <body>
 <div class="upper">
@@ -622,7 +622,7 @@
                         <a class="navitems-lk" target="_blank" href="#">小镇首页</a>
                     </li>
                     <li class="fore2">
-                        <a class="navitems-lk" target="_blank" href="#">账户设置</a>
+                        <a class="navitems-lk" target="_blank" href="#" id="showinfo">个人信息</a>
                     </li>
                     <li class="fore3">
                         <a class="navitems-lk" target="_blank" href="#">我的评价</a>
@@ -640,11 +640,15 @@
                         <a class="navitems-lk" target="_blank" href="#">我的订单</a>
                     </li>
                     <li class="fore7">
-                        <a class="navitems-lk" target="_blank" href="">我的购物车</a>
+                        <a class="navitems-lk" target="_blank" href="">后台管理</a>
+
                     </li>
                     <li class="fore8">
-                        <a class="navitems-lk" target="_blank" href="">后台管理</a>
+                        <a class="navitems-lk" target="_blank" href="javascript:void(0)" onclick="registerShop()">申请成为商家</a>
                     </li>
+                    <script>
+
+                    </script>
                 </ul>
 
             </div>
@@ -661,8 +665,6 @@
             </div>
             <form id="table" method="POST"> <br><br>
 
-
-
            <input id="cid" name="cid" type="hidden">
             <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -672,7 +674,7 @@
             用户默认名：<input id="dname"  name="dname" type="text">
             <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            用户密码：<input id="pwd" name="pwd" type="text">
+            用户密码：<input id="pwd" name="pwd" type="password">
             <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             用户号码：<input id="phone" name="phone"type="text">
@@ -691,6 +693,23 @@
             <br> <br>
             </form>
         </div>
+
+        <div id="shop">
+            <div id="sname">
+                <a href="#">请给您的商店起个名字:</a>
+            </div>
+            <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            商店名：<input id="shopname" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="determine" type="button" value="确定">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="quxiao" type="button" value="取消">
+            <div id="tishi">
+
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

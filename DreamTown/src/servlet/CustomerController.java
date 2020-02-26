@@ -53,7 +53,7 @@ public class CustomerController extends BaseServlet {
 	public void getInfo(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String customerId=(String) session.getAttribute("customerId");
-
+		//System.out.println(customerId);
 		ICustomerService customerService=new CustomerServiceImpl();
 		Customer customer=customerService.getById(customerId);
 
@@ -67,7 +67,33 @@ public class CustomerController extends BaseServlet {
 			e.printStackTrace();
 		}
 	}
+	public void addShop(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		String customerid=request.getParameter("id");
+		System.out.println("id:"+customerid);
+		String shopname=request.getParameter("name");
+		shopname = new String(shopname.getBytes("ISO-8859-1"), "UTF-8");
+		System.out.println("name:"+shopname);
+		String shopid=UUIDString.getId();
+		System.out.println("shopid:"+shopid);
 
+		ICustomerService customerService=new CustomerServiceImpl();
+
+
+		if(customerid !=null &&shopid !=null) {
+			customerService.addShop(customerid,shopid,shopname);
+			response.setContentType("text/plain;charset=UTF-8");
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.write("OK");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
 	public void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
 
 		try {

@@ -105,7 +105,10 @@ public class OrderDaoImpl extends BaseDaoImpl<Orders> implements IOrderDao {
 			e.printStackTrace();
 
 		}
-		DBConnection.closeConn(conn);
+		finally {
+			DBConnection.closeConn(conn);
+		}
+
 	}
 
 }

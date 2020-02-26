@@ -9,4 +9,6 @@ public interface ICustomerService {
 	String verify(String customerName, String password);
 
 	void updateCustomer(Customer customer);
+
+    void addShop(String customerid, String shopid, String shopname);
 }

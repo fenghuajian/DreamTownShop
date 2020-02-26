@@ -18,7 +18,32 @@
     border: 1px solid rgb(227,228,229);
     text-align: center;
 }
+
+#shop{
+    display:none;
+}
+#tishi{
+    display:none;
+}
 #grxx a{
+    font-size: 14px;
+    color:black;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+#sname{
+    background-color: rgb(229, 211, 49);
+    position: absolute;
+    width:160px;
+    height: 24px;
+    left: 1px;
+
+    border: 1px solid rgb(227,228,229);
+    text-align: center;
+}
+
+#sname a{
     font-size: 14px;
     color:black;
     text-decoration: none;

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="DreamTown:war exploded">
-    <output-path>$PROJECT_DIR$/web/WEB-INF/classes/artifacts/DreamTown_war_exploded</output-path>
+    <output-path>D:/ideaProjectOut</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="DreamTown/web/Web" />
       <element id="directory" name="WEB-INF">

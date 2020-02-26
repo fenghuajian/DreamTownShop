@@ -32,4 +32,9 @@ public class CustomerServiceImpl implements ICustomerService {
 	public void updateCustomer(Customer customer) {
 		customerDao.updateCustomer(customer);
 	}
+
+	@Override
+	public void addShop(String customerid, String shopid, String shopname) {
+		customerDao.addShop(customerid,shopid,shopname);
+	}
 }
