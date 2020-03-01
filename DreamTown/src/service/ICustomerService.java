@@ -11,4 +11,8 @@ public interface ICustomerService {
 	void updateCustomer(Customer customer);
 
     void addShop(String customerid, String shopid, String shopname);
+
+	void updaterole(String userid, String roleid);
+
+	void saveUser(String userid, String username, String password);
 }

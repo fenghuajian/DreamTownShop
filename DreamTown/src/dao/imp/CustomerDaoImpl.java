@@ -119,4 +119,56 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 
 	}
 
+	@Override
+	public void updaterole(String userid, String roleid) {
+		System.out.println("userid:"+userid);
+		System.out.println("roleid:"+roleid);
+		String sql="update users set rolesid=? where usersid=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, roleid);
+			pstmt.setString(2, userid);
+			pstmt.executeUpdate();
+			System.out.println(userid+"已经成为商家!");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		finally {
+
+			DBConnection.closeConn(conn);
+		}
+
+
+
+	}
+
+	@Override
+	public void saveUser(String userid, String username, String password) {
+		String sql="insert into users(usersid,username,password) values(?,?,?)";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			pstmt.setString(2, username);
+			pstmt.setString(3, password);
+			pstmt.executeUpdate();
+			System.out.println(username+"已经成为users!");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		finally {
+
+			DBConnection.closeConn(conn);
+		}
+	}
+
 }

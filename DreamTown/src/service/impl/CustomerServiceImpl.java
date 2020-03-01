@@ -37,4 +37,14 @@ public class CustomerServiceImpl implements ICustomerService {
 	public void addShop(String customerid, String shopid, String shopname) {
 		customerDao.addShop(customerid,shopid,shopname);
 	}
+
+	@Override
+	public void updaterole(String userid, String roleid) {
+		customerDao.updaterole(userid,roleid);
+	}
+
+	@Override
+	public void saveUser(String userid, String username, String password) {
+		customerDao.saveUser(userid,username,password);
+	}
 }

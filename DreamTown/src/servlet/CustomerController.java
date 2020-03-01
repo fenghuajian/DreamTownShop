@@ -1,6 +1,8 @@
 package servlet;
 
 import bean.Customer;
+import bean.Roles;
+import bean.Users;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import service.ICustomerService;
@@ -76,11 +78,16 @@ public class CustomerController extends BaseServlet {
 		String shopid=UUIDString.getId();
 		System.out.println("shopid:"+shopid);
 
+       String userid=customerid;
+       String roleid="d26a3b7228d14a518df62e30f9fb2df1";
+
+
 		ICustomerService customerService=new CustomerServiceImpl();
 
 
 		if(customerid !=null &&shopid !=null) {
 			customerService.addShop(customerid,shopid,shopname);
+            customerService.updaterole(userid,roleid);
 			response.setContentType("text/plain;charset=UTF-8");
 			PrintWriter out;
 			try {
@@ -233,7 +240,9 @@ public class CustomerController extends BaseServlet {
 
 	public void saveCustomer(HttpServletRequest request, HttpServletResponse response) {
 		Customer customer=new Customer();
-		customer.setCustomerId(UUIDString.getId());
+	    String customerid=UUIDString.getId();
+        String userid=customerid;
+		customer.setCustomerId(customerid);
 		String username=request.getParameter("username");//
 		String password=request.getParameter("password");//
 		String mail=request.getParameter("mail");//
@@ -244,6 +253,8 @@ public class CustomerController extends BaseServlet {
 		System.out.println("pwd:"+password);
 		System.out.println("mail:"+mail);
 		System.out.println("phone:"+phone);
+
+
 		customer.setUsername(username);
 		customer.setMailBox(mail);
 		customer.setPhone(phone);
@@ -252,6 +263,7 @@ public class CustomerController extends BaseServlet {
 			/*BeanUtils.populate(customer,request.getParameterMap());*/
 			ICustomerService customerService=new CustomerServiceImpl();
 			customerService.save(customer);
+			customerService.saveUser(userid,username,password);
 			System.out.println(customer);
 			response.setContentType("text/plain;charset=UTF-8");
 			PrintWriter out;
