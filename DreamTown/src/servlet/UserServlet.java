@@ -152,6 +152,34 @@ public class UserServlet extends HttpServlet {
 
 		return "index.jsp";
 	}
+
+	public void returnindex(HttpServletRequest request, HttpServletResponse response) {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		System.out.println(username);
+		System.out.println("pwd:"+password);
+		IUserService userService = new UserServiceImpl();
+		Users user = userService.login(username, password);
+		System.out.println("USER:"+user);
+		PrintWriter out;
+
+		// 放入session中
+		HttpSession session = request.getSession();
+		session.setAttribute("user", user);
+
+		if(username !=null && password!=null){
+			response.setContentType("text/plain;charset=UTF-8");
+			try {
+				out = response.getWriter();
+				out.write("OK");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
 	public String customerLogin(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");

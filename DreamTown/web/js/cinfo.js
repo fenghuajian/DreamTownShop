@@ -6,6 +6,8 @@ $(document).ready(function () {
            // alert(data);
             if(data!=""){
                 customerid=data.customerId;
+                pwd=data.password;
+                cname=data.username;
                 $("#cid").val(data.customerId);
                 $("#cname").val(data.username);
                 $("#dname").val(data.defaultName);
@@ -69,19 +71,19 @@ function  registerShop() {
     $("#info").hide();
     $("#shop").show();
 
-    {
+}
+function  manage() {
+    /*alert("username:"+cname);
+    alert(("pwd:"+pwd));*/
+    $.ajax({
+        url:'user?method=returnindex',
+        data:{"username":cname,"password":pwd},
+        success:function(data){
+            if(data=="OK"){
+                alert("准备跳转到后台管理系统！");
+                window.location.href="index.jsp";
+            }
+        }
+    });
 
-        /* if(isdelete()==1){
-             var id=$(e).parent().parent().find("td:first").text();
-             $.ajax({
-                 url:'../product?method=deleteProduct',
-                 data:{"id":id},
-                 success:function(data){
-                     if(data=="OK"){
-                         view(currentPage);
-                     }
-                 }
-             });
-         }*/
-    }
 }

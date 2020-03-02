@@ -72,10 +72,22 @@ public void send(){/**/
  }
 
     @Test
+
+
 public  void random(){
 
-   int i= (int) ((Math.random()*9+1)*100000);
-    System.out.println(i);
+        int a=2,b=3,c=4,s1,s2,s3,x1,x2,x3,x4,x5,x6,n=0;
+        s1=25*a+75*b+50*c;
+        for(x1=1;x1<=s1;x1=x1)
+            for(x2=1;x2<=s1;x2++)
+                for(x3=1;x3<=s1;x3++)
+                    if(x1*a+x2*b+x3*c==s1){
+                        n++;
+                        System.out.println("x1:"+x1);
+                        System.out.println("x2:"+x2);
+                        System.out.println("x3:"+x3);
+                        System.out.println("次数:"+n+"...................");
+                    }
 }
 //
 }
