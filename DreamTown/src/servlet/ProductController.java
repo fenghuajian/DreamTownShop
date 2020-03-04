@@ -31,6 +31,31 @@ public class ProductController extends BaseServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	public void getShop(HttpServletRequest request, HttpServletResponse response) {
+		String shopid=null;
+	    shopid=(String) request.getSession().getAttribute("shopid");
+		System.out.println("shopid:"+shopid);
+		PrintWriter out;
+		try {
+			if(shopid !=null)
+			{
+				out=response.getWriter();
+				out.write(shopid);
+				out.flush();
+				out.close();
+			}
+			else
+			{
+				out=response.getWriter();
+				out.write("no");
+				out.flush();
+				out.close();
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public void listProduct(HttpServletRequest request, HttpServletResponse response) {
 		PrintWriter out=null;
@@ -137,6 +162,15 @@ public class ProductController extends BaseServlet {
 							e.printStackTrace();
 						}
 					}
+					else if (fieldName.equals("shopname")) {
+						try {
+							String shopname = new String(item.getString().getBytes("ISO-8859-1"),"UTF-8");
+							System.out.println("商店名称："+shopname);
+							pro.setShopname(shopname);
+						} catch (UnsupportedEncodingException e) {
+							e.printStackTrace();
+						}
+					}
 					else if("price".equals(fieldName)){
 						pro.setPrice(Float.parseFloat(item.getString()));
 						System.out.println("商品价格："+Float.parseFloat(item.getString()));
@@ -190,7 +224,7 @@ public class ProductController extends BaseServlet {
 				}
 			}
 			IProductService productService=new ProductServiceImpl();
-			System.out.println("商品id:" + pro.getProductId());
+			System.out.println("添加的商品id:" + pro.getProductId());
 
 			if(pid == null || "".equals(pid)) {
 				productService.save(pro);

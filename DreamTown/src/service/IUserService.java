@@ -1,6 +1,7 @@
 package service;
 
 import bean.Permission;
+import bean.Shop;
 import bean.Users;
 import util.PageModel;
 
@@ -19,4 +20,6 @@ public interface IUserService {
 		 * @return ����1��0��1��ʾɾ���ɹ���0��ʾɾ��ʧ��
 		 */
 		int deleteUser(String userId);
-	}
+
+    Shop getshop(String usersId);
+}

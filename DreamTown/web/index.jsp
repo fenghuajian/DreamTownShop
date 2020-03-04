@@ -62,7 +62,9 @@
 
       $(document).ready(function() {
           username = '${user.username}';//session中取
+          shopname = '${shop.shopname}';//session中取
           console.log(username);
+          console.log(shopname);
           $.ajax({
               async : false,//发送同步请求：此代码块执行完毕，才能往下执行
               url : "user?method=getMenu&username=" + username,

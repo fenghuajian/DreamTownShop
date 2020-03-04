@@ -2,6 +2,7 @@ package servlet;
 
 import bean.Permission;
 import bean.Roles;
+import bean.Shop;
 import bean.Users;
 import com.alibaba.fastjson.JSON;
 import service.IRoleService;
@@ -144,11 +145,20 @@ public class UserServlet extends HttpServlet {
 
 		IUserService userService = new UserServiceImpl();
 		Users user = userService.login(username, password);
+		Shop shop= userService.getshop(user.getUsersId());
+		String shopid=null;
 		System.out.println("USER:"+user);
+		System.out.println("shop:"+shop);
 
 		// 放入session中
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
+		if(shop != null){
+			 shopid=shop.getShopid();
+			session.setAttribute("shop", shop);
+			session.setAttribute("shopid", shopid);
+		}
+
 
 		return "index.jsp";
 	}

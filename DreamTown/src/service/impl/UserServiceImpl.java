@@ -2,6 +2,7 @@ package service.impl;
 
 import bean.Permission;
 import bean.Roles;
+import bean.Shop;
 import bean.Users;
 import dao.IRoleDao;
 import dao.IUserDao;
@@ -54,5 +55,10 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public int deleteUser(String userId) {
 		return userDao.delete(userId);
+	}
+
+	@Override
+	public Shop getshop(String usersId) {
+		return userDao.getShop(usersId);
 	}
 }

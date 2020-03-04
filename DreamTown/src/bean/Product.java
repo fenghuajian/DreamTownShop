@@ -7,7 +7,7 @@ public class Product {
 	private String productId;
 	private String categoryId;
 	private String name;
-	//°ü×°ÀàÐÍ
+	//ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½
 	private Float price;
 	private Date onlineDate;
 	private String descInfo;
@@ -15,7 +15,43 @@ public class Product {
 	private String isJingXuan;
 	private String isReMai;
 	private String isXiaJia;
-	
+	private String shopid;
+	private String shopname;
+
+	public String getShopid() {
+		return shopid;
+	}
+
+	public void setShopid(String shopid) {
+		this.shopid = shopid;
+	}
+
+	public String getShopname() {
+		return shopname;
+	}
+
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
+	}
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"productId='" + productId + '\'' +
+				", categoryId='" + categoryId + '\'' +
+				", name='" + name + '\'' +
+				", price=" + price +
+				", onlineDate=" + onlineDate +
+				", descInfo='" + descInfo + '\'' +
+				", picURL='" + picURL + '\'' +
+				", isJingXuan='" + isJingXuan + '\'' +
+				", isReMai='" + isReMai + '\'' +
+				", isXiaJia='" + isXiaJia + '\'' +
+				", shopid='" + shopid + '\'' +
+				", shopname='" + shopname + '\'' +
+				'}';
+	}
+
 	public String getProductId() {
 		return productId;
 	}

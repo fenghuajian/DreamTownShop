@@ -2,6 +2,7 @@ package dao.imp;
 
 import bean.Permission;
 import bean.Roles;
+import bean.Shop;
 import bean.Users;
 import dao.IRoleDao;
 import dao.IUserDao;
@@ -111,5 +112,32 @@ public class UserDaoImpl extends BaseDaoImpl<Users> implements IUserDao {
 			}
 		}
 		DBConnection.closeConn(conn);
+	}
+
+	@Override
+	public Shop getShop(String userId) {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="SELECT * FROM shop WHERE customerid=?";
+		conn=DBConnection.getConn();
+
+		Shop shop=null;
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,userId);
+
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				shop=new Shop();
+				shop.setCustomerid(userId);
+				shop.setShopid(rs.getString("shopid"));
+				shop.setShopname(rs.getString("shopname"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBConnection.closeConn(conn);
+		return shop;
 	}
 }

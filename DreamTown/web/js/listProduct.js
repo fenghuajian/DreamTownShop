@@ -1,6 +1,15 @@
 $(document).ready(function () {
 	totalPage=1;
 	currentPage=1;
+    $.ajax({
+        url:'../product?method=getShop',
+        success:function(data){
+            if(data!= "no"){
+               shopid=data;
+            }
+            else {shopid=null}
+        }
+    });
     view(1);
   
 	$("#cancel").click(function(){
@@ -29,7 +38,7 @@ $(document).ready(function () {
 			});
 		}
 	});
-	
+	//修改保存
 	$("#savebt").click(function(){
 		if(isEmpty()=="1"){
             console.log($("#table").serialize());
@@ -67,19 +76,44 @@ function view(currentPage){
 		totalPage=data.totalPage;
 		disabled();
         $.each(data["list"], function (index, obj) {
-            var tr = $("<tr>")
-            .append($("<td>").text(obj.productId))
-            .append($("<td>").text(obj.categoryId)) //getOneCategory(obj.categoryId)
-            .append($("<td>").text(obj.name))
-            .append($("<td>").text(obj.price))
-            .append($("<td>").text(obj.onlineDate))
-            .append($("<td>").text(obj.descInfo))
-           .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.picURL+'"/>'))
-               // .append($("<td>").html('<img width="50" height="50" src="http://localhost://'+obj.picURL+'"/>'))
-            var td=$("<td>").html('</a> <a href="javascript:void(0)" onclick="modifyProduct(this)">修改</a> ' +
-				'<a href="javascript:void(0)" onclick="deleteProduct(this)">删除</a>');
-            tr.append(td);
-            $("#productTb").append(tr);
+			if(shopid !=null)
+			{
+                if(obj.shopid==shopid)
+                {
+                    var tr = $("<tr>")
+                        .append($("<td>").text(obj.shopname))
+                        .append($("<td>").text(obj.productId))
+                        .append($("<td>").text(obj.categoryId)) //getOneCategory(obj.categoryId)
+                        .append($("<td>").text(obj.name))
+                        .append($("<td>").text(obj.price))
+                        .append($("<td>").text(obj.onlineDate))
+                        .append($("<td>").text(obj.descInfo))
+                        .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.picURL+'"/>'))
+                    // .append($("<td>").html('<img width="50" height="50" src="http://localhost://'+obj.picURL+'"/>'))
+                    var td=$("<td>").html('</a> <a href="javascript:void(0)" onclick="modifyProduct(this)">修改</a> ' +
+                        '<a href="javascript:void(0)" onclick="deleteProduct(this)">删除</a>');
+                    tr.append(td);
+                    $("#productTb").append(tr);
+                }
+			}
+			else {
+                var tr = $("<tr>")
+                    .append($("<td>").text(obj.shopname))
+                    .append($("<td>").text(obj.productId))
+                    .append($("<td>").text(obj.categoryId)) //getOneCategory(obj.categoryId)
+                    .append($("<td>").text(obj.name))
+                    .append($("<td>").text(obj.price))
+                    .append($("<td>").text(obj.onlineDate))
+                    .append($("<td>").text(obj.descInfo))
+                    .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.picURL+'"/>'))
+                // .append($("<td>").html('<img width="50" height="50" src="http://localhost://'+obj.picURL+'"/>'))
+                var td=$("<td>").html('</a> <a href="javascript:void(0)" onclick="modifyProduct(this)">修改</a> ' +
+                    '<a href="javascript:void(0)" onclick="deleteProduct(this)">删除</a>');
+                tr.append(td);
+                $("#productTb").append(tr);
+
+            }
+
         });
     });
 }
@@ -96,7 +130,7 @@ function addProduct(){
 //修改商品
 function modifyProduct(e){
 	set(e);
-	productid=$(e).parent().parent().find("td:first").text();
+	productid=$(e).parent().parent().find("td").eq(1).text();
 	console.log("商品id:"+productid);
 	$("#insertbt").hide();
 	$("#savebt").show();
@@ -107,7 +141,7 @@ function modifyProduct(e){
 //删除商品
 function deleteProduct(e){
 	if(isdelete()==1){
-		var id=$(e).parent().parent().find("td:first").text();
+		var id=$(e).parent().parent().find("td").eq(1).text();
 		$.ajax({
 			url:'../product?method=deleteProduct',
 			data:{"id":id},

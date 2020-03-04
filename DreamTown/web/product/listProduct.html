@@ -27,6 +27,7 @@
 	<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
 		<table id="productTb" style="height:100%;width:100%;">
 	        <tr>
+				<th>商店名称</th>
 	            <th>商品ID</th>
 	            <th>种类ID</th>
 	            <th>商品名称</th>
@@ -47,6 +48,7 @@
     <div class="bg"></div>
     <div class="content">
 		<form id="table" method="POST"> <br><br>
+			<input type="hidden" name="shopname" id="shopname">
 			<input type="hidden" name="productid" id="productid">
 			种类ID<input type="text" name="categoryId" id="categoryId" alias="种类ID"><br><br>
 			商品名称<input type="text" name="name" id="productName" alias="商品名称"><br> <br>
