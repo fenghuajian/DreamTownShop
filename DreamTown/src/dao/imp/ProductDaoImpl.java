@@ -329,7 +329,7 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
 
 
 
-    private List<Method> matchPojoMethods(Product entity, String methodName) {
+    public List<Method> matchPojoMethods(Product entity, String methodName) {
         // 获得当前Pojo所有方法对象
         Method[] methods = entity.getClass().getDeclaredMethods();
 

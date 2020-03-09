@@ -18,7 +18,7 @@ import java.util.List;
 public class BaseDaoImpl<T> implements IBaseDao<T> {
 	PreparedStatement pstmt;
 	Connection conn;
-	private Class<T> persistentClass;
+	public Class<T> persistentClass;
 	// Class c=Class.forName("Users");
 
 	public BaseDaoImpl() {
@@ -89,7 +89,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 	}
 
 	// 得到所有的方法（到底是get还是set呢？）
-	private List<Method> matchPojoMethods(T entity, String methodName) {
+	public List<Method> matchPojoMethods(T entity, String methodName) {
 		// 获得当前Pojo所有方法对象
 		Method[] methods = entity.getClass().getDeclaredMethods();
 

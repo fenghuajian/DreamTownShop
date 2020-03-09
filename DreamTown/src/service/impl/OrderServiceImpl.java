@@ -22,12 +22,16 @@ public class OrderServiceImpl implements IOrderService {
 
 	@Override
 	public PageModel<Orders> getAllProduct(int parseInt) {
-		return orderDao.selectAll(parseInt);
+		/*return orderDao.selectAll(parseInt);*/
+		return null;
 	}
 
 	@Override
-	public void update(Orders order) {
-		orderDao.update(order);
+	public void update(Orders orders)
+
+	{
+
+		orderDao.update1(orders);
 	}
 
 	@Override
@@ -38,5 +42,20 @@ public class OrderServiceImpl implements IOrderService {
 	@Override
 	public void updataCar(Orderinfo orderinfo) {
 		orderDao.updateCar(orderinfo);
+	}
+
+	@Override
+	public PageModel<Orderinfo> listOrderinfo(int parseInt,String shopid) {
+		return orderDao.listOrderinfo(parseInt,shopid);
+	}
+
+	@Override
+	public void updateOrderinfo(String orderid) {
+		orderDao.updateOrderinfo(orderid);
+	}
+
+	@Override
+	public void deleteOrderinfo(String orderid) {
+		orderDao.deleteOrderinfo(orderid);
 	}
 }

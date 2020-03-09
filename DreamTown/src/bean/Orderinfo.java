@@ -19,6 +19,50 @@ public class Orderinfo {
     private  String bphone;
     private  String baddr;
 
+    public Orderinfo() {
+        super();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
+    @Override
+    public String toString() {
+        return "Orderinfo{" +
+                "orderid='" + orderid + '\'' +
+                ", status='" + status + '\'' +
+                ", express='" + express + '\'' +
+                ", orderdate=" + orderdate +
+                ", productid='" + productid + '\'' +
+                ", pname='" + pname + '\'' +
+                ", price=" + price +
+                ", pic='" + pic + '\'' +
+                ", num=" + num +
+                ", pinfo='" + pinfo + '\'' +
+                ", customerid='" + customerid + '\'' +
+                ", bname='" + bname + '\'' +
+                ", bphone='" + bphone + '\'' +
+                ", baddr='" + baddr + '\'' +
+                '}';
+    }
+
     public String getOrderid() {
         return orderid;
     }

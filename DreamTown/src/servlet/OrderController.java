@@ -246,4 +246,76 @@ public class OrderController extends BaseServlet {
 		IOrderService orderService=new OrderServiceImpl();
 		orderService.delete(productId);
 	}
+	public void updateOrderinfo(HttpServletRequest request, HttpServletResponse response) {
+		String orderid=request.getParameter("orderid");
+		System.out.println("orderid:"+orderid);
+		try {
+			PrintWriter out = null;
+
+			IOrderService orderService = new OrderServiceImpl();
+			orderService.updateOrderinfo(orderid);
+			out = response.getWriter();
+			out.write("OK");
+			out.flush();
+			out.close();
+		/*} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();*/
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void deleteOrderinfo(HttpServletRequest request, HttpServletResponse response) {
+		String orderid=request.getParameter("id");
+		System.out.println("orderid:"+orderid);
+		try {
+			PrintWriter out = null;
+
+			IOrderService orderService = new OrderServiceImpl();
+			orderService.deleteOrderinfo(orderid);
+			out = response.getWriter();
+			out.write("OK");
+			out.flush();
+			out.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void listOrderinfo(HttpServletRequest request, HttpServletResponse response) {
+		String shopid=(String) request.getSession().getAttribute("shopid");
+		System.out.println("shopid:"+shopid);
+		PrintWriter out=null;
+
+		try {
+			String currentPage=request.getParameter("currentPage");
+
+			System.out.println(currentPage);
+			//System.out.println(productId);
+			if (currentPage == null) {
+				currentPage = "1";
+			}
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+			IOrderService orderService = new OrderServiceImpl();
+			PageModel<Orderinfo> pm = orderService.listOrderinfo(Integer.parseInt(currentPage),shopid);
+			pm.setCurrentPage(Integer.parseInt(currentPage));
+
+			response.setContentType("application/json;charset=UTF-8");
+			//System.out.println("pm:"+pm);
+			System.out.println(gson.toJson(pm));
+
+			out = response.getWriter();
+			out.write(gson.toJson(pm));
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
+		}
+	}
 }
