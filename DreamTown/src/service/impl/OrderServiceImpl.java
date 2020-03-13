@@ -50,12 +50,17 @@ public class OrderServiceImpl implements IOrderService {
 	}
 
 	@Override
-	public void updateOrderinfo(String orderid) {
-		orderDao.updateOrderinfo(orderid);
+	public void updateOrderinfo(String orderid, String status) {
+		orderDao.updateOrderinfo(orderid,status);
 	}
 
 	@Override
 	public void deleteOrderinfo(String orderid) {
 		orderDao.deleteOrderinfo(orderid);
+	}
+
+	@Override
+	public PageModel<Orderinfo> getOderinfo(int parseInt, String customerid) {
+		return orderDao.getOderinfo(parseInt,customerid);
 	}
 }

@@ -17,12 +17,13 @@ $(document).ready(function (){
 
 
 function view(currentPage){
+    emptyForm1();
     $.getJSON("../order?method=listOrderinfo&currentPage="+currentPage, function (data) {
     	console.log(data);
         totalPage=data.totalPage;
         disabled();
         $.each(data["list"], function (index, obj) {
-            if(obj.status=='已支付，尚未发货')
+            if(obj.status=='已支付,尚未发货')
             {
                 var tr = $("<tr>")
                     .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.pic+'"/>'))
@@ -62,7 +63,18 @@ function view(currentPage){
         });
     });
 }
-
+//翻页清空前一页
+function emptyForm1(){
+    var table=document.getElementById("order");
+    var rowNum=table.rows.length;
+    for (i=1;i<rowNum;i++)
+    {
+        table.deleteRow(i);
+        rowNum=rowNum-1;
+        i=i-1;
+    }
+}
+//确定发货
 function confirmShipment(e){
 
     var orderid=$(e).parent().parent().find("td").eq(1).text();
@@ -72,7 +84,7 @@ function confirmShipment(e){
     $.ajax({
         type:"POST",
         url:"../order?method=updateOrderinfo",
-        data:{"orderid":orderid},
+        data:{"orderid":orderid,"status":"已发货"},
         success: function(data) {
             if(data=="OK"){
                 /*$('#mask').fadeOut(800);

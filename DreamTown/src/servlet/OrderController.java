@@ -197,6 +197,7 @@ public class OrderController extends BaseServlet {
 			orderinfo.setOrderdate(new Timestamp(date.getTime()));
 			orderinfo.setOrderid(UUID.randomUUID().toString().replace("-", ""));
 			orderinfo.setExpress("已付款");
+			orderinfo.setStatus("已支付，尚未发货");
 			orderinfo.setPic(carinfo.getPicURL());
 			orderinfo.setPinfo(carinfo.getDescInfo());
 			orderinfo.setPname(carinfo.getName());
@@ -249,19 +250,18 @@ public class OrderController extends BaseServlet {
 	public void updateOrderinfo(HttpServletRequest request, HttpServletResponse response) {
 		String orderid=request.getParameter("orderid");
 		System.out.println("orderid:"+orderid);
+		String status=request.getParameter("status");
+		System.out.println("status:"+status);
 		try {
 			PrintWriter out = null;
 
 			IOrderService orderService = new OrderServiceImpl();
-			orderService.updateOrderinfo(orderid);
+			orderService.updateOrderinfo(orderid,status);
 			out = response.getWriter();
 			out.write("OK");
 			out.flush();
 			out.close();
-		/*} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();*/
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -281,6 +281,43 @@ public class OrderController extends BaseServlet {
 
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	//用户获取订单信息
+	public void getOrderinfo(HttpServletRequest request, HttpServletResponse response) {
+		String customerid= request.getParameter("customerid");
+		System.out.println("customerid:"+customerid);
+		PrintWriter out=null;
+
+		try {
+			String currentPage=request.getParameter("currentPage");
+
+			System.out.println(currentPage);
+			//System.out.println(productId);
+			if (currentPage == null) {
+				currentPage = "1";
+			}
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+			IOrderService orderService = new OrderServiceImpl();
+			PageModel<Orderinfo> pm = orderService.getOderinfo(Integer.parseInt(currentPage),customerid);
+			pm.setCurrentPage(Integer.parseInt(currentPage));
+
+			response.setContentType("application/json;charset=UTF-8");
+			//System.out.println("pm:"+pm);
+			System.out.println("用户看到的订单："+gson.toJson(pm));
+
+			out = response.getWriter();
+			out.write(gson.toJson(pm));
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
 		}
 	}
 	public void listOrderinfo(HttpServletRequest request, HttpServletResponse response) {

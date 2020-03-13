@@ -4,9 +4,13 @@
     background-color: white;
     width: 400px;
     left: 285px;
-    border: 1px solid rgb(227,228,229);
+    border: 1px  rgb(227,228,229);
     /*height: 550px;*/
 }
+/*.upper{
+    color: #ffffff;
+}*/
+
 
 #grxx{
     background-color: rgb(229, 219, 66);
@@ -22,6 +26,18 @@
 #shop{
     display:none;
 }
+#stream1{
+    display:none;
+    width: 60%;
+    text-align: center;
+  /*  color: red;*/
+    top:230px;
+    background-color: white;
+    position: absolute;
+    left: 20%;
+}
+
+#order { min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse;}
 #tishi{
     display:none;
 }

@@ -18,7 +18,9 @@ public interface IOrderService {
 
     PageModel<Orderinfo> listOrderinfo(int parseInt,String shopid);
 
-    void updateOrderinfo(String orderid);
+    void updateOrderinfo(String orderid, String status);
 
 	void deleteOrderinfo(String orderid);
+
+    PageModel<Orderinfo> getOderinfo(int parseInt, String customerid);
 }
