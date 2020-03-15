@@ -268,19 +268,32 @@ public class OrderDaoImpl extends BaseDaoImpl<Orderinfo> implements IOrderDao {
 	}
 
 	@Override
-	public void deleteOrderinfo(String orderid) {
+	public void deleteOrderinfo(String orderid, String status) {
 		System.out.println(orderid);
-		String sql="update orderinfo set status='已发货，不在显示' where orderid=? ";
+		System.out.println(status);
+		String s=null;
+		/*if(status=="1") {s="商家已发货,并删除订单";}
+		 if(status=="3") {s="用户已收货,并删除订单";}
+		if(status=="2"){s="订单完成";}*/
+
+		switch(status){
+			case "1":s="商家已发货,并删除订单";break;
+			case "2":s="订单完成";break;
+			default:s="用户已收货,并删除订单";break;
+		}
+		System.out.println(s);
+
+		String sql="update orderinfo set status=? where orderid=? ";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		conn=DBConnection.getConn();
 		try {
 			pstmt=conn.prepareStatement(sql);
-
-			pstmt.setString(1, orderid);
+			pstmt.setString(1, s);
+			pstmt.setString(2, orderid);
 
 			pstmt.executeUpdate();
-			System.out.println("订单"+orderid+"已删除");
+			System.out.println("订单"+orderid+"状态："+status);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -375,5 +388,29 @@ public class OrderDaoImpl extends BaseDaoImpl<Orderinfo> implements IOrderDao {
          */
         return null;
     }
+
+	@Override
+	//取消订单
+	public void cancelOrder(String orderid) {
+		System.out.println(orderid);
+
+		String sql="delete from orderinfo where orderid=? ";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+
+			pstmt.setString(1,orderid);
+
+
+			pstmt.executeUpdate();
+			System.out.println("订单"+orderid+"已经取消");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBConnection.closeConn(conn);
+
+	}
 
 }

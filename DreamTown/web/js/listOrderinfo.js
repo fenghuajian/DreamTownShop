@@ -36,12 +36,33 @@ function view(currentPage){
                     .append($("<td>").text(obj.bname))
                     .append($("<td id='status'>").text(obj.status))
 
-                var td=$("<td id='last'>").html(' </a><a id="yes" href="javascript:void(0)" onclick="confirmShipment(this)">确定发货</a> ' +
-                    '<a href="javascript:void(0)" onclick="delete1(this)">删除记录</a>');
+
+                var td=$("<td id='last'>").html(' </a><a id="yes"  type="hide" href="javascript:void(0)" onclick="confirmShipment(this)">确定发货</a> '+
+                    '<a id="d" style="display: none" href="javascript:void(0)" onclick="delete1(this)">删除记录</a>'
+               );
                 tr.append(td);
                 $("#order").append(tr);
             }
-            else if(obj.status=='已发货'){
+            if(obj.status=='用户已收货,并删除订单')
+            {
+                var tr = $("<tr>")
+                    .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.pic+'"/>'))
+                    .append($("<td>").text(obj.orderid))
+                    .append($("<td>").text(obj.pname))
+                    .append($("<td>").text(obj.price))
+                    .append($("<td>").text(obj.num))
+                    .append($("<td>").text((obj.price)*(obj.num)))
+                    .append($("<td>").text(obj.orderdate))
+                    .append($("<td>").text(obj.bname))
+                    .append($("<td id='status'>").text('已收货'))
+
+
+                var td=$("<td id='last'>").html( '<a href="javascript:void(0)" onclick="delete1(this)">删除记录</a>'
+                );
+                tr.append(td);
+                $("#order").append(tr);
+            }
+            else if(obj.status=='已发货'||obj.status=='已收货'){
                 var tr = $("<tr>")
                     .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/'+obj.pic+'"/>'))
                     .append($("<td id='orderid'>").text(obj.orderid))
@@ -80,6 +101,7 @@ function confirmShipment(e){
     var orderid=$(e).parent().parent().find("td").eq(1).text();
     $(e).parent().parent().find('td[id^="status"]').html("已发货");
     $(e).hide();
+    $(e).parent().parent().find('td[id^="last"]').find('a[id^="d"]').show();
    /*alert(orderid);*/
     $.ajax({
         type:"POST",
@@ -104,13 +126,14 @@ function confirmShipment(e){
 function delete1(e){
 
     var id=$(e).parent().parent().find("td").eq(1).text();
-
+    var status=$(e).parent().parent().find("td").eq(8).text();
    $(e).parent().parent().hide();
-    alert(id);
+        var s=1;
+     if(status=="已收货"){s=2;}
     $.ajax({
         type:"POST",
         url:"../order?method=deleteOrderinfo",
-        data:{"id":id},
+        data:{"id":id,"status":s},
         success: function(data) {
             if(data=="OK"){
                /*$('#mask').fadeOut(800);

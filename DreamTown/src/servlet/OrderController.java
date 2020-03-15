@@ -269,11 +269,32 @@ public class OrderController extends BaseServlet {
 	public void deleteOrderinfo(HttpServletRequest request, HttpServletResponse response) {
 		String orderid=request.getParameter("id");
 		System.out.println("orderid:"+orderid);
+		String status=request.getParameter("status");
+		System.out.println("status:"+status);
 		try {
 			PrintWriter out = null;
 
 			IOrderService orderService = new OrderServiceImpl();
-			orderService.deleteOrderinfo(orderid);
+			orderService.deleteOrderinfo(orderid,status);
+			out = response.getWriter();
+			//out.write("OK");
+			out.flush();
+			out.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void cancelOrderinfo(HttpServletRequest request, HttpServletResponse response) {
+		String orderid=request.getParameter("id");
+		System.out.println("orderid:"+orderid);
+
+		try {
+			PrintWriter out = null;
+
+			IOrderService orderService = new OrderServiceImpl();
+			orderService.cancelOrder(orderid);
 			out = response.getWriter();
 			out.write("OK");
 			out.flush();

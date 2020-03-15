@@ -16,7 +16,9 @@ public interface IOrderDao extends IBaseDao<Orderinfo> {
 
     void updateOrderinfo(String s, String orderid);
 
-	void deleteOrderinfo(String orderid);
+	void deleteOrderinfo(String orderid, String status);
 
     PageModel<Orderinfo> getOderinfo(int parseInt, String customerid);
+
+	void cancelOrder(String orderid);
 }

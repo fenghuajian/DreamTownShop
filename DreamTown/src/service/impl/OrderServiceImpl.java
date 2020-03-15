@@ -55,12 +55,17 @@ public class OrderServiceImpl implements IOrderService {
 	}
 
 	@Override
-	public void deleteOrderinfo(String orderid) {
-		orderDao.deleteOrderinfo(orderid);
+	public void deleteOrderinfo(String orderid, String status) {
+		orderDao.deleteOrderinfo(orderid,status);
 	}
 
 	@Override
 	public PageModel<Orderinfo> getOderinfo(int parseInt, String customerid) {
 		return orderDao.getOderinfo(parseInt,customerid);
+	}
+
+	@Override
+	public void cancelOrder(String orderid) {
+		orderDao.cancelOrder(orderid);
 	}
 }
