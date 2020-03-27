@@ -1,9 +1,9 @@
 package service;
 
-import bean.Orderinfo;
+import domain.Orderinfo;
 import util.PageModel;
 
-import bean.Orders;
+import domain.Orders;
 
 public interface IOrderService {
 	void saveOrder(Orderinfo orderinfo);

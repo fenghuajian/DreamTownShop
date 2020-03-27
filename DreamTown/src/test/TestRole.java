@@ -1,6 +1,6 @@
 package test;
 
-import bean.Roles;
+import domain.Roles;
 import dao.IRoleDao;
 import dao.imp.RoleDaoImpl;
 import org.junit.Test;

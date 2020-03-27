@@ -1,6 +1,6 @@
 package dao;
 
-import bean.Category;
+import domain.Category;
 
 public interface ICategoryDao extends IBaseDao<Category> {
 

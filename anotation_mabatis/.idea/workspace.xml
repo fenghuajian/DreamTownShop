@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="22d2c0ab-08eb-4deb-9564-c69d5a78b8dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../DreamShop/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/dao/IRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/domain/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/domain/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/domain/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/test/TestMyBatis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/test/TestSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/java/cn/guet/test/testUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamShop/src/main/webapp/WEB-INF/pages/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/artifacts/DreamShop_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/artifacts/DreamShop_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_aop_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_beans_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_context_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_core_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_expression_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_test_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_tx_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_web_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DreamTown/.idea/libraries/Maven__org_testng_testng_6_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/MybatisTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/dao/IAccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/dao/IRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/domain/AccountUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/domain/Myuser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/java/com/itheima/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/com/itheima/dao/IAccountDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/com/itheima/dao/IRoleDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/com/itheima/dao/IUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/AccountTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/MybatisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/RoleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/SecondLevelCacheTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/TestDaoimp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MybatisTest/src/test/java/com/itheima/test/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/SpringTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/iteima/jdbc/JdbcDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/itheima/dao/IAccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/itheima/dao/impl/AccountDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/itheima/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/itheima/service/IAccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/com/itheima/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/config/JdbcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/config/SpringConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/java/config/TransactionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/resources/com" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/test/java/com/itheima/test/AccountServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringTest/src/test/java/com/itheima/test/MybatisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/anotation_mabatis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/AnnoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/ParamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/utils/StringToDateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/webapp/anno.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springmvc_test/src/main/webapp/param.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/dao/IRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/itheima/test/AnnotationCRUDTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisAnnoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/springboot/src/main/java/com/itheima/MySpringBootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/springboot/src/main/java/com/itheima/controller/QuickController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/springboot/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/controller/AnnoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/controller/ParamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/controller/cn/itcast/interceptor/MyInterceptor1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/controller/cn/itcast/interceptor/MyInterceptor2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/exception/SysException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/exception/SysExceptionResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/utils/StringToDateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/java/cn/itcast/utils/zhuanma.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/anno.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/index1.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/index_rm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/param.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/src/main/webapp/response.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/dao/AccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/test/TestMyBatis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/java/cn/itcast/test/TestSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/webapp/WEB-INF/pages/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc/ssm/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Orderinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Orderinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/RolesPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/RolesPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/carinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/carinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/bean/tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/domain/tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/ICategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/ICategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/ICustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/ICustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/IOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/IOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/IPermissionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/IPermissionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/IProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/IProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/IRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/IRoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/CategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/CategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/CustomerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/CustomerDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/OrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/PermissionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/PermissionDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/RoleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/imp/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/imp/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/dao/userDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/dao/userDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/IPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/IPermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/IRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/CategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/CategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/PermissionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/PermissionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/RoleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/RoleServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/servlet/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTestPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTestPermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTestRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/PermissionTestRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/TestRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/TestRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/TestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DreamTown/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DreamTown/src/test/test.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/springmvc_test/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="355893234">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="880" />
+          <entry key="properties" value="8" />
+          <entry key="xml" value="221" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="880" />
+          <entry key="Properties" value="8" />
+          <entry key="XML" value="221" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="24" />
+          <entry key="jsp" value="3" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="24" />
+          <entry key="JSP" value="3" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="anotation_mabatis" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/domain/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/dao/IUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-425">
+              <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/AccountTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/utils/StringToDateConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/ParamController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/SecondLevelCatchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/HelloController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/param.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/heima/domain/Myuser.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/domain/Account.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AccountTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/dao/IAccountDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/domain/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/domain/Myuser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisAnnoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/RoleTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/dao/IRoleDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/itheima/test/AnnotationCRUDTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/SecondLevelCatchTest.java" />
+        <option value="$PROJECT_DIR$/springmvc_test/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_test/src/main/resources/springmvc.xml" />
+        <option value="$PROJECT_DIR$/springmvc_test/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itheima/dao/IUserDao.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\MavenRepository\maven-repository" />
+        <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+        <option name="userSettingsFile" value="F:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-18" />
+    <option name="y" value="61" />
+    <option name="width" value="1255" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itcast" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="springmvc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itheima" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itheima" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itheima" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anotation_mabatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anotation_mabatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584975048822" />
+    <property name="last_opened_file_path" value="C:/lib/常用/ojdbc6.jar!/" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.itheima.dao" />
+      <recent name="com.itheima.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\springmvc_test\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\springmvc_test\src\main\webapp" />
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\springmvc_test\src\main\java" />
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\springmvc_test\src\main\resources" />
+      <recent name="C:\Users\封华健\IdeaProjects\anotation_mabatis\src\test\java" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.SecondLevelCatchTest.testFindOne">
+    <configuration name="AnnotationCRUDTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="anotation_mabatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.AnnotationCRUDTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationCRUDTest.testFindByRid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="anotation_mabatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.AnnotationCRUDTest" />
+      <option name="METHOD_NAME" value="testFindByRid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationCRUDTest.testFindOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="anotation_mabatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima.test.AnnotationCRUDTest" />
+      <option name="METHOD_NAME" value="testFindOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondLevelCatchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="anotation_mabatis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SecondLevelCatchTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondLevelCatchTest.testFindOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="anotation_mabatis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SecondLevelCatchTest" />
+      <option name="METHOD_NAME" value="testFindOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/springmvc_test/index.jsp" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="springmvc_test:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/springmvc_test" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="AJP_PORT" value="1099" />
+        <option name="BASE_DIRECTORY_NAME" value="_anotation_mabatis" />
+        <option name="HTTP_PORT" value="8080" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54646" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="springmvc_test:war exploded" />
+          <artifact name="springmvc_test:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" value="" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54694" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.AnnotationCRUDTest.testFindByRid" />
+      <item itemvalue="JUnit.AnnotationCRUDTest.test" />
+      <item itemvalue="JUnit.AnnotationCRUDTest.testFindOne" />
+      <item itemvalue="JUnit.SecondLevelCatchTest" />
+      <item itemvalue="JUnit.SecondLevelCatchTest.testFindOne" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SecondLevelCatchTest.testFindOne" />
+        <item itemvalue="JUnit.SecondLevelCatchTest" />
+        <item itemvalue="JUnit.AnnotationCRUDTest.testFindOne" />
+        <item itemvalue="JUnit.AnnotationCRUDTest.testFindByRid" />
+        <item itemvalue="JUnit.AnnotationCRUDTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22d2c0ab-08eb-4deb-9564-c69d5a78b8dc" name="Default Changelist" comment="" />
+      <created>1584631044133</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584631044133</updated>
+      <workItem from="1584631048687" duration="3032000" />
+      <workItem from="1584668873538" duration="14693000" />
+      <workItem from="1584692583403" duration="1131000" />
+      <workItem from="1584707617458" duration="7687000" />
+      <workItem from="1584939770145" duration="5937000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="AnnotationCRUDTest_test - 2020.03.20 at 14h 32m 22s.xml">
+      <configuration name="AnnotationCRUDTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnnotationCRUDTest_test - 2020.03.20 at 14h 32m 54s.xml">
+      <configuration name="AnnotationCRUDTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnnotationCRUDTest_test - 2020.03.20 at 14h 35m 49s.xml">
+      <configuration name="AnnotationCRUDTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnnotationCRUDTest_test - 2020.03.20 at 14h 36m 26s.xml">
+      <configuration name="AnnotationCRUDTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnnotationCRUDTest_testFindByRid - 2020.03.20 at 16h 24m 49s.xml">
+      <configuration name="AnnotationCRUDTest.testFindByRid" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnnotationCRUDTest_testFindOne - 2020.03.20 at 16h 25m 19s.xml">
+      <configuration name="AnnotationCRUDTest.testFindOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SecondLevelCatchTest - 2020.03.20 at 16h 34m 15s.xml">
+      <configuration name="SecondLevelCatchTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SecondLevelCatchTest_testFindOne - 2020.03.20 at 16h 34m 41s.xml">
+      <configuration name="SecondLevelCatchTest.testFindOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SecondLevelCatchTest_testFindOne - 2020.03.20 at 16h 39m 19s.xml">
+      <configuration name="SecondLevelCatchTest.testFindOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SecondLevelCatchTest_testFindOne - 2020.03.20 at 21h 46m 56s.xml">
+      <configuration name="SecondLevelCatchTest.testFindOne" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="32480000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.2627346" />
+      <window_info id="Structure" order="1" sideWeight="0.5021097" side_tool="true" weight="0.25938338" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5021097" side_tool="true" weight="0.25938338" />
+      <window_info id="Web" order="7" sideWeight="0.5021097" side_tool="true" weight="0.25938338" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48441926" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48441926" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisAnnoTest.java</url>
+          <line>22</line>
+          <properties class="com.itheima.test.MybatisAnnoTest" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/itheima/test/AnnotationCRUDTest.java</url>
+          <line>67</line>
+          <properties class="com.itheima.test.AnnotationCRUDTest" method="test">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbcConfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/domain/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/dao/IAccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="6" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/domain/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/dao/IRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/jdk1.8.0_211/jdk1.8.0_211/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/domain/Myuser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="71" column="28" lean-forward="true" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/itheima/test/MybatisAnnoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/itheima/test/AnnotationCRUDTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/WEB-INF/pages/success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/resources/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/param.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itheima/dao/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SecondLevelCatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/utils/StringToDateConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/ParamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AccountTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/RoleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springmvc_test/src/main/java/cn/itcast/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>anotation_mabatis</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,6 +1,6 @@
 package test;
 
-import bean.Users;
+import domain.Users;
 import dao.IUserDao;
 import dao.imp.UserDaoImpl;
 import junit.framework.TestCase;

@@ -1,6 +1,6 @@
 package service;
 
-import bean.Category;
+import domain.Category;
 import util.PageModel;
 
 public interface ICategoryService {

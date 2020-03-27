@@ -1,9 +1,9 @@
 package dao.imp;
 
-import bean.Permission;
-import bean.Roles;
-import bean.Shop;
-import bean.Users;
+import domain.Permission;
+import domain.Roles;
+import domain.Shop;
+import domain.Users;
 import dao.IRoleDao;
 import dao.IUserDao;
 import util.DBConnection;

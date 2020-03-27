@@ -1,6 +1,6 @@
 package service.impl;
 
-import bean.Permission;
+import domain.Permission;
 import dao.IPermissionDao;
 import dao.imp.PermissionDaoImpl;
 import service.IPermissionService;

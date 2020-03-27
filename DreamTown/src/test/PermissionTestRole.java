@@ -1,7 +1,7 @@
 package test;
 
-import bean.Permission;
-import bean.Roles;
+import domain.Permission;
+import domain.Roles;
 import dao.IPermissionDao;
 import dao.IRoleDao;
 import dao.imp.PermissionDaoImpl;

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DreamShop:war">
+    <output-path>$PROJECT_DIR$/../DreamShop/target</output-path>
+    <root id="archive" name="DreamShop.war">
+      <element id="artifact" artifact-name="DreamShop:war exploded" />
+    </root>
+  </artifact>
+</component>

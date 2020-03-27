@@ -1,6 +1,6 @@
 package dao.imp;
 
-import bean.Permission;
+import domain.Permission;
 import dao.IPermissionDao;
 import util.DBConnection;
 
@@ -23,11 +23,11 @@ public class PermissionDaoImpl extends BaseDaoImpl<Permission> implements IPermi
 		List<Permission> permissions=new ArrayList<Permission>();
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, roleId);//·½·¨Á´
+			pstmt.setString(1, roleId);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			rs=pstmt.executeQuery();
 			while(rs.next()){
 				/**
-				 * Ã¿Ñ­»·Ò»´Î¾ÍÊÇÒ»¸öÈ¨ÏÞ£¬¾ÍÐèÒªnewÒ»¸öÈ¨ÏÞ¶ÔÏó£¬²¢ÇÒÒ»Ò»Õë¶ÔÈ¨ÏÞµÄÊôÐÔ½øÐÐ¸³Öµ²Ù×÷
+				 * Ã¿Ñ­ï¿½ï¿½Ò»ï¿½Î¾ï¿½ï¿½ï¿½Ò»ï¿½ï¿½È¨ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½ÒªnewÒ»ï¿½ï¿½È¨ï¿½Þ¶ï¿½ï¿½ó£¬²ï¿½ï¿½ï¿½Ò»Ò»ï¿½ï¿½ï¿½È¨ï¿½Þµï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ð¸ï¿½Öµï¿½ï¿½ï¿½ï¿½
 				 */
 				Permission permission=new Permission();
 				permission.setPermissionid(rs.getString("PERMISSIONID"));

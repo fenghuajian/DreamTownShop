@@ -1,6 +1,6 @@
 package dao.imp;
 
-import bean.Customer;
+import domain.Customer;
 import dao.ICustomerDao;
 import util.DBConnection;
 
@@ -59,8 +59,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 
 	@Override
 	public void updateCustomer(Customer customer) {
-		String sql="update customer set username=?,defaultname=?,password=?," +
-				"phone=?,defaultphone=?,defaultaddr=?,mailbox=? where customerid=?";
+		String sql="update customer set username=?,defaultname=?,password=?,phone=?,defaultphone=?,defaultaddr=?,mailbox=? where customerid=?";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 

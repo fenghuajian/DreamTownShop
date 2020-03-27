@@ -1,6 +1,6 @@
 package dao.imp;
 
-import bean.Roles;
+import domain.Roles;
 import dao.IRoleDao;
 import util.DBConnection;
 

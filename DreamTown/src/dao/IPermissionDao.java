@@ -1,6 +1,6 @@
 package dao;
 
-import bean.Permission;
+import domain.Permission;
 
 import java.util.List;
 

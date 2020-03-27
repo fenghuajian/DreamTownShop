@@ -1,7 +1,7 @@
 package service;
 
-import bean.Product;
-import bean.carinfo;
+import domain.Product;
+import domain.carinfo;
 import util.PageModel;
 
 import java.util.List;
@@ -20,4 +20,6 @@ public interface IProductService {
 	List<Product> getOther(String productid);
 
     PageModel<Product> getProduct1(int currentPage, String name);
+
+    PageModel<Product> getProduct2(int parseInt, String name);
 }

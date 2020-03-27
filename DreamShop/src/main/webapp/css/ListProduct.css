@@ -1,0 +1,76 @@
+table,tr,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+#productTb th,td{
+	text-align:center;
+}
+.bg{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:#000;
+	z-index:2;
+	top:0;
+	left:0;
+	opacity:0.7;
+}
+.content{
+    z-index: 2;
+    border: 1px solid rgba(0,0,0,.2);
+    width: 598px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    background: #fff;
+    z-index: 1000;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    margin-left: -299px;
+    display: none;
+    text-align: center;
+}
+tr:nth-child(1){
+	background:rgb(36,41,46);
+	color:white;
+}
+tr{
+	height:35px;
+}
+#productTb a{
+	color:black;
+}
+#sfmtop{
+	background:rgb(36,41,46);
+	height:35px;
+}
+#sfmtop label{
+	height:35px;
+	line-height: 35px;
+	color:white;
+	font-Weight:bolder;
+	margin-left:30px;
+}
+#sfmouter{
+	height:35px;
+	border:1px solid black;
+}
+#sfminner{
+	margin:5px 0 0 3px;
+}
+#sbt{
+	margin:5px 0 0 3px;
+	float:right;
+}
+#sbt button{
+	width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-style: none;
+    cursor: pointer;
+    font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", "sans-serif";
+    background: url(../img/btn.jpg) 0px 0px no-repeat;
+}

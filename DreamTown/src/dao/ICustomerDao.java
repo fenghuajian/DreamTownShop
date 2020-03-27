@@ -1,6 +1,6 @@
 package dao;
 
-import bean.Customer;
+import domain.Customer;
 
 public interface ICustomerDao extends IBaseDao<Customer>{
 	int isExist(String account);

@@ -1,7 +1,7 @@
 package dao;
 
-import bean.Orderinfo;
-import bean.Orders;
+import domain.Orderinfo;
+import domain.Orders;
 import util.PageModel;
 
 public interface IOrderDao extends IBaseDao<Orderinfo> {

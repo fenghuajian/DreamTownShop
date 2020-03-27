@@ -68,9 +68,13 @@
 
                                   var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
                                   var r = window.location.search.substr(1).match(reg);
-                                  if(r!=null)return  unescape(r[2]); return null;
+                                  if(r!=null)return  decodeURI(unescape(r[2])); return null;
                               }
                               $("#dl").click(function () {
+
+                                  var searchUrl =window.location.href;
+                                  var searchData =searchUrl.split("=");        //截取 url中的“=”,获得“=”后面的参数
+                                  name2 =decodeURI(searchData[1]);//name2是为了在网址传值，name1是为了传给后台
                                   name1=GetQueryString("search")
                                   username=$("#name").val();
                                   password=$("#pass").val();
@@ -84,8 +88,14 @@
                                       success:function (data) {
                                                 if(data!=null && name1==null)
                                                     window.location.href="index.html?customername="+data;
-                                                else
-                                                    window.location.href="ProductSelect.html?search="+name1;
+                                                else{
+                                                   // window.location.href="ProductSelect.html?search="+name1;
+                                                    var searchUrl =encodeURI("ProductSelect.html?search="+name2);   //使用encodeURI编码
+
+                                                    window.location.href =searchUrl;
+                                                    //window.location.href="ProductSelect.html?search="+search;
+                                                }
+
 
                                       }
                                   })

@@ -1,6 +1,6 @@
 package service;
 
-import bean.Roles;
+import domain.Roles;
 
 import java.util.List;
 

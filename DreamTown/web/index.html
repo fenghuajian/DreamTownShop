@@ -658,7 +658,11 @@
                             alert(search);
                             if(!(search==''))
                             {
-                                window.location.href="ProductSelect.html?search="+search;
+
+                                var searchUrl =encodeURI("ProductSelect.html?search="+search);   //使用encodeURI编码
+
+                                window.location.href =searchUrl;
+                                //window.location.href="ProductSelect.html?search="+search;
                             }
                             /*alert(search);
                             console.log(search);*/
@@ -5092,6 +5096,7 @@
             </div>
         </div>
     </div>
+
     <div id="J_footer" class="footer">
     <div class="mod_service">
         <div class="grid_c1 mod_service_inner">

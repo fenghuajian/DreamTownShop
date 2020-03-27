@@ -1,7 +1,7 @@
 package service.impl;
 
-import bean.Product;
-import bean.carinfo;
+import domain.Product;
+import domain.carinfo;
 import dao.IProductDao;
 import dao.imp.ProductDaoImpl;
 import service.IProductService;
@@ -58,7 +58,12 @@ public class ProductServiceImpl implements IProductService {
 		return productDao.getProduct1(currentPage,name);
 	}
 
-	@Override
+    @Override
+    public PageModel<Product> getProduct2(int currentPage, String name) {
+        return productDao.getProduct2(currentPage,name);
+    }
+
+    @Override
 	public void addCar(String productId, String customerId) {
 		// TODO Auto-generated method stub
 

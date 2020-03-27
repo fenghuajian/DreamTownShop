@@ -1,6 +1,6 @@
 package service.impl;
 
-import bean.Category;
+import domain.Category;
 import dao.ICategoryDao;
 import dao.imp.CategoryDaoImpl;
 import service.ICategoryService;

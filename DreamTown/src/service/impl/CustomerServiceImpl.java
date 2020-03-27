@@ -1,6 +1,6 @@
 package service.impl;
 
-import bean.Customer;
+import domain.Customer;
 import dao.ICustomerDao;
 import dao.imp.CustomerDaoImpl;
 import service.ICustomerService;

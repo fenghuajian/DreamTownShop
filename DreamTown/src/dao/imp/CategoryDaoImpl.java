@@ -1,6 +1,6 @@
 package dao.imp;
 
-import bean.Category;
+import domain.Category;
 import dao.ICategoryDao;
 
 public class CategoryDaoImpl extends BaseDaoImpl<Category> implements ICategoryDao {

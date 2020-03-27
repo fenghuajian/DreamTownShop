@@ -1,6 +1,6 @@
 package service;
 
-import bean.Permission;
+import domain.Permission;
 import util.PageModel;
 
 import java.util.List;

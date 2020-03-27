@@ -26,7 +26,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
 		persistentClass = (Class<T>) type.getActualTypeArguments()[0];
 	}
-
+//保存
 	@Override
 	public void save(T t) {
 		String sql = "INSERT INTO " + t.getClass().getSimpleName().toLowerCase() + " (";
@@ -87,7 +87,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 
 		DBConnection.closeConn(conn);
 	}
-
+//获取所有
 	// 得到所有的方法（到底是get还是set呢？）
 	public List<Method> matchPojoMethods(T entity, String methodName) {
 		// 获得当前Pojo所有方法对象
@@ -104,7 +104,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		}
 		return list;
 	}
-
+//根据id获取
 	@Override
 	public <O> T getById(O id) {
 		String className = persistentClass.getSimpleName().toLowerCase();
@@ -151,7 +151,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		 */
 		return null;
 	}
-
+//选择所有，分页
 	@Override
 	public PageModel<T> selectAll(int currentPage) {
 
@@ -223,7 +223,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		 */
 		return null;
 	}
-
+//获取所有记录数
 	@Override
 	public int getTotalRows() {
 		try {
@@ -239,6 +239,8 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		}
 		return 0;
 	}
+
+	//获取所有
 	@Override
 	public List<T> getAll() {
 		String sql = "SELECT * FROM " + persistentClass.getSimpleName().toLowerCase();
@@ -283,7 +285,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		 */
 		return null;
 	}
-
+//根据id删除
 	@Override
 	public <O> int delete(O id) {
 		String tableName=persistentClass.getSimpleName().toLowerCase();
@@ -307,7 +309,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		}
 		return 0;
 	}
-
+//根据id更新
 	@Override
 	public void update(T t) {
 		try {

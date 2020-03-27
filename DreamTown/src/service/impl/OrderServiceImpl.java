@@ -1,9 +1,9 @@
 package service.impl;
 
-import bean.Orderinfo;
+import domain.Orderinfo;
 import util.PageModel;
 
-import bean.Orders;
+import domain.Orders;
 import dao.IOrderDao;
 import dao.imp.OrderDaoImpl;
 import service.IOrderService;

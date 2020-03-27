@@ -1,6 +1,6 @@
 package service.impl;
 
-import bean.Roles;
+import domain.Roles;
 import dao.IRoleDao;
 import dao.imp.RoleDaoImpl;
 import service.IRoleService;
@@ -14,7 +14,7 @@ public class RoleServiceImpl implements IRoleService {
 
 	IRoleDao roleDao=null;
 	public RoleServiceImpl(){
-		//Éè¼ÆÄ£Ê½Ö®³éÏó¹¤³§Ä£Ê½
+		//ï¿½ï¿½ï¿½Ä£Ê½Ö®ï¿½ï¿½ï¿½ó¹¤³ï¿½Ä£Ê½
 		roleDao=new RoleDaoImpl();
 	}
 

@@ -1,8 +1,8 @@
 package dao.imp;
 
 
-import bean.Product;
-import bean.carinfo;
+import domain.Product;
+import domain.carinfo;
 import dao.IProductDao;
 import util.DBConnection;
 import util.PageModel;
@@ -86,6 +86,7 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
 
     @Override
     public List<carinfo> getOrder(String customerId) {
+
         String sql="select p.*，c.num from product p,cart c where p.productid=c.productid and c.customerid=?";
         Connection conn=null;
         PreparedStatement pstmt=null;
@@ -122,15 +123,34 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
         DBConnection.closeConn(conn);
         return null;
     }
+
+    /**
+     * 模糊查询商品显示
+     * @param currentPage
+     * @param name
+     * @return
+     */
     @Override
     public PageModel<Product> getProduct1(int currentPage, String name) {
-        String tableName = persistentClass.getSimpleName().toLowerCase();
+        //获取总条数
+        int totalRows =0;
+        String sql="  SELECT count(*) FROM (SELECT p.*,c.name cname FROM \n" +
+                "  product p left join category c on p.categoryid=c.categoryid\n" +
+                "   ) t WHERE  isremai='false' AND  (name like \n" +
+                "   '%"+name+"%' or shopname like '%"+name+"%' or cname like '%"+name+"%')";
 
+        try {
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+             totalRows = rs.getInt(1);// 获取第一列
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         int rowsPerPage = 3;
-
         int endRow = currentPage * rowsPerPage;
         int startRow = (currentPage - 1) * rowsPerPage + 1;
-        int totalRows = getTotalRows();
+
         int totalPage = 0;
         if (totalRows % rowsPerPage == 0) {
             totalPage = totalRows / rowsPerPage;
@@ -138,16 +158,16 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
             totalPage = totalRows / rowsPerPage + 1;
         }
 
-        String sql = "SELECT * FROM (SELECT rownum rn,t.* FROM (SELECT * FROM "
-                + tableName
-                + ") t WHERE rownum<=? AND  name like "
-                +"'%"+name+"%'"
-
-                +") WHERE rn>=?";
+    //获取所有数据
+        String sql1="SELECT * FROM (SELECT rownum rn,t.* FROM (SELECT p.*,c.name cname FROM \n" +
+                "   product p left join category c on p.categoryid=c.categoryid\n" +
+                "    ) t WHERE rownum<=? and isremai='false' AND  (name like \n" +
+                "    '%"+name+"%' or shopname like '%"+name+"%' or cname like '%"+name+"%')\n" +
+                "       ) WHERE rn>=?";
 
         List<Product> objList = new ArrayList<Product>();
         try {
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement(sql1);
             pstmt.setInt(1, endRow);
             // pstmt.setString(2, name);
             pstmt.setInt(2, startRow);
@@ -195,6 +215,94 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
          */
         return null;
     }
+
+    /**
+     * 拿到热卖商品
+     * @param currentPage
+     * @param name
+     * @return
+     */
+    @Override
+    public PageModel<Product> getProduct2(int currentPage, String name) {
+        //获取总条数
+        int totalRows =0;
+        String sql="  SELECT count(*) FROM (SELECT p.*,c.name cname FROM \n" +
+                "  product p left join category c on p.categoryid=c.categoryid\n" +
+                "   ) t WHERE  isremai='true' AND  (name like \n" +
+                "   '%"+name+"%' or shopname like '%"+name+"%' or cname like '%"+name+"%')";
+        try {
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            totalRows = rs.getInt(1);// 获取第一列
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        int rowsPerPage = 3;
+        //只拿两个数据
+        int endRow = 2;
+        int startRow = 0;
+
+        int totalPage = 0;
+        if (totalRows % rowsPerPage == 0) {
+            totalPage = totalRows / rowsPerPage;
+        } else {
+            totalPage = totalRows / rowsPerPage + 1;
+        }
+
+        //获取所有数据
+        String sql1="SELECT * FROM (SELECT rownum rn,t.* FROM (SELECT p.*,c.name cname FROM \n" +
+                "   product p left join category c on p.categoryid=c.categoryid\n" +
+                "    ) t WHERE rownum<=? and isremai='true' AND  (name like \n" +
+                "    '%"+name+"%' or shopname like '%"+name+"%' or cname like '%"+name+"%')\n" +
+                "       ) WHERE rn>=?";
+
+        List<Product> objList = new ArrayList<Product>();
+        try {
+            pstmt = conn.prepareStatement(sql1);
+            pstmt.setInt(1, endRow);
+            // pstmt.setString(2, name);
+            pstmt.setInt(2, startRow);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {// 判断游标是否能够向下移动
+                Product t = persistentClass.newInstance();
+                List<Method> list = this.matchPojoMethods(t, "set");
+                Iterator<Method> iter = list.iterator();
+                while (iter.hasNext()) {
+                    Method method = iter.next();
+                    String type = method.getParameterTypes()[0].getName();
+                    if (type.indexOf("String") != -1) {
+                        method.invoke(t, rs.getString(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("int") != -1) {
+                        method.invoke(t, rs.getInt(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("float") != -1) {
+                        method.invoke(t, rs.getFloat(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("Float") != -1) {
+                        method.invoke(t, rs.getFloat(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("Date")!=-1){
+                        method.invoke(t, rs.getDate(method.getName().substring(3).toLowerCase()));
+                    }
+                }
+                objList.add(t);
+            }
+            PageModel<Product> pm=new PageModel<Product>();
+            pm.setList(objList);//数据
+            pm.setTotalPage(totalPage);
+            return (PageModel<Product>) pm;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public PageModel<Product> getProduct(int currentPage, String categoryId) {
         String tableName = persistentClass.getSimpleName().toLowerCase();

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DreamShop/DreamShop.iml" filepath="$PROJECT_DIR$/../DreamShop/DreamShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/DreamTown.iml" filepath="$PROJECT_DIR$/DreamTown.iml" />
     </modules>
   </component>

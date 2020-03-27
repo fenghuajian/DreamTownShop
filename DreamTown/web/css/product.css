@@ -4,10 +4,17 @@
 	margin: 0 auto;
 }
 .table123{
+	left: 8px;
 	width:33%;
 	float:left;
 
 
+}
+
+#endhtml{
+	position: absolute;
+	left: 150px;
+	top:750px;
 }
 .jia11{
 	background-color: white;
@@ -25,9 +32,40 @@
 	line-height: 26px;
 }
 
+.addcar{
+	background-color: white;
+
+	width:90px;
+	height: 23px;
+
+	border: 1px solid rgb(227,228,229);
+	text-align: center;
+}
+.addcar a{
+	font-size: 10px;
+	color:#E4393C;
+	text-decoration: none;
+	line-height: 23px;
+}
+
+
+.collect{
+	width: 75px;height: 23px;background-color: red;text-align: center;
+}
+.collect a{
+	color: white;font-size: 12px;text-decoration: none;line-height: 23px;
+}
+
+
 .num11 {
 	color: red;
 	font-size: 20px;
+//text-decoration: none;
+	font-weight: bold;
+}
+.num12 {
+	color: red;
+	font-size: 15px;
 //text-decoration: none;
 	font-weight: bold;
 }
@@ -450,12 +488,15 @@
 }
 #spselect{
 	position: absolute;
-	width: 215px;
-	height: 650px;
+	width: 185px;
+	height: 540px;
 	background-color:rgb(250,250,250);
 	border: 2px solid rgb(255,255,255);
-	left: 60px;
+	left: 65px;
 	top: 145px;
+}
+.tableremai{
+
 }
 #spselect1{
 	position: absolute;
@@ -500,6 +541,22 @@
 }
 
 
+#spjx{
+	position: absolute;
+	background-color:red;
+	width:90px;
+	height: 24px;
+
+	border: 1px solid rgb(227,228,229);
+	text-align: center;
+}
+
+#spjx a{
+	font-size: 14px;
+	color:white;
+	text-decoration: none;
+	line-height: 24px;
+}
 
 
 #xl{
@@ -512,6 +569,7 @@
 	border: 1px solid rgb(227,228,229);
 	text-align: center;
 }
+
 #xl a{
 	font-size: 14px;
 	color:white;
@@ -585,7 +643,7 @@
 }
 #prev{
 	position: absolute;
-	left: 1085px;
+	left: 1035px;
 	top: 150px;
 	border: 1px solid rgb(227,228,229);
 	background-color: white;
@@ -595,7 +653,7 @@
 }
 #first{
 	position: absolute;
-	left: 1030px;
+	left: 980px;
 	top: 150px;
 	border: 1px solid rgb(227,228,229);
 	background-color: white;
@@ -605,7 +663,7 @@
 }
 #last{
 	position: absolute;
-	left: 1195px;
+	left: 1145px;
 	top: 150px;
 	border: 1px solid rgb(227,228,229);
 	background-color: white;
@@ -633,7 +691,7 @@
 }
 #next{
 	position: absolute;
-	left: 1140px;
+	left: 1090px;
 	top: 150px;
 	border: 1px solid rgb(227,228,229);
 	background-color: white;
@@ -787,6 +845,7 @@
 	text-decoration: none;
 	font-weight: bold;
 }
+
 #send1{
 	position: absolute;
 	width: 35px;
@@ -986,6 +1045,7 @@
 	text-decoration: none;
 	line-height: 26px;
 }
+
 
 #kuang12{
 	position: absolute;
@@ -1360,6 +1420,7 @@
 	text-decoration: none;
 	font-weight: bold;
 }
+
 #word21{
 	position: absolute;
 	left:306px;

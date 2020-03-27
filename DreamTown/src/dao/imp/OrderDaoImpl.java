@@ -1,7 +1,7 @@
 package dao.imp;
 
-import bean.Orderinfo;
-import bean.Orders;
+import domain.Orderinfo;
+import domain.Orders;
 import dao.IOrderDao;
 import util.DBConnection;
 import util.PageModel;
@@ -391,6 +391,7 @@ public class OrderDaoImpl extends BaseDaoImpl<Orderinfo> implements IOrderDao {
 
 	@Override
 	//取消订单
+	
 	public void cancelOrder(String orderid) {
 		System.out.println(orderid);
 

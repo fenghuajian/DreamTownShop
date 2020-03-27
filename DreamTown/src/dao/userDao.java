@@ -1,6 +1,6 @@
 package dao;
 
-import bean.User;
+import domain.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

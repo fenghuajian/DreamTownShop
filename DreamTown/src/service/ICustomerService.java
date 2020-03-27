@@ -1,6 +1,6 @@
 package service;
 
-import bean.Customer;
+import domain.Customer;
 
 public interface ICustomerService {
 	Customer getById(String customerId);

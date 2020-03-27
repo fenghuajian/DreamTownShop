@@ -1,8 +1,8 @@
 package dao;
 
-import bean.Permission;
-import bean.Shop;
-import bean.Users;
+import domain.Permission;
+import domain.Shop;
+import domain.Users;
 
 import java.util.Set;
 

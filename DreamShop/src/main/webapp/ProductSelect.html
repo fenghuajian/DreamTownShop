@@ -1,0 +1,1111 @@
+<html>
+<head>
+
+    <title>商品展示页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+
+    <link href="./css/first-screen.chunk.css" rel="stylesheet">
+
+    <link href="./css/seckill.chunk.css" rel="stylesheet">
+
+    <link href="./css/index.chunk.css" rel="stylesheet">
+
+    <link href="./css/left.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <link href="./css/style2.css" rel="stylesheet">
+
+    <link href="./css/style3.css" rel="stylesheet">
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <title>ProductSelect</title>
+<style>
+
+
+</style>
+</head>
+
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+
+
+</script>
+
+<body>
+
+
+<!--shortcut start -->
+<div id="shortcut">
+    <div class="top_nav" aria-label="顶部导航">
+        <!--address start-->
+        <ul class="fl">
+            <li class="shortcut_btn" id="location">
+                <a href="" id="area" class="dt cw-icon" aria-label="地区">
+                    <img  class="iconfont iconfont-location" src="img/address.jpg">
+                    <span class="loc_nanme" data-id="20" title="广西">广西</span>
+                </a>
+                <div class="dd dropdown-layer" tabindex="-1">
+                    <div class="ui-area-content-list">
+                        <div class="item">
+                            <a data-id="1" href="" tabindex="-1">北京</a></div>
+                        <div class="item">
+                            <a data-id="2" href="" tabindex="-1">上海</a></div>
+                        <div class="item">
+                            <a data-id="3" href="" tabindex="-1">天津</a></div>
+                        <div class="item">
+                            <a data-id="4" href="" tabindex="-1">重庆</a></div>
+                        <div class="item">
+                            <a data-id="5" href="" tabindex="-1">河北</a></div>
+                        <div class="item">
+                            <a data-id="6" href="" tabindex="-1">山西</a></div>
+                        <div class="item">
+                            <a data-id="7" href="" tabindex="-1">河南</a></div>
+                        <div class="item">
+                            <a data-id="8" href="" tabindex="-1">辽宁</a></div>
+                        <div class="item">
+                            <a data-id="9" href="" tabindex="-1">吉林</a></div>
+                        <div class="item">
+                            <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
+                        <div class="item">
+                            <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
+                        <div class="item">
+                            <a data-id="12" href="" tabindex="-1">江苏</a></div>
+                        <div class="item">
+                            <a data-id="13" href="" tabindex="-1">山东</a></div>
+                        <div class="item">
+                            <a data-id="14" href="" tabindex="-1">安徽</a></div>
+                        <div class="item">
+                            <a data-id="15" href="" tabindex="-1">浙江</a></div>
+                        <div class="item">
+                            <a data-id="16" href="" tabindex="-1">福建</a></div>
+                        <div class="item">
+                            <a data-id="17" href="" tabindex="-1">湖北</a></div>
+                        <div class="item">
+                            <a data-id="18" href="" tabindex="-1">湖南</a></div>
+                        <div class="item">
+                            <a data-id="19" href="" tabindex="-1">广东</a></div>
+                        <div class="item">
+                            <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
+                        <div class="item">
+                            <a data-id="21" href="" tabindex="-1">江西</a></div>
+                        <div class="item">
+                            <a data-id="22" href="" tabindex="-1">四川</a></div>
+                        <div class="item">
+                            <a data-id="23" href="" tabindex="-1">海南</a></div>
+                        <div class="item">
+                            <a data-id="24" href="" tabindex="-1">贵州</a></div>
+                        <div class="item">
+                            <a data-id="25" href="" tabindex="-1">云南</a></div>
+                        <div class="item">
+                            <a data-id="26" href="" tabindex="-1">西藏</a></div>
+                        <div class="item">
+                            <a data-id="27" href="" tabindex="-1">陕西</a></div>
+                        <div class="item">
+                            <a data-id="28" href="" tabindex="-1">甘肃</a></div>
+                        <div class="item">
+                            <a data-id="29" href="" tabindex="-1">青海</a></div>
+                        <div class="item">
+                            <a data-id="30" href="" tabindex="-1">宁夏</a></div>
+                        <div class="item">
+                            <a data-id="31" href="" tabindex="-1">新疆</a></div>
+                        <div class="item">
+                            <a data-id="52993" href="" tabindex="-1">港澳</a></div>
+                        <div class="item">
+                            <a data-id="32" href="" tabindex="-1">台湾</a></div>
+                        <div class="item">
+                            <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
+                        <div class="item">
+                            <a data-id="53283" href="" tabindex="-1">海外</a></div>
+                    </div>
+                    <div class="area_inter">
+                        <div class="area_inter_split"></div>
+                        <p class="area_inter_desc">地区专享版本</p>
+                        <ul class="area_inter_list">
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
+                                    <div class="area_inter_name">中國港澳</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="area_inter">
+                        <div class="area_inter_split"></div>
+                        <p class="area_inter_desc">Available Sites</p>
+                        <ul class="area_inter_list">
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_global"></div>
+                                    <div class="area_inter_name">Global Site</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_russia"></div>
+                                    <div class="area_inter_name">Сайт России</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_indonesia"></div>
+                                    <div class="area_inter_name">Situs Indonesia</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_spain"></div>
+                                    <div class="area_inter_name">Sitio de Espa?a</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_thailand"></div>
+                                    <div class="area_inter_name">?????????????????</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--address end-->
+
+        <!--menu start-->
+        <ul class="fr">
+            <li id="login" class="shortcut_btn fore1">
+                <a href="" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
+                <a href="register.html" class="link-regist style-red">免费注册</a>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore2">
+                <div class="dt">
+                    <a target="_blank" href="" aria-label="我的订单">我的订单</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li id="myjd" class="shortcut_btn fore3 dropdown">
+                <div class="dt cw-icon">
+                    <a target="_blank" href="" aria-label="我的京东">我的小镇</a>
+                    <img class="iconfont" src="img/dropdown.png">
+                </div>
+                <div class="dd dropdown-layer">
+                    <div class="myjdlist">
+                        <div class="fore1">
+                            <div class="item">
+                                <a href="" target="_blank">待处理订单</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">返修退换货</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">降价商品</a>
+                            </div>
+                        </div>
+                        <div class="fore2">
+                            <div class="item">
+                                <a href="" target="_blank">消息</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">我的问答</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">我的关注</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="myjdlist myjdlist_2">
+                        <div class="fore1">
+                            <div class="item">
+                                <a href="" target="_blank">我的小豆</a>
+                            </div>
+                            <div class="item baitiao">
+                                <a href="" target="_blank">我的白条</a>
+                            </div>
+                        </div>
+                        <div class="fore2">
+                            <div class="item">
+                                <a href="" target="_blank">我的优惠券</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">我的理财</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore4">
+                <div class="dt">
+                    <a target="_blank" href="" aria-label="京东会员">小镇会员</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore5 dropdown shortcut_btn_company">
+                <div class="dt cw-icon">
+                    <a target="_blank" href="" aria-label="企业采购">企业采购</a>
+                    <img class="iconfont" src="img/dropdown.png">
+                </div>
+                <div class="dd dropdown-layer">
+                    <div class="dd-inner">
+                        <div class="item">
+                            <a href="" target="_blank">企业购</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank"">商用场景馆</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank">工业品</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank">礼品卡</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li id="serv" class="shortcut_btn fore6 dropdown">
+                <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
+                    <img class="iconfont" src="img/dropdown.png">
+                </div>
+                <div class="dd dropdown-layer" tabindex="-1">
+                    <div class="item-client">客户</div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">帮助中心</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">售后服务</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">在线客服</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">意见建议</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">电话客服</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">客服邮箱</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">金融咨询</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">全球售客服</a>
+                    </div>
+                    <div class="item-business">商户</div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">合作招商</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">成长中心</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">商家后台</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">小镇工作台</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">商家帮助</a>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank" tabindex="-1">规则平台</a>
+                    </div>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li id="ttbar-navs" class="shortcut_btn fore9 dropdown">
+                <div class="dt cw-icon" id="shortcutSitenavButton" tabindex="0" aria-label="网站导航">网站导航
+                    <img class="iconfont" src="img/dropdown.png">
+                </div>
+                <div class="dd dropdown-layer" tabindex="-1">
+                    <dl class="fore1">
+                        <dt>特色主题</dt>
+                        <dd>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇试用</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇金融</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">全球售</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">国际站</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇会员</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇预售</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">买什么</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">俄语站</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">装机大师</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">0元评测</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">港澳售</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">优惠券</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">秒杀</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">闪购</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">印尼站</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇金融科技</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">陪伴计划</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">出海招商</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">拍拍二手</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="fore2">
+                        <dt>行业频道</dt>
+                        <dd>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">手机</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">智能数码</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">玩3C</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">电脑办公</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">家用电器</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">京鱼座智能</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">服装城</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇生鲜</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">家装城</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">母婴</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">食品</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">农资频道</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">整车</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">图书</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">劳动防护</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="fore3">
+                        <dt>生活服务</dt>
+                        <dd>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇众筹</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">白条</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇金融App</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇小金库</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">理财</a>
+                            </div><div class="item">
+                            <a href="" target="_blank" class="" tabindex="-1">话费</a>
+                        </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">水电煤</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">彩票</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">旅行</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">机票酒店</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">电影票</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇到家</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">游戏</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">拍拍回收</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="fore4">
+                        <dt>更多精选</dt>
+                        <dd>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">合作招商</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇通信</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇E卡</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">企业采购</a>
+                            </div><div class="item">
+                            <a href="" target="_blank" class="" tabindex="-1">服务市场</a>
+                        </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">办公生活馆</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">乡村招募</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">校园加盟</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">小镇社区</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">游戏社区</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" class="" tabindex="-1">知识产权维权</a>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li id="J_mobile" class="shortcut_btn fore10 mobile">
+                <div class="dt mobile_txt">手机小镇</div>
+                <div class="mobile_static">
+                    <div class="mobile_static_qrcode"></div>
+                </div>
+                <div id="J_mobile_pop" class="mobile_pop">
+                    <div>
+                        <div class="mobile_pop_item">
+                            <div class="mobile_pop_qrcode mobile_pop_qrcode_1">
+                                <img src="img/dc4cf353fd96922e.png">
+                            </div>
+                            <div class="mobile_pop_info">
+                                <h5 class="mobile_pop_tit">
+                                    <a href="" target="_blank">手机小镇</a></h5>
+                                <p class="mobile_pop_value">新人专享大礼包</p>
+                                <p class="mobile_pop_device">
+                                    <a class="mobile_pop_device_lk mobile_pop_device_ios" href="" target="_blank">APP Store</a>
+                                    <a class="mobile_pop_device_lk mobile_pop_device_and" href="" target="_blank">安卓市场</a>
+                                    <a class="mobile_pop_device_lk mobile_pop_device_pad" href="" target="_blank">APP Store</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mobile_pop_item">
+                            <div class="mobile_pop_qrcode mobile_pop_qrcode_2">
+                                <img src="img/cf0d1777936ac532.jpg">
+                            </div>
+                            <div class="mobile_pop_info">
+                                <h5 class="mobile_pop_tit">关注梦想小镇微信</h5>
+                                <p class="mobile_pop_value">微信扫一扫关注梦想小镇服务号订阅更多促销优惠福利</p>
+                            </div>
+                        </div>
+                        <div class="mobile_pop_item">
+                            <div class="mobile_pop_qrcode mobile_pop_qrcode_3">
+                                <img src="img/5cf21582b416c186.jpg">
+                            </div>
+                            <div class="mobile_pop_info">
+                                <h5 class="mobile_pop_tit">
+                                    <a href="" target="_blank">小镇金融客户端</a>
+                                </h5>
+                                <p class="mobile_pop_value">新人专享大礼包</p>
+                                <p class="mobile_pop_device">
+                                    <a class="mobile_pop_device_lk mobile_pop_device_ios" href="" target="_blank">APP Store</a>
+                                    <a class="mobile_pop_device_lk mobile_pop_device_and" href="" target="_blank">安卓市场</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--menu end-->
+    </div>
+</div>
+<!--shortcut end-->
+
+<div id="header">
+    <div class="w">
+        <!--logo start-->
+        <div id="logo" class="logo">
+            <a href="#" class="logo_tit_lk">
+                <img src="img/logo1.jpg">
+            </a>
+        </div>
+        <!--logo end-->
+
+        <!--search start-->
+        <div id="search">
+            <div class="search-m">
+                <div class="form">
+                    <ul id="shelper" class="search-helper" style="display: none"></ul>
+                    <div id="J_searchbg" class="search_bg"></div>
+                    <input type="text" id="key" class="text" style="background: transparent;">
+                    <span class="photo-search-btn">
+                            <form id="search-img-upload" method="post" action="#" enctype="multipart/form-data" target="search_upload">
+                                <img class="upload-bg" src="img/photo.png">
+                                <input type="file" name="file" class="upload-trigger" accept="image/png,image/jpeg,image/jpg" tabindex="-1">
+                            </form>
+                        </span>
+                    <button class="button">
+                        <img class="iconfont" src="img/search.png">
+                    </button>
+                </div>
+                <script>
+                    $(".button").click(function(){
+                        var search=$("#key").val();
+                        alert(search);
+                        if(!(search==''))
+                        {
+                            window.location.href="ProductSelect.html?search="+search;
+                        }
+
+                    })
+                </script>
+                <div id="settleup" class="dropdown">
+                    <div class="cw-icon">
+                        <img class="iconfont" src="img/cart.png">
+                        <a target="_blank" href="order.html">我的购物车</a>
+                        <i class="ci-count" id="shopping-amount">0</i>
+                    </div>
+                    <div class="dropdown-layer">
+                        <div class="cart_pop">
+                            <div class="cart_empty">
+                                <img class="cart_empty_img" src="img/nocart.png">
+                                购物车中还没有商品，赶紧选购吧！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--search end-->
+
+        <!--hotwords start-->
+        <div id="hotwords" role="" aria-label="热搜词">
+            <a href="#" id="specHotWord" class="style-red" target="_blank" data-idx="0">储物收纳季</a>
+            <a href="#" target="_blank" data-idx="1">苹果</a>
+            <a href="#" target="_blank" data-idx="2">美妆</a>
+            <a href="#" target="_blank" data-idx="3">智能网络</a>
+            <a href="#" target="_blank" data-idx="4">特价冰洗</a>
+            <a href="#" target="_blank" data-idx="5">跨界京喜</a>
+            <a href="#" target="_blank" data-idx="6">养殖消毒</a>
+            <a href="#" target="_blank" data-idx="7">小米手环</a>
+            <a href="#" target="_blank" data-idx="8">国际大牌</a>
+        </div>
+        <!--hotwords end-->
+
+        <!--navigation start-->
+        <div id="navitems">
+            <div class="spacer"></div>
+            <ul id="navitems-group1">
+                <li class="fore1">
+                    <a class="navitems-lk" target="_blank" href="#">秒杀</a>
+                </li>
+                <li class="fore2">
+                    <a class="navitems-lk" target="_blank" href="#">优惠券</a>
+                </li>
+                <li class="fore3">
+                    <a class="navitems-lk" target="_blank" href="#">PLUS会员</a>
+                </li>
+                <li class="fore4">
+                    <a class="navitems-lk" target="_blank" href="#">品牌闪购</a>
+                </li>
+            </ul>
+            <div class="spacer"></div>
+            <ul id="navitems-group2">
+                <li class="fore5">
+                    <a class="navitems-lk" target="_blank" href="#">拍卖</a>
+                </li>
+                <li class="fore6">
+                    <a class="navitems-lk" target="_blank" href="#">小镇时尚</a>
+                </li>
+                <li class="fore7">
+                    <a class="navitems-lk" target="_blank" href="">小镇超市</a>
+                </li>
+                <li class="fore8">
+                    <a class="navitems-lk" target="_blank" href="">小镇生鲜</a>
+                </li>
+            </ul>
+            <div class="spacer"></div>
+            <ul id="navitems-group3">
+                <li class="fore9">
+                    <a class="navitems-lk" target="_blank" href="">海囤全球</a>
+                </li>
+                <li class="fore10">
+                    <a class="navitems-lk" target="_blank" href="">小镇金融</a>
+                </li>
+            </ul>
+            <!--navigation end-->
+
+
+        </div>
+
+        <!--header end-->
+        <div id="dottedline7"></div>
+
+        <div id="spselect1">
+            <a href="#">商品精选</a>
+        </div>
+
+        <div id="spselect2">
+            <a href="#">广告</a>
+        </div>
+
+        <div id="spselect3">
+        </div>
+
+        <div id="xl">
+            <a href="#">销量</a>
+        </div>
+        <div id="jg">
+            <a href="#">价格</a>
+        </div>
+        <div id="pls">
+            <a href="#">评论数</a>
+        </div>
+        <div id="sjsj">
+            <a href="#">上架时间</a>
+        </div>
+
+
+        <div id="shuzi">
+            <a href="#">1/300</a>
+        </div>
+        <div id="first">
+            <a href="#">&nbsp;首页&nbsp;</a>
+        </div>
+        <div id="prev">
+            <a href="#">&nbsp;<&nbsp;</a>
+        </div>
+        <div id="next">
+            <a href="#">&nbsp;>&nbsp;</a>
+        </div>
+        <div id="last">
+            <a href="#">&nbsp;尾页&nbsp;</a>
+        </div>
+        <div id="spselect4"></div>
+        <div id="psz">
+            <a href="#">配送至</a>
+        </div>
+
+        <div id="center1" STYLE="background-color: white" ;>
+            <table id="center11"  width=100%></table>
+        </div>
+        <div id="psz1"></div>
+        <div id="pszcheck1">
+            <input type="checkbox" value="京东物流">
+            <a href="#" id="psc1">京东物流</a>
+        </div>
+        <div id="pszcheck2">
+            <input type="checkbox" value="货到付款">
+            <a href="#" id="psc2">货到付款</a>
+        </div>
+        <div id="pszcheck3">
+            <input type="checkbox" value="仅显示有货">
+            <a href="#" id="psc3">仅显示有货</a>
+        </div>
+        <div id="pszcheck4">
+            <input type="checkbox" value="可配送全球">
+            <a href="#" id="psc4">可配送全球</a>
+        </div>
+        <div id="spselect">
+        </div>
+        <div id="spleft">
+            <img src="img\0a592393dbc8d9ae.jpg" width="190" height="190" id="spleft1"/>
+            <img src="img\7dc3f0c076df2762.jpg" width="190" height="190" id="spleft2"/>
+         <!-- //  <img src="img\12d491f02a2bde2f.jpg" width="190" height="190" id="spleft3"/>-->
+        </div>
+        <div id="word1">
+            <a href="#">数视达&nbsp;55英寸拼接屏三星超窄边框</br>液晶拼接屏安防监控高清led大屏幕</a>
+        </div>
+        <div id="word2">
+            <a href="#">惠普&nbsp;(HP)&nbsp;E273q&nbsp;27英寸&nbsp;2K高清I</br>PS宽屏&nbsp;Type-C&nbsp;三面微边框显示器</a>
+        </div>
+        <!--//<div id="word3">
+            <a href="#">数视达&nbsp;壁挂式广告机竖屏高清超薄</br>显示器楼宇电梯单机拔插U盘播放远</a>
+        </div>-->
+        <div id="num1">
+            <a href="#">￥5480.00</a>
+        </div>
+        <div id="num2">
+            <a href="#">￥2299.00</a>
+        </div>
+      <!-- // <div id="num3">
+            <a href="#">￥1380.00</a>
+        </div>-->
+        <div id="send1">
+            <a href="#">赠品</a>
+        </div>
+        <div id="evaluate1">
+            <a href="#">已有0人评价</a>
+        </div>
+        <div id="evaluate2">
+            <a href="#">已有2人评价</a>
+        </div>
+     <!--  <div id="evaluate3">
+            <a href="#">已有155人评价</a>
+        </div>-->
+
+    </div>
+
+    <!--下面是js代码-->
+    <script >
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        $(function () {
+            name1=GetQueryString("search")
+            //console.log(name1);
+            alert(name1);
+            $.ajax({
+                type:"POST",
+                dataType:"json",
+                url:"product?method=viewProduct1",
+                data:{ "currentPage": 1,"categoryId":name1 },
+                success:function(data){
+                    //console.log(data);
+                    alert(data);
+
+                    xs(data);
+                }
+            })
+        })
+        function xs(data) {
+            currentPage=data["currentPage"];
+            totalPage = data["totalPage"];
+           // totalPage1=totalPage;
+            list=data["list"];
+            $("#shuzi").html(currentPage+"/"+totalPage);
+            console.log("cu:"+currentPage);
+            console.log("to:"+totalPage);
+            console.log("list:"+list);
+            disabled();
+
+            $(".table123").remove();
+            console.log("object1:");
+            $.each(data["list"], function (index, obj) {
+              //  console.log("object2:");
+                if(!(obj.name== '')){
+                    console.log("object:"+obj);
+                    var table = $("<table>").attr("class","table123")
+                        .append($("<tr>").text(obj.productId).hide())
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").html('<img width="220" height="220"  src="img/'+obj.picURL+'"/>'))
+                        .append($("<tr>").attr("height","5px"))
+
+                        .append($("<tr>").text('￥'+(obj.price)).attr("class","num11"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text(obj.name).css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").attr("height","5px"))
+                        //.append($("<tr>").text(obj.descInfo).css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").html("<p style='width:220px;'>"+obj.descInfo+"</p>").css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text('已有0人评价').css("font-size","14px").css("color","#A7A7A7"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text('花江自营店').css("font-size","14px").css("color","#999999"))
+                        .append($("<tr>").attr("height","5px"))
+
+
+
+
+                    var tr1=$("<tr>").html('<div class="jia11"> <a  href="javascript:void(0) text-decoration:none;" onclick="addProduct(this)">加入购物车</a></div>');
+                    var tr2=$("<tr>").html('<div class="send111" style="width: 35px;background-color: red;text-align: center;"> <a style="color: white;font-size: 12px;text-decoration: none;" >自营</a></div>');
+                    var tr3=$("<tr>").html('<div style="height:5px"></div>');
+                    table.append(tr2);
+                    table.append(tr3);
+                    table.append(tr1);
+                    $("#center11").append(table);
+                    //console.log(productId);
+                }
+
+            });
+        }
+
+        /*下面·代码多余*/
+        /*  $(document).ready(function () {
+              //对后台发送请求
+              //获取json数据
+              var url = window.location.href;
+              categoryId = url.split("?")[1].split("=")[1];
+              //catecategoryId=document.getAttribute(catecategoryId);
+              //console.log(categoryId);
+
+
+              $.getJSON("product?method=viewProduct", { "currentPage": 1,"categoryId":categoryId }, function (data) {
+                  cz(data);
+              });
+
+          });*/
+
+        function cz(data){
+
+            currentPage=data["currentPage"];
+            totalPage = data["totalPage"];
+            disabled();
+
+            $(".table123").remove();
+
+            $.each(data["list"], function (index, obj) {
+                if(obj.categoryId== categoryId){
+                    var table = $("<table>").attr("class","table123")
+                        .append($("<tr>").text(obj.productId).hide())
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").html('<img width="220" height="220" src="http://localhost:8080/JdShop/upload/'+obj.picURL+'"/>'))
+                        .append($("<tr>").attr("height","5px"))
+
+                        .append($("<tr>").text('￥'+(obj.price)).attr("class","num11"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text(obj.name).css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").attr("height","5px"))
+                        //.append($("<tr>").text(obj.descInfo).css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").html("<p style='width:220px;'>"+obj.descInfo+"</p>").css("font-size","14px").css("color","#666"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text('已有0人评价').css("font-size","14px").css("color","#A7A7A7"))
+                        .append($("<tr>").attr("height","5px"))
+                        .append($("<tr>").text('花江自营店').css("font-size","14px").css("color","#999999"))
+                        .append($("<tr>").attr("height","5px"))
+
+
+
+
+                    var tr1=$("<tr>").html('<div class="jia11"> <a  href="javascript:void(0) text-decoration:none;" onclick="addProduct(this)">加入购物车</a></div>');
+                    var tr2=$("<tr>").html('<div class="send111" style="width: 35px;background-color: red;text-align: center;"> <a style="color: white;font-size: 12px;text-decoration: none;" >自营</a></div>');
+                    var tr3=$("<tr>").html('<div style="height:5px"></div>');
+                    table.append(tr2);
+                    table.append(tr3);
+                    table.append(tr1);
+                    $("#center11").append(table);
+                    //console.log(productId);
+                }
+
+            });
+        }
+
+        $(document).ready(function () {
+            $("#first").click(function () {
+                //对后台发送请求
+
+                $.ajax({
+                    type:"POST",
+                    dataType:"json",
+                    url:"product?method=viewProduct1",
+                    data:{ "currentPage": 1,"categoryId":name1 },
+                    success:function(data){
+                        //console.log(data);
+                        //alert(data);
+                        xs(data);
+                    }
+                })
+            });
+
+        });
+
+
+
+        $(document).ready(function () {
+            $("#next").click(function () {
+                //对后台发送请求
+                currentPage=parseInt(currentPage)+1;
+                if(currentPage<=totalPage){
+                    $.ajax({
+                        type:"POST",
+                        dataType:"json",
+                        url:"product?method=viewProduct1",
+                        data:{ "currentPage": currentPage,"categoryId":name1 },
+                        success:function(data){
+                            //console.log(data);
+                            //alert(data);
+                            xs(data);
+                        }
+                    })
+                }
+                else {
+                    $.ajax({
+                        type:"POST",
+                        dataType:"json",
+                        url:"product?method=viewProduct1",
+                        data:{ "currentPage": totalPage,"categoryId":name1 },
+                        success:function(data){
+                            //console.log(data);
+                            //alert(data);
+                            xs(data);
+                        }
+                    })
+
+                }
+
+            });
+
+        });
+
+        $(document).ready(function () {
+            $("#prev").click(function () {
+                //对后台发送请求
+                currentPage=parseInt(currentPage)-1;
+                if(!(currentPage==0))
+                {
+                    $.ajax({
+                        type:"POST",
+                        dataType:"json",
+                        url:"product?method=viewProduct1",
+                        data:{ "currentPage": currentPage,"categoryId":name1 },
+                        success:function(data){
+                            //console.log(data);
+                            //alert(data);
+                            xs(data);
+                        }
+                    })
+                }
+                else
+                {
+                    $.ajax({
+                        type:"POST",
+                        dataType:"json",
+                        url:"product?method=viewProduct1",
+                        data:{ "currentPage": 1,"categoryId":name1 },
+                        success:function(data){
+                            //console.log(data);
+                            //alert(data);
+                            xs(data);
+                        }
+                    })
+                }
+
+            });
+
+        });
+
+        $(document).ready(function () {
+            $("#last").click(function () {
+                //对后台发送请求
+
+
+                $.ajax({
+                    type:"POST",
+                    dataType:"json",
+                    url:"product?method=viewProduct1",
+                    data:{ "currentPage": totalPage,"categoryId":name1 },
+                    success:function(data){
+                        //console.log(data);
+                        //alert(data);
+                        xs(data);
+                    }
+                })
+            });
+
+        });
+
+        function addProduct(a){
+
+
+            var productId=$(a).parent().parent().parent().find("tr:first").text();
+            alert(productId);
+            $.ajax({
+                type:"POST",
+
+                url:"product?method=addCar",
+                data:{"productId":productId },
+                success:function(data){
+                    //console.log(data);
+                    if(data=="OK") window.location.href="success.html?productid="+productId;
+                    else{
+                        alert("您好，请您先登录，谢谢！");
+                        window.location.href="customerLogin.html?search="+name1;
+                    }
+                }
+            })
+           /* $.ajax("product?method=addCar",{ "productId": productId}, function (data) {
+
+                if(data=="OK") window.location.href="success.html?productid="+productId;
+            })*/
+        }
+
+        function disabled(){
+
+                if(totalPage==1){
+                    document.getElementById("first").disabled=false;
+                    document.getElementById("prev").disabled=true;
+                    document.getElementById("next").disabled=true;
+                    document.getElementById("last").disabled=false;
+                }
+                if(currentPage<1 && currentPage==1){
+                    currentPage=1;
+                    document.getElementById("first").disabled=true;
+                    document.getElementById("prev").disabled=true;
+                    document.getElementById("next").disabled=false;
+                    document.getElementById("last").disabled=false;
+                }
+
+                else if( currentPage>totalPage && currentPage==totalPage){
+                    currentPage=totalPage;
+                    document.getElementById("first").disabled=false;
+                    document.getElementById("prev").disabled=false;
+                    document.getElementById("next").disabled=true;
+                    document.getElementById("last").disabled=true;
+                }
+
+
+        }
+    </script>
+
+
+
+
+
+
+</body>
+</html>

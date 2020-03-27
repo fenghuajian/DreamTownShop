@@ -1,8 +1,8 @@
 package service;
 
-import bean.Permission;
-import bean.Shop;
-import bean.Users;
+import domain.Permission;
+import domain.Shop;
+import domain.Users;
 import util.PageModel;
 
 import java.util.Set;
@@ -14,12 +14,8 @@ public interface IUserService {
 		Set<Permission> getPermission(String username);
 		PageModel<Users> getAllUser(int currentPage);
 		void saveGrant(String userId, String roleId);
-		/**
-		 *
-		 * @param userId ����userId��ɾ����¼
-		 * @return ����1��0��1��ʾɾ���ɹ���0��ʾɾ��ʧ��
-		 */
+
 		int deleteUser(String userId);
 
-    Shop getshop(String usersId);
+    	Shop getshop(String usersId);
 }

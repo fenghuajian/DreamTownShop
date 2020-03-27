@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link href="../css/ListProduct.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../js/jquery.form.js"></script>
+    <script type="text/javascript" src="../js/listOrderinfo.js"></script>
+    <script type="text/javascript" src="../js/Popup.js"></script>
+</head>
+<body>
+<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
+    <div id="sfmtop"><label>搜索</label></div>
+    <form id="searchfm">
+        <div id="sfmouter">
+            <div id="sfminner">
+                商品ID：<input type="text" name="scategoryId" id="scategoryId" style="width:370px;">
+                <button onclick="search()">查询</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
+    <table id="order" style="height:100%;width:100%;">
+        <tr>
+            <th></th>
+            <th>订单号</th>
+            <th>商品名称</th>
+
+            <th>单价</th>
+            <th>数量</th>
+            <th>总价</th>
+            <th>下单日期</th>
+            <th>顾客信息</th>
+            <th>订单详情</th>
+            <th>操作</th>
+        </tr>
+    </table>
+    <div style="margin:1% 0 0 41% ;position:absolute">
+        <button type="button" onclick="goFirst()" id="first">首页</button>
+        <button type="button" onclick="goPrev()" id="prev">上一页</button>
+        <button type="button" onclick="goNext()" id="next">下一页</button>
+        <button type="button" onclick="goLast()" id="last">末页</button>
+    </div>
+</div>
+
+</body>
+</html>

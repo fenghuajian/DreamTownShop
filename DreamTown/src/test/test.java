@@ -1,7 +1,5 @@
 package test;
 
-import bean.User;
-import dao.userDao;
 import org.junit.Test;
 
 
