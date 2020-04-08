@@ -63,7 +63,27 @@ public class ProductServiceImpl implements IProductService {
         return productDao.getProduct2(currentPage,name);
     }
 
-    @Override
+	@Override
+	public int addCollection(String productId, String customerId) {
+		return productDao.addCollection( productId,  customerId);
+	}
+
+	@Override
+	public List<Product> getProductRemai(String name) {
+		return productDao.getProductRemai(name);
+	}
+
+	@Override
+	public PageModel<Product> viewCollection(int parseInt, String customerid) {
+		return productDao.viewCollection( parseInt,  customerid);
+	}
+
+	@Override
+	public void deleteCollection(String productId, String customerId) {
+		productDao. deleteCollection(productId,customerId);
+	}
+
+	@Override
 	public void addCar(String productId, String customerId) {
 		// TODO Auto-generated method stub
 

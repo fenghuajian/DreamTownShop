@@ -1,3 +1,53 @@
+
+
+//获取用户信息
+$(function () {
+    customer=null;
+    customerid=null;
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        url:"customer?method=getInfo",
+        success:function(data){
+            customer=data;
+            customerid=data.customerId;
+            username=customer.username;
+            $("#reg111").hide();
+            $("#loginbt").text(username+",梦想小镇欢迎您！");
+            $.ajax({
+                type:"POST",
+                data:{"customerid":customerid},
+                url:"user?method=getRoleId",
+                success:function(data){
+                    console.log("roles:"+data)
+                    //alert(data)
+                    if(data=="969323d6ff9a4acf8aabc8d367474d14" || data=="d26a3b7228d14a518df62e30f9fb2df1")
+                    {
+                        $(".fore7").show();
+
+                    }
+                    else{
+                        $(".fore8").show();
+                    }
+
+                }
+            })
+
+
+            console.log("customerid:"+data.customerId)
+            console.log("name:"+customer.username)
+            //console.log(data)
+        }
+    })
+})
+
+//获取角色id
+$(function () {
+
+
+
+})
+//获取用户信息
 $(document).ready(function () {
     totalPage=1;
     currentPage=1;
@@ -45,10 +95,20 @@ $(document).ready(function () {
     $("#showinfo").click(function () {
         $("#info").show();
 
+
+        $("#shop").hide();
+        $("#collection1").hide();
+        $("#stream1").hide();
+
     })
     $("#quxiao").click(function () {
         $("#shop").hide();
         $("#info").show();
+
+
+
+        $("#collection1").hide();
+        $("#stream1").hide();
 
     })
 //修改信息
@@ -74,12 +134,17 @@ function  registerShop() {
     $("#info").hide();
     $("#shop").show();
 
+
+    $("#collection1").hide();
+    $("#stream1").hide();
+
 }
 //显示订单
 function  stream() {
     //alert(customerid);
     $("#info").hide();
     $("#shop").hide();
+    $("#collection1").hide();
     $("#stream1").show();
     view(1);
 
@@ -92,10 +157,11 @@ function view(currentPage){
         totalPage=data.totalPage;
        /* disabled();*/
         $.each(data["list"], function (index, obj) {
+
             if(obj.customerid==customerid) {
                 if (obj.status == '已支付,尚未发货' ) {
                     var tr = $("<tr>")
-                        .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/' + obj.pic + '"/>'))
+                        .append($("<td>").html('<img width="50" height="50" src="img/' + obj.pic + '"/>'))
                         .append($("<td>").text(obj.orderid))
                         .append($("<td>").text(obj.pname))
                         .append($("<td>").text(obj.price))
@@ -149,6 +215,74 @@ function view(currentPage){
         });
     });
 }
+//显示收藏
+function viewCollection(currentPage) {
+    $("#info").hide();
+    $("#shop").hide();
+    $("#stream1").hide();
+    $("#collection1").show();
+    emptyForm();
+   // console.log(customerid);
+   // alert(customerid)
+    $.ajax({
+        type:"POST",
+        url:"product?method=viewCollection",
+        data:{"id":customerid,"cu":currentPage},
+        success: function(data) {
+
+                //alert("信息:"+data["list"])
+                  totalPage=data.totalPage;
+               // alert("to:"+totalPage);
+                currentPage=data.currentPage;
+               // alert("cu："+currentPage);
+                $.each(data["list"],function(index,obj){
+                    var tr = $("<tr>")
+                        .append($("<td>").html('<img width="50" height="50" src="img/' + obj.picURL + '"/>'))
+                        .append($("<td id='productid'>").text(obj.productId))
+                        .append($("<td>").text(obj.shopname))
+                        .append($("<td>").text(obj.name))
+                        .append($("<td>").text(obj.descInfo))
+                        .append($("<td>").text(obj.price))
+                    .append($("<td id='last'>").html(
+                        '<a id="yes" href="javascript:void(0)" onclick="addCar(this)">加入购物车</a>'+'&nbsp;&nbsp;'+
+                       '<a id="d" href="javascript:void(0)" onclick="deleteCollection(this)">删除收藏</a>'))
+                    $("#collection").append(tr);
+                })
+        }
+    });
+}
+//把收藏加入购物车
+
+function addCar(e) {
+    alert("该商品已经加入购物车！")
+    var id=$(e).parent().parent().find("td").eq(1).text();
+    $.ajax({
+        type: "POST",
+        url: "product?method=addCar",
+        data: {"productId": id, "customerId": customerid},
+        success: function (data) {
+            if(data=="OK")
+                console.log("已经加入购物车")
+        }
+    })
+}
+//删除收藏
+function deleteCollection(e) {
+
+    var id=$(e).parent().parent().find("td").eq(1).text();
+    $.ajax({
+        type: "POST",
+        url: "product?method=deleteCollection",
+        data: {"productId": id, "customerId": customerid},
+        success: function (data) {
+            if(data=="OK")
+            {
+                viewCollection(currentPage);
+            }
+        }
+    })
+}
+
 //取消订单
 
 function cancel1(e){
@@ -209,6 +343,14 @@ function emptyForm(){
     {
         table.deleteRow(i);
         rowNum=rowNum-1;
+        i=i-1;
+    }
+    var table1=document.getElementById("collection");
+    var rowNum1=table1.rows.length;
+    for (i=1;i<rowNum1;i++)
+    {
+        table1.deleteRow(i);
+        rowNum1=rowNum1-1;
         i=i-1;
     }
 }
@@ -301,6 +443,33 @@ function goLast(){
     turn(currentPage);
 }
 function turn(currentPage){
+    if(currentPage<1) currentPage=1;
+    if(currentPage>totalPage) currentPage=totalPage;
     view(currentPage);
+  // viewCollection(currentPage);
+    disabled();
+}
+
+function goFirst1(){
+    currentPage=1;
+    turn1(currentPage);
+}
+function goPrev1(){
+    currentPage=parseInt(currentPage)-1;
+    turn1(currentPage);
+}
+function goNext1(){
+    currentPage=parseInt(currentPage)+1;
+    turn1(currentPage);
+}
+function goLast1(){
+    currentPage=totalPage;
+    turn1(currentPage);
+}
+function turn1(currentPage){
+    if(currentPage<1) currentPage=1;
+    if(currentPage>totalPage) currentPage=totalPage;
+    //view(currentPage);
+     viewCollection(currentPage);
     disabled();
 }

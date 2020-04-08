@@ -3,6 +3,11 @@
     overflow: hidden;
     float: left;
 }
+#endhtmls{
+    position: absolute;
+    left: 80px;
+    top:620px;
+}
 .LeftBotton{
 	left: 0px;
     border-top-right-radius: 18px;

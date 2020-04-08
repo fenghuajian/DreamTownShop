@@ -70,6 +70,13 @@ public class UserController extends HttpServlet {
 		}
 
 	}
+
+	/**
+	 * 删除用户
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	public String deleteUser(HttpServletRequest request, HttpServletResponse response) {
 		String userId=request.getParameter("userId");
 		if(userService.deleteUser(userId)==1){
@@ -166,9 +173,45 @@ public class UserController extends HttpServlet {
 		return "index.jsp";
 	}
 
+	/**
+	 * 根据用户id返回角色id
+	 * @param request
+	 * @param response
+	 */
+
+	public void getRoleId(HttpServletRequest request, HttpServletResponse response) {
+		String userid=request.getParameter("customerid");
+		System.out.println(userid);
+		IUserService userService = new UserServiceImpl();
+		String roleid = userService.getRoleId(userid);
+		PrintWriter out;
+
+		System.out.println(roleid);
+		response.setContentType("text/plain;charset=UTF-8");
+		if(roleid !=null)
+		{
+			try {
+				out = response.getWriter();
+				out.write(roleid);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else{
+			try {
+				out = response.getWriter();
+				out.write("role is normal");
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 
-
+	}
 	//
 	public void returnindex(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");

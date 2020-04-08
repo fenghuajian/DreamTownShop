@@ -140,4 +140,33 @@ public class UserDaoImpl extends BaseDaoImpl<Users> implements IUserDao {
 		DBConnection.closeConn(conn);
 		return shop;
 	}
+
+	/**
+	 * 拿到rolesid
+	 * @param userid
+	 * @return
+	 */
+	@Override
+	public String getRoleId(String userid) {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String roleid=null;
+		String sql="select rolesid from users where usersid=?";
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,userid);
+
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				roleid=rs.getString("rolesid");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBConnection.closeConn(conn);
+		return roleid;
+
+	}
 }

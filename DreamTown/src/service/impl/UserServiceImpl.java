@@ -61,4 +61,9 @@ public class UserServiceImpl implements IUserService {
 	public Shop getshop(String usersId) {
 		return userDao.getShop(usersId);
 	}
+
+	@Override
+	public String getRoleId(String userid) {
+		return userDao.getRoleId( userid);
+	}
 }

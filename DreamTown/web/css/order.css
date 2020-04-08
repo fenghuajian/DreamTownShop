@@ -55,21 +55,24 @@
 }
 
 .search_text{
-	width: 265px;
-	height: 21px;
+	width: 365px;
+	height: 31px;
 	border: 3px solid #C91623;
 	
 	position: relative;
-	left: 4px;
+	left: -300px;
 	top: -1px;
 }	
 
 .search_but{
-	width: 51px;
-	height: 29px;
+	width: 61px;
+	height: 38px;
 	background-color: #C91623;
 	border: 0px;
 	color: #FFFFFF;
+	position: relative;
+	left: -303px;
+	top:-1px;
 }
 
 /*搜索框结束*/

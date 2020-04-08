@@ -5,21 +5,20 @@
 
     <title>个人主页</title>
 
-
+    <link href="./css/cinfo.css" rel="stylesheet">
     <link href="./css/first-screen.chunk.css" rel="stylesheet">
 
     <link href="./css/seckill.chunk.css" rel="stylesheet">
-    <link href="./css/cinfo.css" rel="stylesheet">
-
-    <link href="./css/index.chunk.css" rel="stylesheet">
-
-    <link href="./css/left.css" rel="stylesheet">
-
     <link href="./css/style.css" rel="stylesheet">
-
     <link href="./css/style2.css" rel="stylesheet">
 
     <link href="./css/style3.css" rel="stylesheet">
+
+    <link href="./css/index.chunk.css" rel="stylesheet">
+
+
+
+
 
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/cinfo.js"></script>
@@ -166,12 +165,12 @@
             <ul class="fr">
                 <li id="login" class="shortcut_btn fore1">
                     <a href="" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
-                    <a href="register.html" class="link-regist style-red">免费注册</a>
+                    <a href="register.html" id="reg111" class="link-regist style-red">免费注册</a>
                 </li>
                 <li class="spacer"></li>
                 <li class="shortcut_btn fore2">
                     <div class="dt">
-                        <a target="_blank" href="" aria-label="我的订单">我的订单</a>
+                        <a target="_blank" href="index.html" aria-label="商城首页">商城首页</a>
                     </div>
                 </li>
                 <li class="spacer"></li>
@@ -619,7 +618,7 @@
                 <div class="spacer"></div>
                 <ul id="navitems-group1">
                     <li class="fore1">
-                        <a class="navitems-lk" target="_blank" href="#">小镇首页</a>
+                        <a class="navitems-lk" target="_blank" href="order.html">我的购物车</a>
                     </li>
                     <li class="fore2">
                         <a class="navitems-lk" target="_blank" href="#" id="showinfo">个人信息</a>
@@ -634,7 +633,7 @@
                 <div class="spacer"></div>
                 <ul id="navitems-group2">
                     <li class="fore5">
-                        <a class="navitems-lk" target="_blank" href="#">我的收藏</a>
+                        <a class="navitems-lk" target="_blank" href="javascript:void(0)" onclick="viewCollection(currentPage)">我的收藏</a>
                     </li>
                     <li class="fore6">
                         <a class="navitems-lk" target="_blank" href="javascript:void(0)" onclick="stream()">订单物流</a>
@@ -658,7 +657,9 @@
     </div>
     <!--header end-->
     <div id="stream1">
+        <strong>我的订单</strong>
         <table id="order" style="height:100%;width:100%;" border="1" cellspacing="0" >
+
             <tr>
                 <th></th>
                 <th>订单号</th>
@@ -679,6 +680,30 @@
             <button type="button" onclick="goPrev()" id="prev">上一页</button>
             <button type="button" onclick="goNext()" id="next">下一页</button>
             <button type="button" onclick="goLast()" id="last">末页</button>
+        </div>
+
+    </div>
+    <div id="collection1">
+        <strong>我的收藏</strong>
+        <table id="collection" style="height:100%;width:100%;" border="1" cellspacing="0" >
+
+            <tr>
+
+                <th></th>
+                <th>商品id</th>
+                <th>商店名称</th>
+                <th>商品名称</th>
+                <th>商品信息</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </tr>
+        </table>
+
+        <div style="margin:3% 0 0 41% ;position:absolute">
+            <button type="button" onclick="goFirst1()" id="first">首页</button>
+            <button type="button" onclick="goPrev1()" id="prev">上一页</button>
+            <button type="button" onclick="goNext1()" id="next">下一页</button>
+            <button type="button" onclick="goLast1()" id="last">末页</button>
         </div>
 
     </div>
@@ -737,6 +762,338 @@
         </div>
     </div>
 
+<!--网页尾部-->
+
+    <div id="endcinfo" class="footer">
+        <div class="mod_service">
+            <div class="grid_c1 mod_service_inner">
+                <ul class="mod_service_list">
+                    <li class="mod_service_item">
+                        <div class="mod_service_unit">
+                            <h5 class="mod_service_tit mod_service_duo">多</h5>
+                            <p class="mod_service_txt">品类齐全，轻松购物</p>
+                        </div>
+                    </li>
+                    <li class="mod_service_item">
+                        <div class="mod_service_unit">
+                            <h5 class="mod_service_tit mod_service_kuai">快</h5>
+                            <p class="mod_service_txt">多仓直发，极速配送</p>
+                        </div>
+                    </li>
+                    <li class="mod_service_item">
+                        <div class="mod_service_unit">
+                            <h5 class="mod_service_tit mod_service_hao">好</h5>
+                            <p class="mod_service_txt">正品行货，精致服务</p>
+                        </div>
+                    </li>
+                    <li class="mod_service_item">
+                        <div class="mod_service_unit">
+                            <h5 class="mod_service_tit mod_service_sheng">省</h5>
+                            <p class="mod_service_txt">天天低价，畅选无忧</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
+            <div class="grid_c1 mod_help_inner">
+                <div class="mod_help_list">
+                    <div class="mod_help_nav">
+                        <h5 class="mod_help_nav_tit">购物指南</h5>
+                        <ul class="mod_help_nav_con">
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">购物流程</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">会员介绍</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">生活旅行</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">常见问题</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">大家电</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">联系客服</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod_help_nav">
+                        <h5 class="mod_help_nav_tit">配送方式</h5>
+                        <ul class="mod_help_nav_con">
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">上门自提</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">211限时达</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">海外配送</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod_help_nav">
+                        <h5 class="mod_help_nav_tit">支付方式</h5>
+                        <ul class="mod_help_nav_con">
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">货到付款</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">在线支付</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">分期付款</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">邮局汇款</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">公司转账</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod_help_nav">
+                        <h5 class="mod_help_nav_tit">售后服务</h5>
+                        <ul class="mod_help_nav_con">
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">售后政策</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">价格保护</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">退款说明</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">返修/退换货</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">取消订单</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod_help_nav">
+                        <h5 class="mod_help_nav_tit">特色服务</h5>
+                        <ul class="mod_help_nav_con">
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">夺宝岛</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">DIY装机</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">延保服务</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">小镇E卡</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">小镇通信</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" rel="noopener noreferrer">小镇智能</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod_help_cover">
+                        <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
+                        <div class="mod_help_cover_con">
+                            <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+                            <p class="mod_help_cover_more">
+                                <a href="#" target="_blank" rel="noopener noreferrer">查看详情
+                                    <img class="iconfont" src="img/dropright.png">
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod_copyright">
+            <div class="grid_c1 mod_copyright_inner">
+                <p class="mod_copyright_links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">关于我们</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">联系我们</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">联系客服</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">合作招商</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">商家帮助</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">营销中心</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">手机小镇</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">友情链接</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">销售联盟</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">小镇社区</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">风险监测</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">隐私政策</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">小镇公益</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">English Site</a>
+                    <span class="mod_copyright_split">|</span>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Media &amp; IR</a>
+                </p>
+                <div class="mod_copyright_info">
+                    <div class="mod_copyright_cert">
+                        <p>
+                            <a href="#" target="_blank" rel="noopener noreferrer">京公网安备 11000002000088号</a>
+                            <span class="mod_copyright_split">|</span>
+                            <span>京ICP证070359号</span>
+                            <span class="mod_copyright_split">|</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+                            <span class="mod_copyright_split">|</span>
+                            <span>新出发京零&amp;nbsp字第大120007号</span>
+                        </p>
+                        <p>
+                            <span>互联网出版许可证编号新出网证(京)字150号</span>
+                            <span class="mod_copyright_split">|</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer">出版物经营许可证</a>
+                            <span class="mod_copyright_split">|</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer">网络文化经营许可证京网文[2014]2148-348号</a>
+                            <span class="mod_copyright_split">|</span>
+                            <span>违法和不良信息举报电话：4006561155</span>
+                        </p>
+                        <p>
+                            <span>Copyright&nbsp;?&nbsp;2004&nbsp;-&nbsp;2019&nbsp;&nbsp;梦想小镇JD.com&nbsp;版权所有</span>
+                            <span class="mod_copyright_split">|</span>
+                            <span>消费者维权热线：4006067733</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="mod_copyright_license">经营证照</a>
+                            <span class="mod_copyright_split">|</span>
+                            <span>(京)网械平台备字(2018)第00003号</span>
+                            <span class="mod_copyright_split">|</span>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="mod_business_license">营业执照</a>
+                        </p>
+                    </div>
+                    <div class="mod_copyright_inter">
+                        <p>
+                            <a class="mod_copyright_inter_lk" href="#" target="_blank">
+                                <i class="mod_copyright_inter_ico mod_copyright_inter_ico_global"></i>Global Site
+                            </a>
+                            <span class="mod_copyright_split">|</span>
+                            <a class="mod_copyright_inter_lk" href="" target="_blank">
+                                <i class="mod_copyright_inter_ico mod_copyright_inter_ico_rissia"></i>Сайт России
+                            </a>
+                            <span class="mod_copyright_split">|</span>
+                            <a class="mod_copyright_inter_lk" href="" target="_blank">
+                                <i class="mod_copyright_inter_ico mod_copyright_inter_ico_indonesia"></i>Situs Indonesia
+                            </a>
+                            <span class="mod_copyright_split">|</span>
+                            <a class="mod_copyright_inter_lk" href="" target="_blank">
+                                <i class="mod_copyright_inter_ico mod_copyright_inter_ico_spain"></i>Sitio de Espa?a
+                            </a>
+                            <span class="mod_copyright_split">|</span>
+                            <a class="mod_copyright_inter_lk" href="" target="_blank">
+                                <i class="mod_copyright_inter_ico mod_copyright_inter_ico_thailand"></i>?????????????????
+                            </a>
+                        </p>
+                    </div>
+                    <div class="mod_copyright_subsites">
+                        <p>
+                            <span>小镇旗下网站：</span>
+                            <a href="" target="_blank">小镇钱包</a>
+                            <span class="mod_copyright_split">|</span>
+                            <a href="" target="_blank">阿里云</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="mod_copyright_auth">
+                    <a class="mod_copyright_auth_ico mod_copyright_auth_ico_2" href="" target="_blank">可信网站信用评估</a>
+                    <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="" target="_blank">网络警察提醒你</a>
+                    <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="" target="_blank">诚信网站</a>
+                    <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="" target="_blank">中国互联网举报中心</a>
+                    <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="" target="_blank">网络举报APP下载</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="elevator">
+        <svg class="svgcont" style="display: none;">
+            <defs>
+                <style>
+                    path {
+                        fill: inherit
+                    }
+                </style>
+            </defs>
+            <defs>
+                <symbol id="icon_timline" viewBox="0 0 16 16">
+                    <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
+                    </path>
+                </symbol>
+                <symbol id="icon_feedback" viewBox="0 0 16 16">
+                    <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
+                    </path>
+                </symbol>
+            </defs>
+        </svg>
+        <ul class="elevator_list">
+            <li class="elevator_item">
+                <a class="elevator_lk" href="javascript:void(0);" tabindex="-1">
+                    <span class="elevator_lk_bg"></span>
+                    <span class="elevator_lk_txt">小镇秒杀</span>
+                </a>
+            </li>
+            <li class="elevator_item">
+                <a class="elevator_lk" href="javascript:void(0);" tabindex="-1">
+                    <span class="elevator_lk_bg"></span>
+                    <span class="elevator_lk_txt">特色优选</span>
+                </a>
+            </li>
+            <li class="elevator_item">
+                <a class="elevator_lk" href="javascript:void(0);" tabindex="-1">
+                    <span class="elevator_lk_bg"></span>
+                    <span class="elevator_lk_txt">频道广场</span>
+                </a>
+            </li>
+            <li class="elevator_item">
+                <a class="elevator_lk" href="javascript:void(0);" tabindex="-1">
+                    <span class="elevator_lk_bg"></span>
+                    <span class="elevator_lk_txt">为你推荐</span>
+                </a>
+            </li>
+            <li class="elevator_item">
+                <a class="elevator_lk elevator_lk2" href="" target="_blank">
+                    <span class="elevator_lk_bg"></span>
+                    <svg>
+                        <use xlink:href="#icon_timline"></use>
+                    </svg>
+                    <span class="elevator_lk_txt">客服</span>
+                </a>
+            </li>
+            <li class="elevator_item">
+                <a class="elevator_lk elevator_lk2" href="" target="_blank">
+                    <span class="elevator_lk_bg"></span>
+                    <svg>
+                        <use xlink:href="#icon_feedback"></use>
+                    </svg>
+                    <span class="elevator_lk_txt">反馈</span>
+                </a>
+            </li>
+        </ul>
+        <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
+            <span class="elevator_totop_icon"></span>
+            <span class="elevator_totop_txt">顶部</span>
+        </a>
+    </div>
+</div>
 
 
 </body>

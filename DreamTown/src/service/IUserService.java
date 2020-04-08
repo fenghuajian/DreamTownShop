@@ -18,4 +18,6 @@ public interface IUserService {
 		int deleteUser(String userId);
 
     	Shop getshop(String usersId);
+
+    String getRoleId(String userid);
 }

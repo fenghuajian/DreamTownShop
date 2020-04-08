@@ -60,6 +60,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 	@Override
 	public void updateCustomer(Customer customer) {
 		String sql="update customer set username=?,defaultname=?,password=?,phone=?,defaultphone=?,defaultaddr=?,mailbox=? where customerid=?";
+		String sql1="update users set username=?,password=? where usersid=?";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 
@@ -74,6 +75,14 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 			pstmt.setString(6, customer.getDefaultAddr());
 			pstmt.setString(7, customer.getMailBox());
 			pstmt.setString(8, customer.getCustomerId());
+			pstmt.executeUpdate();
+			//System.out.println("已经修改用户信息！");
+
+
+			pstmt=	pstmt=conn.prepareStatement(sql1);
+			pstmt.setString(1, customer.getUsername());
+			pstmt.setString(3, customer.getCustomerId());
+			pstmt.setString(2, customer.getPassword());
 			pstmt.executeUpdate();
 			System.out.println("已经修改用户信息！");
 

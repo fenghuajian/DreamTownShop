@@ -1,6 +1,7 @@
 package dao.imp;
 
 
+import domain.Collection;
 import domain.Product;
 import domain.carinfo;
 import dao.IProductDao;
@@ -303,6 +304,203 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
         return null;
     }
 
+    /**
+     * 加入收藏
+     * @param productId
+     * @param customerId
+     * @return
+     */
+    @Override
+    public int addCollection(String productId, String customerId) {
+
+        int flag=1;
+
+        String sql1="select * from collection where productid=? and customerid=?";
+        String sql="INSERT INTO collection(productid,customerid) VALUES(?,?)";
+        //String sql2="update cart set num=num+1 where productid=? and customerid=?";
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try {
+            //Class.forName("oracle.jdbc.OracleDriver");
+            conn=DBConnection.getConn();
+            pstmt=conn.prepareStatement(sql1);
+            pstmt.setString(1,productId);
+            pstmt.setString(2,customerId);
+            rs=pstmt.executeQuery();
+            if(rs.next())
+            {
+                flag=0;
+            }
+            else
+            {
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1,productId);
+                pstmt.setString(2,customerId);
+                pstmt.executeUpdate();
+            }
+
+       } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        finally {
+
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+       return  flag;
+    }
+
+    @Override
+    public List<Product> getProductRemai(String name) {
+
+
+        //获取所有数据
+        String sql1="SELECT * FROM (SELECT rownum rn,t.* FROM (SELECT p.*,c.name cname FROM \n" +
+                "   product p left join category c on p.categoryid=c.categoryid\n" +
+                "    ) t WHERE rownum<=2 and isremai='true' AND  (name like \n" +
+                "    '%"+name+"%' or shopname like '%"+name+"%' or cname like '%"+name+"%')\n" +
+                "       ) WHERE rn>=0";
+
+        List<Product> objList = new ArrayList<Product>();
+        try {
+            pstmt = conn.prepareStatement(sql1);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {// 判断游标是否能够向下移动
+                Product t = persistentClass.newInstance();
+                List<Method> list = this.matchPojoMethods(t, "set");
+                Iterator<Method> iter = list.iterator();
+                while (iter.hasNext()) {
+                    Method method = iter.next();
+                    String type = method.getParameterTypes()[0].getName();
+                    if (type.indexOf("String") != -1) {
+                        method.invoke(t, rs.getString(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("int") != -1) {
+                        method.invoke(t, rs.getInt(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("float") != -1) {
+                        method.invoke(t, rs.getFloat(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("Float") != -1) {
+                        method.invoke(t, rs.getFloat(method.getName().substring(3).toLowerCase()));
+                    } else if (type.indexOf("Date")!=-1){
+                        method.invoke(t, rs.getDate(method.getName().substring(3).toLowerCase()));
+                    }
+                }
+                objList.add(t);
+            }
+
+            return objList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public PageModel<Product> viewCollection(int currentPage, String customerid) {
+        //获取总条数
+        int totalRows =0;
+        String sql="  SELECT count(*) FROM (select * from product\n" +
+                "  where productid in(select productid from collection\n" +
+                "  where customerid=?))";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, customerid);
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            totalRows = rs.getInt(1);// 获取第一列
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String tableName = persistentClass.getSimpleName().toLowerCase();
+        int rowsPerPage = 3;
+        int endRow = currentPage * rowsPerPage;
+        int startRow = (currentPage - 1) * rowsPerPage + 1;
+
+        int totalPage = 0;
+
+        if (totalRows % rowsPerPage == 0) {
+            totalPage = totalRows / rowsPerPage;
+        } else {
+            totalPage = totalRows / rowsPerPage + 1;
+        }
+
+        String sql1 = "  SELECT * FROM (SELECT rownum rn,t.* FROM ( select * from product\n" +
+                "    where productid in(select productid from collection\n" +
+                "    \twhere customerid=?)) t WHERE rownum<=? ) WHERE rn>=?";
+
+        List<Product> objList = new ArrayList<Product>();
+        try {
+            pstmt = conn.prepareStatement(sql1);
+            pstmt.setInt(2, endRow);
+            pstmt.setString(1, customerid);
+            pstmt.setInt(3, startRow);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {// 判断游标是否能够向下移动
+               Product t = new Product();
+               t.setProductId(rs.getString("productid"));
+               t.setPicURL(rs.getString("picurl"));
+               t.setDescInfo(rs.getString("descinfo"));
+               t.setShopname(rs.getString("shopname"));
+               t.setName(rs.getString("name"));
+               t.setPrice(rs.getFloat("price"));
+                objList.add(t);
+            }
+            PageModel<Product> pm=new PageModel<Product>();
+            pm.setList(objList);//数据
+            pm.setTotalPage(totalPage);
+            return (PageModel<Product>) pm;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteCollection(String productId, String customerId) {
+
+        String sql="delete from collection where productid=? and customerid=?";
+        //String sql2="update cart set num=num+1 where productid=? and customerid=?";
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        try {
+            //Class.forName("oracle.jdbc.OracleDriver");
+            conn=DBConnection.getConn();
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1,productId);
+                pstmt.setString(2,customerId);
+                pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        finally {
+
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+    }
+
     @Override
     public PageModel<Product> getProduct(int currentPage, String categoryId) {
         String tableName = persistentClass.getSimpleName().toLowerCase();
@@ -372,6 +570,12 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
          */
         return null;
     }
+
+    /**
+     * 可能还喜欢
+     * @param productid
+     * @return
+     */
     @Override
     public List<Product> getOther(String productid) {
         Connection conn=null;
@@ -380,7 +584,6 @@ public class ProductDaoImpl extends BaseDaoImpl<Product> implements IProductDao 
         String sql="SELECT categoryid FROM product WHERE productid=?";
         conn=DBConnection.getConn();
         List<Product> prolist=new ArrayList<Product>();
-
 
         try {
             pstmt=conn.prepareStatement(sql);

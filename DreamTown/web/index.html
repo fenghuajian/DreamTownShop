@@ -28,6 +28,29 @@
         var r = window.location.search.substr(1).match(reg);
         if(r!=null)return  unescape(r[2]); return null;
     }
+    //获取用户信息
+    $(function () {
+        customer=null;
+        customerid=null;
+        $.ajax({
+            type:"POST",
+            dataType:"json",
+            url:"customer?method=getInfo",
+            success:function(data){
+                customer=data;
+                customerid=data.customerId;
+                username=customer.username;
+                $("#r123,.user_login,.user_reg").hide();
+                $("#loginbt").text(username+",梦想小镇欢迎您！");
+
+                console.log("customerid:"+data.customerId)
+                console.log("name:"+customer.username)
+                //console.log(data)
+            }
+        })
+    })
+
+
     $(function(){
            customername1=GetQueryString("customername");
         if(customername1!=null)
@@ -244,7 +267,7 @@
                         <div class="myjdlist">
                             <div class="fore1">
                                 <div class="item">
-                                    <a href="" target="_blank">待处理订单</a>
+                                    <a href="order.html" target="_blank">我的购物车</a>
                                 </div>
                                 <div class="item">
                                     <a href="" target="_blank">返修退换货</a>
@@ -655,7 +678,7 @@
                     <script>
                         $(".button").click(function(){
                             var search=$("#key").val();
-                            alert(search);
+                           // alert(search);
                             if(!(search==''))
                             {
 

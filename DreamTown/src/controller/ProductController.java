@@ -1,5 +1,6 @@
 package controller;
 
+import domain.Collection;
 import domain.Product;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -22,10 +23,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+
 @WebServlet("/product")
 public class ProductController extends BaseServlet {
 
@@ -393,6 +392,11 @@ public class ProductController extends BaseServlet {
 		}
 	}
 
+	/**
+	 * 可能还想购买
+	 * @param request
+	 * @param response
+	 */
 	public void showOtherproduct(HttpServletRequest request, HttpServletResponse response) {
 		String productid=request.getParameter("productid");
 		IProductService productService = new ProductServiceImpl();
@@ -406,7 +410,16 @@ public class ProductController extends BaseServlet {
 
 				itp.remove();
 			}
-
+		}
+		List<Product> prolist1= new ArrayList<Product>();
+		//只显示四个
+		for (int i=0;i<prolist.size();i++)
+		{
+			if (i>=4)
+			{
+				break;
+			}
+			prolist1.add(prolist.get(i));
 		}
 
 		response.setContentType("application/json;charset=utf-8");
@@ -416,7 +429,7 @@ public class ProductController extends BaseServlet {
 				.create();
 		try {
 			out = response.getWriter();
-			out.print(gson.toJson(prolist));
+			out.print(gson.toJson(prolist1));
 			out.flush();
 			out.close();
 		} catch (IOException e) {
@@ -469,6 +482,12 @@ public class ProductController extends BaseServlet {
 			}
 		}
 	}
+
+	/**
+	 * 把商品加入购物车
+	 * @param request
+	 * @param response
+	 */
 	public void addCar(HttpServletRequest request, HttpServletResponse response) {
 		PrintWriter out=null;
 
@@ -486,19 +505,91 @@ public class ProductController extends BaseServlet {
 			{
 				IProductService productService = new ProductServiceImpl();
 				productService.addCar(productId,customerId);
-
 				response.setContentType("application/json;charset=UTF-8");
-
 				out = response.getWriter();
 				out.write(gson.toJson("OK"));
 				out.flush();
-
 			}
 			else{
 				out = response.getWriter();
 				out.write(gson.toJson("您好，请您先登录，谢谢！"));
 				out.flush();
 			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
+		}
+	}
+
+	/**
+	 * 删除收藏
+	 */
+
+	public void deleteCollection(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out=null;
+		try {
+
+			String productId=request.getParameter("productId");
+			String customerId=(String) request.getSession().getAttribute("customerId");
+			System.out.println("pid:"+productId);
+			System.out.println("cid:"+customerId);
+
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+
+			IProductService productService = new ProductServiceImpl();
+			productService.deleteCollection(productId,customerId);
+			response.setContentType("application/json;charset=UTF-8");
+				out = response.getWriter();
+				out.write(gson.toJson("OK"));
+				out.flush();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
+		}
+	}
+
+	/**
+	 * 加入收藏
+	 */
+
+	public void addCollection(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out=null;
+		try {
+
+			String productId=request.getParameter("productid");
+			String customerId=(String) request.getSession().getAttribute("customerId");
+			System.out.println("pid:"+productId);
+			System.out.println("cid:"+customerId);
+
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+
+				IProductService productService = new ProductServiceImpl();
+				int flag=productService.addCollection(productId,customerId);
+				response.setContentType("application/json;charset=UTF-8");
+				if(flag==1){
+
+					out = response.getWriter();
+					out.write(gson.toJson("OK"));
+					out.flush();
+				}
+
+				else{
+					out = response.getWriter();
+					out.write(gson.toJson("no"));
+					out.flush();
+				}
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -547,12 +638,76 @@ public class ProductController extends BaseServlet {
 			}
 		}
 	}
+	//显示收藏
+	public void viewCollection(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out=null;
+		try {
+			String currentPage=request.getParameter("cu");
+			String customerid=request.getParameter("id");
+			System.out.println(customerid);
+			System.out.println(currentPage);
+			//System.out.println(productId);
+			if (currentPage == null) {
+				currentPage = "1";
+			}
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+			IProductService productService = new ProductServiceImpl();
+			PageModel<Product> pm = productService.viewCollection(Integer.parseInt(currentPage),customerid);
+			pm.setCurrentPage(Integer.parseInt(currentPage));
+			response.setContentType("application/json;charset=UTF-8");
+			System.out.println("pm:"+gson.toJson(pm));
+			out = response.getWriter();
+			out.write(gson.toJson(pm));
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
+		}
+	}
 
     /**
      * 拿到热卖商品
      * @param request
      * @param response
      */
+	public void viewProductRemai(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out=null;
+		try {
+
+			String name=request.getParameter("categoryId");
+			name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
+			//String productId=request.getParameter("productId");
+			System.out.println(name);
+
+			Gson gson = new GsonBuilder()
+					.setDateFormat("yyyy-MM-dd")
+					.create();
+			IProductService productService = new ProductServiceImpl();
+			List<Product> pm = productService.getProductRemai(name);
+			response.setContentType("application/json;charset=UTF-8");
+			System.out.println("pm:"+pm);
+			out = response.getWriter();
+			out.write(gson.toJson(pm));
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out!=null) {
+				out.close();
+			}
+		}
+	}
+
+	/**
+	 * 热卖1.0代码
+	 * @param request
+	 * @param response
+	 */
     public void viewProduct2(HttpServletRequest request, HttpServletResponse response) {
         PrintWriter out=null;
         try {

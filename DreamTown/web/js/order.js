@@ -1,3 +1,24 @@
+//获取用户信息
+$(function () {
+    customer=null;
+    customerid=null;
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        url:"customer?method=getInfo",
+        success:function(data){
+            customer=data;
+            customerid=data.customerId;
+            username=customer.username;
+            $("#reg111").hide();
+            $("#loginbt").text(username+",梦想小镇欢迎您！");
+
+            console.log("customerid:"+data.customerId)
+            console.log("name:"+customer.username)
+            //console.log(data)
+        }
+    })
+})
 window.onload = function(){
 	flag2=0;
 	order=null;

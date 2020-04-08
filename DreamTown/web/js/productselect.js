@@ -29,10 +29,13 @@ $(function () {
     $.ajax({
         type:"POST",
         dataType:"json",
-        url:"product?method=viewProduct2",
-        data:{ "currentPage": 1,"categoryId":name1 },
+      //  url:"product?method=viewProduct2",
+       // data:{ "currentPage": 1,"categoryId":name1 },
+        url:"product?method=viewProductRemai",
+        data:{ "categoryId":name1 },
         success:function(dataremai){
-            xsrm(dataremai);
+           xsrm(dataremai);
+            //alert(dataremai)
         }
     })
 })
@@ -48,9 +51,12 @@ $(function () {
            customer=data;
            customerid=data.customerId;
            username=customer.username;
+            $("#reg111").hide();
+            $("#loginbt").text(username+",梦想小镇欢迎您！");
+
            console.log("customerid:"+data.customerId)
             console.log("name:"+customer.username)
-           console.log(data)
+           //console.log(data)
         }
     })
 })
@@ -60,8 +66,8 @@ $(function () {
 function xsrm(dataremai) {
     //list=data["list"];
     //alert(list)
-    $.each(dataremai["list"], function (index, obj) {
-        var tablerm = $("<table>").attr("class", "table123")
+    $.each(dataremai, function (index, obj) {
+        var tablerm = $("<table>").attr("class", "table1ReMai")
             .append($("<tr>").text(obj.productId).hide())
             .append($("<tr>").attr("height", "2px"))
             .append($("<tr>").html('<img width="120" height="120"  src="img/' + obj.picURL + '"/>'))
@@ -144,13 +150,14 @@ function xs(data) {
 
 function collect(a) {
     var productId = $(a).parent().parent().parent().find("tr:first").text();
-    alert(productId);
+   // alert(productId);
     // alert("确定收藏吗")
 
     var productId = $(a).parent().parent().parent().find("tr:first").text();
     // alert(productId);
     if (customerid == null)
     {
+        alert("您好，请您先登录，谢谢！");
        // alert(name1);
         //var name1= jQuery.trim(name1);
         var searchUrl =encodeURI("customerLogin.html?search="+name2);   //使用encodeURI编码
@@ -158,21 +165,20 @@ function collect(a) {
     }
     else
     {
-
-        alert("收藏成功");
-        /*$.ajax({
+        alert("您已收藏成功！");
+       // alert("productid:"+productId+"........"+"customerid:"+customerid);
+        $.ajax({
             type:"POST",
             url:"product?method=addCollection",
-            data:{"productId":productId },
+            data:{"productid":productId},
             success:function(data){
                 //console.log(data);
                 if(data=="OK")console.log("收藏成功");
                 else{
-                    alert("您好，请您先登录，谢谢！");
-                    window.location.href="customerLogin.html?search="+name1;
+                    console.log("已经收藏过");
                 }
             }
-        })*/
+        })
     }
 
 

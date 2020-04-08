@@ -11,7 +11,14 @@
     color: #ffffff;
 }*/
 
-
+.fore7,.fore8{
+    display: none;
+}
+#endcinfo{
+    position: absolute;
+    left: 150px;
+    top:650px;
+}
 #grxx{
     background-color: rgb(229, 219, 66);
     position: absolute;
@@ -26,7 +33,7 @@
 #shop{
     display:none;
 }
-#stream1{
+#stream1,#collection1{
     display:none;
     width: 60%;
     text-align: center;

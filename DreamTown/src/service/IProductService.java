@@ -22,4 +22,12 @@ public interface IProductService {
     PageModel<Product> getProduct1(int currentPage, String name);
 
     PageModel<Product> getProduct2(int parseInt, String name);
+
+    int addCollection(String productId, String customerId);
+
+	List<Product> getProductRemai(String name);
+
+    PageModel<Product> viewCollection(int parseInt, String customerid);
+
+	void deleteCollection(String productId, String customerId);
 }

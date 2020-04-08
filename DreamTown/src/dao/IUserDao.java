@@ -11,4 +11,6 @@ public interface IUserDao extends IBaseDao<Users> {
 	Set<Permission> getPermission(String username);
 	void saveGrant(String userId, String roleId);
 	Shop getShop(String userId);
+
+    String getRoleId(String userid);
 }
