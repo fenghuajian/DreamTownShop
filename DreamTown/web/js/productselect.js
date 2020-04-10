@@ -358,11 +358,10 @@ $(document).ready(function () {
 
 });
 
+//把商品加入购物车
 function addProduct(a){
-
-
     var productId=$(a).parent().parent().parent().find("tr:first").text();
-    alert(productId);
+   // alert(productId);
     $.ajax({
         type:"POST",
 

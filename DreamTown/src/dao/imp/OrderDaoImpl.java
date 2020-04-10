@@ -37,6 +37,10 @@ public class OrderDaoImpl extends BaseDaoImpl<Orderinfo> implements IOrderDao {
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		conn=DBConnection.getConn();
+		/*float price=orderinfo.getPrice().floatValue();
+
+		System.out.println("price:"+price);*/
+		float price=orderinfo.getPrice();
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, orderinfo.getOrderid());
@@ -53,7 +57,9 @@ public class OrderDaoImpl extends BaseDaoImpl<Orderinfo> implements IOrderDao {
 			pstmt.setString(11, orderinfo.getBname());
 			pstmt.setString(12, orderinfo.getBphone());
 			pstmt.setString(13, orderinfo.getBaddr());
-			pstmt.setFloat(14, orderinfo.getPrice());
+			//pstmt.setFloat(14,  orderinfo.getPrice());
+			pstmt.setFloat(14,price);
+
 			pstmt.executeUpdate();
 			System.out.println("已经把商品"+orderinfo.getPname()+"加入订单");
 		} catch (SQLException e) {

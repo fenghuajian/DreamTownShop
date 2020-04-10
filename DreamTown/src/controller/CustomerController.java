@@ -264,7 +264,9 @@ public class CustomerController extends BaseServlet {
 		try {
 			/*BeanUtils.populate(customer,request.getParameterMap());*/
 			ICustomerService customerService=new CustomerServiceImpl();
+			//保存用户信息
 			customerService.save(customer);
+			//在user也保存一份
 			customerService.saveUser(userid,username,password);
 			System.out.println(customer);
 			response.setContentType("text/plain;charset=UTF-8");

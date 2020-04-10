@@ -19,7 +19,7 @@ public class BaseServlet extends HttpServlet {
 		if (methodName != null) {
 			try {
 				Method method = this.getClass().getMethod(methodName, HttpServletRequest.class,
-						HttpServletResponse.class);// �ɱ䳤���������Ե�ͬ��������
+						HttpServletResponse.class);
 				String url = (String) method.invoke(this, request, response);
 				if (url != null) {
 					request.getRequestDispatcher(url).forward(request, response);

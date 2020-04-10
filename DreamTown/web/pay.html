@@ -6,6 +6,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>梦想小镇商城购物车结算页面</title>
     <link href="css/public.css" type="text/css" rel="stylesheet" />
+
+    <link href="./css/first-screen.chunk.css" rel="stylesheet">
+
+    <link href="./css/seckill.chunk.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+   <!-- <link href="./css/style2.css" rel="stylesheet">-->
+
+    <link href="./css/style3.css" rel="stylesheet">
+
+    <link href="./css/index.chunk.css" rel="stylesheet">
+
+
+
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <script type="text/javascript" src="js/jquery_cart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/checkOut.css" />
@@ -27,20 +40,42 @@
                 function (data) {
                 	console.log(data);
                 	info=data;
-                   /* $("#checkoutAddrList .itemConsignee").text(data.defaultName);
-                    $("#checkoutAddrList .tel-itemTel").text(data.defaultPhone);
-                    $("#checkoutAddrList .itemRegion").text(data.defaultAddr);
-                    $("#newConsignee").text(data.defaultName);
-                    $("#newTel").text(data.defaultPhone);
-                    $("#newZipcode").text(data.defaultAddr);*/
+                 /*   $("#checkoutAddrList .itemConsignee").text(data.defaultName);*/
+                 /*   $("#checkoutAddrList .tel-itemTel").text(data.defaultPhone);*/
+                 /*   $("#checkoutAddrList .itemRegion").text(data.defaultAddr);*/
+                 /*   $("#checkoutAddrList .itemStreet").text(data.defaultAddr+"(543202)");*/
+                 /*   $("#newConsignee").text(data.defaultName);*/
+                 /*   $("#newTel").text(data.defaultPhone);*/
+                 /*   $("#newZipcode").text(data.defaultAddr);*/
                 }
             )
+
+            //获取用户信息
+            $(function () {
+                customer=null;
+                customerid=null;
+                $.ajax({
+                    type:"POST",
+                    dataType:"json",
+                    url:"customer?method=getInfo",
+                    success:function(data){
+                        customer=data;
+                        customerid=data.customerId;
+                        username=customer.username;
+                        $("#reg111").hide();
+                        $("#loginbt").text(username+",梦想小镇欢迎您！");
+                        console.log("customerid:"+data.customerId)
+                        console.log("name:"+customer.username)
+                        //console.log(data)
+                    }
+                })
+            })
             
             $.ajax({
 		        url:"order?method=listOrder",
 		        success:function(data){
 		        	order=data;
-		        	alert("oder:"+order);
+		        	//alert("oder:"+order);
 		        	item=document.getElementById('items');
 		            for(var i=0;i<Object.keys(data).length-1;i++){
 						var div=document.createElement("div");
@@ -74,27 +109,30 @@
 		        }
             });
             
-            $("#checkoutToPay").on("click",function(){
-            	packaging();
-            	var name=$("#Consignee").text();
-            	var phone=$("#Telephone").val();
-                alert(JSON.stringify(orderInfo));
+            $("#checkoutToPay").on("click",function() {
+                packaging();
+                var name = $("#Consignee").text();
+                var phone = $("#Telephone").val();
+               // alert(JSON.stringify(orderInfo));
                 console.log(JSON.stringify(orderInfo));
-            	//alert(name);
-            	/*console.log(JSON.stringify(orderInfo));
+                //alert(name);
+                /*console.log(JSON.stringify(orderInfo));
             	alert(JSON.stringify(orderInfo));*/
-            	$.ajax({
-            		url:"order?method=placeOrder",
-                    contentType : "application/json; charset=utf-8",
-            		data:{"order":JSON.stringify(orderInfo)},
-            		success:function(data){
-            			if(data=="OK"){
-            				alert("下单成功");
-            			}
-            		}
-            	});
+                if (orderInfo.buyerInfo != "") {
+                         // alert(orderInfo.buyerInfo)
+                $.ajax({
+                    url: "order?method=placeOrder",
+                    contentType: "application/json; charset=utf-8",
+                    data: {"order": JSON.stringify(orderInfo)},
+                    success: function (data) {
+                        if (data == "OK") {
+                            alert("下单成功");
+                        }
+                    }
+                });
+            }
             });
-            
+
         });
      
         function packaging(){
@@ -134,52 +172,593 @@
 
 <body>
     <!--顶部快捷菜单-->
-    <div class="shortcut_v2013 alink_v2013">
-        <div class="w">
-            <ul class="fl 1h">
+    <div class="upper">
 
-                <li class="fl"><i class="shortcut_s"></i></li>
-                <li class="fl">
-                    <div class="menu_hd">您好，欢迎来梦想小镇商城结算页面！</div>
-                </li>
-
-            </ul>
-            <ul class="fr 1h">
-                <li class="fl">
-                    <div class="menu_hd"><a href="index.html">商城首页 </a></div>
-               </li>
-                <li class="fl"><i class="shortcut_s"></i></li>
-                <li class="fl">
-                    <div class="menu_hd"><a href="#">我的订单</a></div>
-                </li>
-
-                <li class="fl">
-                    <div class="menu_hd"><a href="cinfo.html">我的小镇</a></div>
-                </li>
-                <li class="fl"><i class="shortcut_s"></i></li>
-                <li class="fl">
-                    <div class="menu_hd"><a href="#">服务中心</a></div>
-                </li>
-                <li class="fl"><i class="shortcut_s"></i></li>
-                <li class="fl">
-                    <div class="menu_hd"><a href="#">商家入驻</a></div>
-                </li>
-                <li class="fl"><i class="shortcut_s"></i></li>
-                <li class="fl">
-                    <div class="menu">
-                        <div class="menu_hd"><a href="#">网站导航</a><b><em></em></b></div>
-                        <div class="menu_bd">
-                            <ul>
-                                <li><a href="#">网站导航</a></li>
-                                <li><a href="#">网站导航</a></li>
-                            </ul>
+        <!--shortcut start -->
+        <div id="shortcut">
+            <div class="top_nav" aria-label="顶部导航">
+                <!--address start-->
+                <ul class="fl">
+                    <li class="shortcut_btn" id="location">
+                        <a href="" id="area" class="dt cw-icon" aria-label="地区">
+                            <img  class="iconfont iconfont-location" src="img/address.jpg">
+                            <span class="loc_nanme" data-id="20" title="广西">广西</span>
+                        </a>
+                        <div class="dd dropdown-layer" tabindex="-1">
+                            <div class="ui-area-content-list">
+                                <div class="item">
+                                    <a data-id="1" href="" tabindex="-1">北京</a></div>
+                                <div class="item">
+                                    <a data-id="2" href="" tabindex="-1">上海</a></div>
+                                <div class="item">
+                                    <a data-id="3" href="" tabindex="-1">天津</a></div>
+                                <div class="item">
+                                    <a data-id="4" href="" tabindex="-1">重庆</a></div>
+                                <div class="item">
+                                    <a data-id="5" href="" tabindex="-1">河北</a></div>
+                                <div class="item">
+                                    <a data-id="6" href="" tabindex="-1">山西</a></div>
+                                <div class="item">
+                                    <a data-id="7" href="" tabindex="-1">河南</a></div>
+                                <div class="item">
+                                    <a data-id="8" href="" tabindex="-1">辽宁</a></div>
+                                <div class="item">
+                                    <a data-id="9" href="" tabindex="-1">吉林</a></div>
+                                <div class="item">
+                                    <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
+                                <div class="item">
+                                    <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
+                                <div class="item">
+                                    <a data-id="12" href="" tabindex="-1">江苏</a></div>
+                                <div class="item">
+                                    <a data-id="13" href="" tabindex="-1">山东</a></div>
+                                <div class="item">
+                                    <a data-id="14" href="" tabindex="-1">安徽</a></div>
+                                <div class="item">
+                                    <a data-id="15" href="" tabindex="-1">浙江</a></div>
+                                <div class="item">
+                                    <a data-id="16" href="" tabindex="-1">福建</a></div>
+                                <div class="item">
+                                    <a data-id="17" href="" tabindex="-1">湖北</a></div>
+                                <div class="item">
+                                    <a data-id="18" href="" tabindex="-1">湖南</a></div>
+                                <div class="item">
+                                    <a data-id="19" href="" tabindex="-1">广东</a></div>
+                                <div class="item">
+                                    <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
+                                <div class="item">
+                                    <a data-id="21" href="" tabindex="-1">江西</a></div>
+                                <div class="item">
+                                    <a data-id="22" href="" tabindex="-1">四川</a></div>
+                                <div class="item">
+                                    <a data-id="23" href="" tabindex="-1">海南</a></div>
+                                <div class="item">
+                                    <a data-id="24" href="" tabindex="-1">贵州</a></div>
+                                <div class="item">
+                                    <a data-id="25" href="" tabindex="-1">云南</a></div>
+                                <div class="item">
+                                    <a data-id="26" href="" tabindex="-1">西藏</a></div>
+                                <div class="item">
+                                    <a data-id="27" href="" tabindex="-1">陕西</a></div>
+                                <div class="item">
+                                    <a data-id="28" href="" tabindex="-1">甘肃</a></div>
+                                <div class="item">
+                                    <a data-id="29" href="" tabindex="-1">青海</a></div>
+                                <div class="item">
+                                    <a data-id="30" href="" tabindex="-1">宁夏</a></div>
+                                <div class="item">
+                                    <a data-id="31" href="" tabindex="-1">新疆</a></div>
+                                <div class="item">
+                                    <a data-id="52993" href="" tabindex="-1">港澳</a></div>
+                                <div class="item">
+                                    <a data-id="32" href="" tabindex="-1">台湾</a></div>
+                                <div class="item">
+                                    <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
+                                <div class="item">
+                                    <a data-id="53283" href="" tabindex="-1">海外</a></div>
+                            </div>
+                            <div class="area_inter">
+                                <div class="area_inter_split"></div>
+                                <p class="area_inter_desc">地区专享版本</p>
+                                <ul class="area_inter_list">
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
+                                            <div class="area_inter_name">中國港澳</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="area_inter">
+                                <div class="area_inter_split"></div>
+                                <p class="area_inter_desc">Available Sites</p>
+                                <ul class="area_inter_list">
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
+                                            <div class="area_inter_ico area_inter_ico_global"></div>
+                                            <div class="area_inter_name">Global Site</div>
+                                        </a>
+                                    </li>
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                            <div class="area_inter_ico area_inter_ico_russia"></div>
+                                            <div class="area_inter_name">Сайт России</div>
+                                        </a>
+                                    </li>
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                            <div class="area_inter_ico area_inter_ico_indonesia"></div>
+                                            <div class="area_inter_name">Situs Indonesia</div>
+                                        </a>
+                                    </li>
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                            <div class="area_inter_ico area_inter_ico_spain"></div>
+                                            <div class="area_inter_name">Sitio de Espa?a</div>
+                                        </a>
+                                    </li>
+                                    <li class="area_inter_item">
+                                        <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                            <div class="area_inter_ico area_inter_ico_thailand"></div>
+                                            <div class="area_inter_name">?????????????????</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-            <span class="clr"></span>
+                    </li>
+                </ul>
+                <!--address end-->
+
+                <!--menu start-->
+                <ul class="fr">
+                    <li id="login" class="shortcut_btn fore1">
+                        <a href="" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
+                        <a href="register.html" id="reg111" class="link-regist style-red">免费注册</a>
+                    </li>
+                    <li class="spacer"></li>
+                    <li class="shortcut_btn fore2">
+                        <div class="dt">
+                            <a target="_blank" href="index.html" aria-label="商城首页">商城首页</a>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li id="myjd" class="shortcut_btn fore3 dropdown">
+                        <div class="dt cw-icon">
+                            <a target="_blank" href="" aria-label="我的京东">我的小镇</a>
+
+                        </div>
+                        <div class="dd dropdown-layer">
+                            <div class="myjdlist">
+                                <div class="fore1">
+                                    <div class="item">
+                                        <a href="order.html" target="_blank">我的购物车</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank">返修退换货</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank">降价商品</a>
+                                    </div>
+                                </div>
+                                <div class="fore2">
+                                    <div class="item">
+                                        <a href="cinfo.html" target="_blank">个人主页</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank">我的问答</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank">我的关注</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="myjdlist myjdlist_2">
+                                <div class="fore1">
+                                    <div class="item">
+                                        <a href="" target="_blank">我的小豆</a>
+                                    </div>
+                                    <div class="item baitiao">
+                                        <a href="" target="_blank">我的白条</a>
+                                    </div>
+                                </div>
+                                <div class="fore2">
+                                    <div class="item">
+                                        <a href="" target="_blank">我的优惠券</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank">我的理财</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li class="shortcut_btn fore4">
+                        <div class="dt">
+                            <a target="_blank" href="" aria-label="京东会员">小镇会员</a>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li class="shortcut_btn fore5 dropdown shortcut_btn_company">
+                        <div class="dt cw-icon">
+                            <a target="_blank" href="" aria-label="企业采购">企业采购</a>
+                            <img class="iconfont" src="img/dropdown.png">
+                        </div>
+                        <div class="dd dropdown-layer">
+                            <div class="dd-inner">
+                                <div class="item">
+                                    <a href="" target="_blank">企业购</a>
+                                </div>
+                                <div class="item">
+                                    <a href="" target="_blank"">商用场景馆</a>
+                                </div>
+                                <div class="item">
+                                    <a href="" target="_blank">工业品</a>
+                                </div>
+                                <div class="item">
+                                    <a href="" target="_blank">礼品卡</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li id="serv" class="shortcut_btn fore6 dropdown">
+                        <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
+                            <img class="iconfont" src="img/dropdown.png">
+                        </div>
+                        <div class="dd dropdown-layer" tabindex="-1">
+                            <div class="item-client">客户</div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">帮助中心</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">售后服务</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">在线客服</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">意见建议</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">电话客服</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">客服邮箱</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">金融咨询</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">全球售客服</a>
+                            </div>
+                            <div class="item-business">商户</div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">合作招商</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">成长中心</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">商家后台</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">小镇工作台</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">商家帮助</a>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank" tabindex="-1">规则平台</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li id="ttbar-navs" class="shortcut_btn fore9 dropdown">
+                        <div class="dt cw-icon" id="shortcutSitenavButton" tabindex="0" aria-label="网站导航">网站导航
+                            <img class="iconfont" src="img/dropdown.png">
+                        </div>
+                        <div class="dd dropdown-layer" tabindex="-1">
+                            <dl class="fore1">
+                                <dt>特色主题</dt>
+                                <dd>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇试用</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇金融</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">全球售</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">国际站</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇会员</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇预售</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">买什么</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">俄语站</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">装机大师</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">0元评测</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">港澳售</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">优惠券</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">秒杀</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">闪购</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">印尼站</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇金融科技</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">陪伴计划</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">出海招商</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">拍拍二手</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="fore2">
+                                <dt>行业频道</dt>
+                                <dd>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">手机</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">智能数码</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">玩3C</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">电脑办公</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">家用电器</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">京鱼座智能</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">服装城</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇生鲜</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">家装城</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">母婴</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">食品</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">农资频道</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">整车</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">图书</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">劳动防护</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="fore3">
+                                <dt>生活服务</dt>
+                                <dd>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇众筹</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">白条</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇金融App</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇小金库</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">理财</a>
+                                    </div><div class="item">
+                                    <a href="" target="_blank" class="" tabindex="-1">话费</a>
+                                </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">水电煤</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">彩票</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">旅行</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">机票酒店</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">电影票</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇到家</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">游戏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">拍拍回收</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="fore4">
+                                <dt>更多精选</dt>
+                                <dd>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">合作招商</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇通信</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇E卡</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">企业采购</a>
+                                    </div><div class="item">
+                                    <a href="" target="_blank" class="" tabindex="-1">服务市场</a>
+                                </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">办公生活馆</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">乡村招募</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">校园加盟</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">小镇社区</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">游戏社区</a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="" target="_blank" class="" tabindex="-1">知识产权维权</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </li>
+                    <li class="spacer"></li>
+                    <li id="J_mobile" class="shortcut_btn fore10 mobile">
+                        <div class="dt mobile_txt">手机小镇</div>
+                        <div class="mobile_static">
+                            <div class="mobile_static_qrcode"></div>
+                        </div>
+                        <div id="J_mobile_pop" class="mobile_pop">
+                            <div>
+                                <div class="mobile_pop_item">
+                                    <div class="mobile_pop_qrcode mobile_pop_qrcode_1">
+                                        <img src="img/dc4cf353fd96922e.png">
+                                    </div>
+                                    <div class="mobile_pop_info">
+                                        <h5 class="mobile_pop_tit">
+                                            <a href="" target="_blank">手机小镇</a></h5>
+                                        <p class="mobile_pop_value">新人专享大礼包</p>
+                                        <p class="mobile_pop_device">
+                                            <a class="mobile_pop_device_lk mobile_pop_device_ios" href="" target="_blank">APP Store</a>
+                                            <a class="mobile_pop_device_lk mobile_pop_device_and" href="" target="_blank">安卓市场</a>
+                                            <a class="mobile_pop_device_lk mobile_pop_device_pad" href="" target="_blank">APP Store</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mobile_pop_item">
+                                    <div class="mobile_pop_qrcode mobile_pop_qrcode_2">
+                                        <img src="img/cf0d1777936ac532.jpg">
+                                    </div>
+                                    <div class="mobile_pop_info">
+                                        <h5 class="mobile_pop_tit">关注梦想小镇微信</h5>
+                                        <p class="mobile_pop_value">微信扫一扫关注梦想小镇服务号订阅更多促销优惠福利</p>
+                                    </div>
+                                </div>
+                                <div class="mobile_pop_item">
+                                    <div class="mobile_pop_qrcode mobile_pop_qrcode_3">
+                                        <img src="img/5cf21582b416c186.jpg">
+                                    </div>
+                                    <div class="mobile_pop_info">
+                                        <h5 class="mobile_pop_tit">
+                                            <a href="" target="_blank">小镇金融客户端</a>
+                                        </h5>
+                                        <p class="mobile_pop_value">新人专享大礼包</p>
+                                        <p class="mobile_pop_device">
+                                            <a class="mobile_pop_device_lk mobile_pop_device_ios" href="" target="_blank">APP Store</a>
+                                            <a class="mobile_pop_device_lk mobile_pop_device_and" href="" target="_blank">安卓市场</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--menu end-->
+            </div>
         </div>
-    </div>
+        <!--shortcut end-->
+
+
+        <!-- <div class="shortcut_v2013 alink_v2013">
+             <div class="w">
+                 <ul class="fl 1h">
+
+                     <li class="fl"><i class="shortcut_s"></i></li>
+                     <li class="fl">
+                         <div class="menu_hd">您好，欢迎来梦想小镇商城结算页面！</div>
+                     </li>
+
+                 </ul>
+                 <ul class="fr 1h">
+                     <li class="fl">
+                         <div class="menu_hd"><a href="index.html">商城首页 </a></div>
+                    </li>
+                     <li class="fl"><i class="shortcut_s"></i></li>
+                     <li class="fl">
+                         <div class="menu_hd"><a href="#">我的订单</a></div>
+                     </li>
+
+                     <li class="fl">
+                         <div class="menu_hd"><a href="cinfo.html">我的小镇</a></div>
+                     </li>
+                     <li class="fl"><i class="shortcut_s"></i></li>
+                     <li class="fl">
+                         <div class="menu_hd"><a href="#">服务中心</a></div>
+                     </li>
+                     <li class="fl"><i class="shortcut_s"></i></li>
+                     <li class="fl">
+                         <div class="menu_hd"><a href="#">商家入驻</a></div>
+                     </li>
+                     <li class="fl"><i class="shortcut_s"></i></li>
+                     <li class="fl">
+                         <div class="menu">
+                             <div class="menu_hd"><a href="#">网站导航</a><b><em></em></b></div>
+                             <div class="menu_bd">
+                                 <ul>
+                                     <li><a href="#">网站导航</a></li>
+                                     <li><a href="#">网站导航</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </li>
+                 </ul>
+                 <span class="clr"></span>
+             </div>
+         </div>-->
     <!--顶部快捷菜单-->
 
 
@@ -244,24 +823,24 @@
                             </div>
                             <div class="box-bd">
                                 <div class="clearfix xm-address-list" id="checkoutAddrList">
-                                    <dl class="item">
-                                        <dt>
-                                            <strong class="itemConsignee"></strong>
-                                        </dt>
-                                        <dd>
-                                            <p id="phone" class="tel-itemTel"></p>
-                                            <p class="itemRegion"></p>
-                                            <p class="itemStreet"></p>
-                                            <span class="edit-btn J_editAddr">编辑</span>
-                                        </dd>
-                                        <dd style="display:none">
-                                            <input type="radio" name="Checkout[address]" class="addressId"
-                                                value="10140916720030323">
-                                        </dd>
-                                    </dl>
+                                   <!-- <dl class="item">-->
+                                   <!--     <dt>-->
+                                   <!--         <strong class="itemConsignee"></strong>-->
+                                   <!--     </dt>-->
+                                   <!--     <dd>-->
+                                   <!--         <p id="phone" class="tel-itemTel"></p>-->
+                                   <!--         <p class="itemRegion"></p>-->
+                                   <!--         <p class="itemStreet"></p>-->
+                                   <!--         <span class="edit-btn J_editAddr">编辑</span>
+                                   /*     </dd>*/     -->
+                                   <!--     <dd style="display:none">-->
+                                   <!--         <input type="radio" name="Checkout[address]" class="addressId"-->
+                                   <!--             value="10140916720030323">-->
+                                   <!--     </dd>-->
+                                   <!-- </dl>-->
                                     <div class="item use-new-addr" id="J_useNewAddr" data-state="off">
                                         <span class="iconfont icon-add"><img src="imges/add_cart.png" /></span>
-                                        使用新地址
+                                        添加收货地址
                                     </div>
                                 </div>
                                   <!--
@@ -332,7 +911,7 @@
                                     /*$(".baocun").click(function () {
 
                                     })*/
-                                </script>>
+                                </script>
                                 <!--点击弹出新增/收货地址界面end-->
                                 <div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
                             </div>
@@ -562,7 +1141,7 @@
                         <input type="hidden" id="couponValue" name="Checkout[couponsValue]">
                         <div class="checkout-confirm">
 
-                            <a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
+                            <a href="order.html" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
                             <input type="button" class="btn btn-primary" value="立即下单" id="checkoutToPay" />
                         </div>
                     </div>

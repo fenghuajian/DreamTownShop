@@ -173,8 +173,8 @@ public class OrderController extends BaseServlet {
 		}
 		street=street.substring(0, street.length() - 1);
 		String temp[]=street.split("\\(");
-		System.out.println("地址:"+temp[0]);
-		System.out.println("邮编:"+temp[1]);
+	//	System.out.println("地址:"+temp[0]);
+//		System.out.println("邮编:"+temp[1]);
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = null;
 		try {
@@ -189,31 +189,38 @@ public class OrderController extends BaseServlet {
 		List<carinfo> carinfolist= JSONObject.parseArray(order,carinfo.class);
 		IOrderService orderService=new OrderServiceImpl();
 		for (carinfo carinfo : carinfolist) {
-			Orderinfo orderinfo=new Orderinfo();
-			orderinfo.setBaddr(temp[0]);
-			orderinfo.setBname(bname);
-			orderinfo.setBphone(jo.get("phone").getAsString());
-			orderinfo.setCustomerid(jo.get("customerId").getAsString());
-			orderinfo.setNum(carinfo.getNum());
-			orderinfo.setOrderdate(new Timestamp(date.getTime()));
-			orderinfo.setOrderid(UUID.randomUUID().toString().replace("-", ""));
-			orderinfo.setExpress("已付款");
-			orderinfo.setStatus("已支付，尚未发货");
-			orderinfo.setPic(carinfo.getPicURL());
-			orderinfo.setPinfo(carinfo.getDescInfo());
-			orderinfo.setPname(carinfo.getName());
-			orderinfo.setPrice(carinfo.getPrice());
-			orderinfo.setProductid(carinfo.getProductId());
-			orderService.saveOrder(orderinfo);
+			if(carinfo.getName()!=null) {
+				Orderinfo orderinfo = new Orderinfo();
+				orderinfo.setBaddr(temp[0]);
+				orderinfo.setBname(bname);
+				orderinfo.setBphone(jo.get("phone").getAsString());
+				orderinfo.setCustomerid(jo.get("customerId").getAsString());
+				orderinfo.setNum(carinfo.getNum());
+				orderinfo.setOrderdate(new Timestamp(date.getTime()));
+				orderinfo.setOrderid(UUID.randomUUID().toString().replace("-", ""));
+				orderinfo.setExpress("已付款");
+				orderinfo.setStatus("已支付,尚未发货");
+				orderinfo.setPic(carinfo.getPicURL());
+				orderinfo.setPinfo(carinfo.getDescInfo());
+				orderinfo.setPname(carinfo.getName());
+				orderinfo.setPrice(carinfo.getPrice());
+				orderinfo.setProductid(carinfo.getProductId());
+				//System.out.println("orderinfo:" + orderinfo);
 
-			orderService.updataCar(orderinfo);
+
+				//保存订单
+				orderService.saveOrder(orderinfo);
+				//修改购物车
+				orderService.updataCar(orderinfo);
+			}
+
 		}
 
 		response.setContentType("text/plain;charset=UTF-8");
 		PrintWriter out;
 		try {
 			out = response.getWriter();
-			//out.write("OK");
+			out.write("OK");
 			out.flush();
 			out.close();
 		} catch (IOException e) {

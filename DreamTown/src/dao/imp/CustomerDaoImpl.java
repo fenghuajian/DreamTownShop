@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerDao {
 
 	@Override
+	//判断用户是否存在
 	public int isExist(String account) {
 		String sql="select * from customer where username=?";
 		Connection conn=null;
@@ -58,6 +59,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements ICustomerD
 	}
 
 	@Override
+	//修改用户信息
 	public void updateCustomer(Customer customer) {
 		String sql="update customer set username=?,defaultname=?,password=?,phone=?,defaultphone=?,defaultaddr=?,mailbox=? where customerid=?";
 		String sql1="update users set username=?,password=? where usersid=?";
