@@ -37,9 +37,19 @@
         else if(check("phone")==0){
             $("#phone-tip").html("<img src='img/icon2.png'>&nbsp;格式错误");
             $("#phone-tip").css("color","#f91");
-        }else if(check("phone")==1){
+        }
+        else if(check("phone")==1){
+            $("#check").hide();
+            $("#checkform").show();
+            $("#rec").show();
+            $("#recode").show();
+            $("#code-cancel").hide();
+            $("#code-status").hide();
+        }
+
+        /*else if(check("phone")==1){
             $.ajax({
-                url: 'customer?method=sendVerifyCode&phone=' + $("#phone").val(),
+                url: 'customer?method=sendPhoneCode&phone=' + $("#phone").val(),
                 dataType: 'text',
                 method: "GET",
                 success: function (result) {
@@ -56,12 +66,18 @@
                 	}
                 }
             });
-        }
+        }*/
     }
     function sendecode(){
         checkall();
         if (equalTopwd()==1 && j==0 && $("#form-mail").val()!="" && check("form-mail")==1) {
-        	$.ajax({
+            $("#checkmail").hide();
+            $("#checkmailform").show();
+            $("#rem").show();
+            $("#remail").show();
+            $("#ecode-cancel").hide();
+            $("#ecode-status").hide();
+        	/*$.ajax({
                 url: 'customer?method=sendEmailCode&mail=' + $("#form-mail").val(),
                 dataType: 'text',
                 method: "GET",
@@ -78,7 +94,7 @@
                 		$("#ecode-tip").css("color","#f91");
                 	}
                 }
-            });
+            });*/
         }
     }
     $(function () {
@@ -108,7 +124,7 @@
                 $("#code-tip").css("color","#f91");
             }else if(check("code")==1){
             	$.ajax({
-                    url: 'customer?method=checkCode&code=' + $("#code").val(),
+                    url: 'customer?method=sendVerifyCode&code=' + $("#code").val(),
                     dataType: 'text',
                     method: "GET",
                     success: function (data) {
@@ -193,6 +209,7 @@
 
     $(function(){
         $("#form-register").click(function() {
+
             var ecode = $("#ecode").val();
             //alert(ecode);
             console.log(ecode);
@@ -304,7 +321,102 @@
                             <img class="i-status" id="code-status" src="img/right.png">
                             <i class="i-cancel" id="code-cancel" style="display: none;" onclick="cancel('code')"></i>
                         </div>
-                        <div id="rec"><button type="button" id="recode">重新发送</button></div>
+                        <!--<div id="rec"><button type="button" id="recode">重新发送</button></div>-->
+
+                        <div id="rec"><input id="recode" type="button" value="获取验证码" onclick="sendMessages()"></input>
+                            <font id="errMsg2" color="red" style="display:none; position:absolute; top:2rem;"></font></div>
+
+                        <script>
+                            var InterValObj; //timer变量，控制时间
+                            var count = 60; //间隔函数，1秒执行
+                            var curCount; //当前剩余秒数
+                            var code = ""; //验证码
+                            var codeLength = 6; //验证码长度
+                            function sendMessages() {
+                                curCount = count;
+                                var phone = $("#phone").val()
+                                /*if(validatePhone(phone)) {
+                                    return;
+                                }*/
+                                if(phone != "") {
+                                    //设置button效果，开始计时
+                                    $("#recode").attr("disabled", "true");
+                                    $("#recode").val("倒计时：" + curCount + "");
+                                    InterValObj = window.setInterval(SetRemainTimes, 1000); //启动计时器，1秒执行一次
+                                    //向后台发送处理数据
+                                    $.ajax({
+                                        url: "customer?method=sendPhoneCode",
+                                        dataType: "json",
+                                        type: "post",
+                                        data: "phone=" + phone,
+                                        success: function(data) {
+                                            //保存验证码
+                                            //$("#code").val(data);
+                                        }
+                                    });
+                                } else {
+                                    alert("手机号码不能为空！！！！！！");
+                                }
+                            }
+                            //timer处理函数
+                            function SetRemainTimes() {
+                                if(curCount == 0) {
+                                    window.clearInterval(InterValObj); //停止计时器
+                                    $("#recode").removeAttr("disabled"); //启用按钮
+                                    $("#recode").val("重新发送");
+                                    code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+                                } else {
+                                    curCount--;
+                                    $("#recode").val("倒计时：" + curCount  );
+                                }
+                            }
+                            /*//开始按钮点击事件
+                            $("#start").click(function() {
+                                window.location.href = "regafter.html?phone=" + $("#phone").val();
+                            })*/
+                            //验证手机号
+                            /*function validatePhone(phone) {
+                                if(phone == '') {
+                                    $("#errMsg1").html("  请先填写手机号");
+                                    $("#errMsg1").show();
+                                    return true;
+                                }
+                                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                                if(!myreg.test(phone)) {
+                                    $("#errMsg1").html("  请输入有效的手机号");
+                                    $("#errMsg1").show();
+                                    return true;
+                                }
+                                return false;
+                            }*/
+                            //验证码非空和错误验证
+                            function validateCode() {
+                                var phone = $("#phone").val();
+                                var code = $("#code").val();
+                                var rpcode = $("#rpcode").val();
+                                if(validatePhone(phone)) {
+                                    return true;
+                                }
+                                if(code == '') {
+                                    $("#errMsg2").html("  请先获取验证码");
+                                    $("#errMsg2").show();
+                                    return true;
+                                }
+                                if(rpcode == '' || code != rpcode) {
+                                    $("#errMsg2").html("  请正确输入验证码");
+                                    $("#errMsg2").show();
+                                    return true;
+                                }
+                                alert(code != rpcode);
+                                return false;
+                            }
+                            $("#phone").on("focus", function() {
+                                $("#errMsg1").hide();
+                            })
+                            $("#rpcode").on("focus", function() {
+                                $("#errMsg2").hide();
+                            })
+                        </script>
                         <span id="code-tip"></span>
                     </div>
                     <div id="step1-next" class="btn-register">下一步</div>
@@ -356,10 +468,53 @@
                             <i class="i-cancel" id="ecode-cancel" style="display: none;" onclick="cancel('ecode')"></i>
                         </div>
 
-                        <div id="rem"><button type="button" id="remail">重新发送</button></div>
+                        <div id="rem">
+                           <!-- <button type="button" id="remail">重新发送</button>-->
+                            <input id="remail" type="button" value="发送验证码" onclick="sendMessage()"></input>
+                        </div>
+                        <script>
+                            var InterValObj1; //timer变量，控制时间
+                            var count1 = 60; //间隔函数，1秒执行
+                            var curCount1; //当前剩余秒数
+                            var code = ""; //验证码
+                            var codeLength = 6; //验证码长度
+
+
+                            function sendMessage() {
+                                curCount1 = count1;
+                                //设置button效果，开始计时
+                                $("#remail").attr("disabled", "true");
+                                $("#remail").val("倒计时：" + curCount1 + "");
+                                InterValObj1 = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+
+                                $.ajax({
+                                        url: 'customer?method=sendEmailCode&mail=' + $("#form-mail").val(),
+                                        dataType: 'text',
+                                        method: "GET",
+                                        success: function (result) {
+
+                                        }
+                                    });
+                            }
+
+                            //timer处理函数
+                            function SetRemainTime() {
+                                if(curCount1 == 0) {
+                                    window.clearInterval(InterValObj1); //停止计时器
+                                    $("#remail").removeAttr("disabled"); //启用按钮
+                                    $("#remail").val("重新发送");
+                                    code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+                                } else {
+                                    curCount1--;
+                                    $("#remail").val("倒计时：" + curCount1  );
+                                }
+                            }
+
+
+                        </script>
                         <span id="ecode-tip"></span>
                     </div>
-                    <button type="button" class="btn-register" id="form-register" onclick="register()">立即注册</button>
+                    <button type="button" class="btn-register" id="form-register" >立即注册</button>
                 </div>
             </form>
         </div>

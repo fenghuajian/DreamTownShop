@@ -153,7 +153,7 @@ function check(id){
     reg=null;
     phonereg=/^[1][3,4,5,7,8][0-9]{9}$/;
     codereg=/^[A-Za-z0-9]{6,6}/;
-    accountreg=/(?=^[\u4e00-\u9fa5a-zA-Z0-9\-_]{4,20}$)\w*[\u4e00-\u9fa5a-zA-Z-_]+\w*/;
+    accountreg=/(?=^[\u4e00-\u9fa5a-zA-Z0-9\-_]{3,20}$)\w*[\u4e00-\u9fa5a-zA-Z-_]+\w*/;
     pwdreg=/^[\u4e00-\u9fa5a-zA-Z0-9]{6,20}$/;
     mailreg=/\w+@\w{2,}\.[com|net|org]{3,}/i;
     if(id=="phone"){

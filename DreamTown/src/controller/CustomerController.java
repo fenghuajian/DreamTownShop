@@ -1,12 +1,13 @@
 package controller;
 
-import domain.Customer;
 import com.alibaba.fastjson.JSON;
+import controller.base.BaseServlet;
+import domain.Customer;
 import service.ICustomerService;
 import service.impl.CustomerServiceImpl;
-import controller.base.BaseServlet;
 import util.SendEmail;
 import util.UUIDString;
+import util.getCode;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -53,7 +54,11 @@ public class CustomerController extends BaseServlet {
 	 * @param request
 	 * @param response
 	 */
-
+	/**
+	 * 获取用户信息
+	 * @param request
+	 * @param response
+	 */
 	public void getInfo(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String customerId=(String) session.getAttribute("customerId");
@@ -71,6 +76,7 @@ public class CustomerController extends BaseServlet {
 			e.printStackTrace();
 		}
 	}
+
 	public void addShop(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
 		String customerid=request.getParameter("id");
 		System.out.println("id:"+customerid);
@@ -79,14 +85,9 @@ public class CustomerController extends BaseServlet {
 		System.out.println("name:"+shopname);
 		String shopid=UUIDString.getId();
 		System.out.println("shopid:"+shopid);
-
        String userid=customerid;
        String roleid="d26a3b7228d14a518df62e30f9fb2df1";
-
-
 		ICustomerService customerService=new CustomerServiceImpl();
-
-
 		if(customerid !=null &&shopid !=null) {
 			customerService.addShop(customerid,shopid,shopname);
             customerService.updaterole(userid,roleid);
@@ -103,6 +104,13 @@ public class CustomerController extends BaseServlet {
 		}
 
 	}
+
+	/**
+	 * 修改用户信息
+	 * @param request
+	 * @param response
+	 * @throws UnsupportedEncodingException
+	 */
 	public void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
 
 		try {
@@ -165,13 +173,43 @@ public class CustomerController extends BaseServlet {
 
 	}
 
+	/**
+	 * 发送手机验证码
+	 * @param request
+	 * @param response
+	 */
+	public void sendPhoneCode(HttpServletRequest request, HttpServletResponse response){
+			String phone=request.getParameter("phone");
+			System.out.println("手机号为："+phone);
+			String code= getCode.vcode();
+			System.out.println("验证码为："+code);
+			request.getSession().setAttribute("phoneCode", code);
+			//SendPhoneCode.sendCode(phone,code);
+		    PrintWriter out;
+			try {
+			out = response.getWriter();
+			out.write("OK");
+			out.flush();
+			out.close();
+			} catch (IOException e) {
+			e.printStackTrace();
+			}
+	}
+	/**
+	 * 手机验证
+	 * @param request
+	 * @param response
+	 */
 	public void sendVerifyCode(HttpServletRequest request, HttpServletResponse response){
 		PrintWriter out;
 		String  phone=request.getParameter("phone");
-		String code="123456";
-		System.out.println(phone);
-		if(!code.equals("")) {
-			request.getSession().setAttribute("code", code);
+		String chek=request.getParameter("code");
+		String code=(String) request.getSession().getAttribute("phoneCode");
+		System.out.println("chek:"+chek);
+		System.out.println("code:"+code);
+		if(code.equals(chek)) {
+			System.out.println("yes");
+			//request.getSession().setAttribute("code", code);
 			response.setContentType("text/plain;charset=UTF-8");
 			try {
 				out = response.getWriter();
@@ -184,6 +222,11 @@ public class CustomerController extends BaseServlet {
 		}
 	}
 
+	/**
+	 * 发送邮箱验证码
+	 * @param request
+	 * @param response
+	 */
 	public void sendEmailCode(HttpServletRequest request, HttpServletResponse response){
 		PrintWriter out;
 		String email=request.getParameter("mail");
@@ -204,15 +247,24 @@ public class CustomerController extends BaseServlet {
 		}
 	}
 
+	/**
+	 * 验证邮箱
+	 * @param request
+	 * @param response
+	 */
 	public void checkCode(HttpServletRequest request, HttpServletResponse response){
 
 		String code=request.getParameter("code");
+		String code1=(String) request.getSession().getAttribute("code");
 		System.out.println(code);
-		if(request.getSession().getAttribute("code").equals(code)) {
+		//不区分大小写判断
+		if(code.equalsIgnoreCase(code1)) {
 			response.setContentType("text/plain;charset=UTF-8");
 			PrintWriter out;
 			try {
+				System.out.println("yes");
 				out = response.getWriter();
+				//out.write("hhh");
 				out.write("OK");
 				out.flush();
 				out.close();
@@ -222,6 +274,11 @@ public class CustomerController extends BaseServlet {
 		}
 	}
 
+	/**
+	 * 判断用户是否存在
+	 * @param request
+	 * @param response
+	 */
 	public void checkAccount(HttpServletRequest request, HttpServletResponse response) {
 		String account=request.getParameter("account");
 		ICustomerService customerService=new CustomerServiceImpl();
@@ -240,6 +297,11 @@ public class CustomerController extends BaseServlet {
 		}
 	}
 
+	/**
+	 * 保存用户
+	 * @param request
+	 * @param response
+	 */
 	public void saveCustomer(HttpServletRequest request, HttpServletResponse response) {
 		Customer customer=new Customer();
 	    String customerid=UUIDString.getId();
@@ -255,8 +317,6 @@ public class CustomerController extends BaseServlet {
 		System.out.println("pwd:"+password);
 		System.out.println("mail:"+mail);
 		System.out.println("phone:"+phone);
-
-
 		customer.setUsername(username);
 		customer.setMailBox(mail);
 		customer.setPhone(phone);

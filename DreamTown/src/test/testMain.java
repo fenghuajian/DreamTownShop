@@ -1,6 +1,7 @@
 package test;
 
 import org.junit.Test;
+import util.SendEmail;
 
 import javax.mail.Address;
 import javax.mail.NoSuchProviderException;
@@ -18,6 +19,11 @@ import java.util.Properties;
 public class testMain {
    int i= (int) ((Math.random()*9+1)*100000);
   String content=String.valueOf(i);
+
+    @Test
+    public void send1(){/**/
+        SendEmail.recmail("2274105767@qq.com","123456");
+    }
  @Test
 public void send(){/**/
      try {
@@ -54,7 +60,7 @@ public void send(){/**/
 
             //jbmhvmdlrymqeahf
             // 连接邮件服务器
-            transport.connect("2274105767", "jbmhvmdlrymqeahf");
+            transport.connect("2274105767", "mhoewzhcfurhdjcf");
             // 发送邮件:mail1是接收者邮箱
             transport.sendMessage(msg, new Address[] { new InternetAddress(mail1) });
             flag=true;
