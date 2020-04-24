@@ -66,4 +66,19 @@ public class UserServiceImpl implements IUserService {
 	public String getRoleId(String userid) {
 		return userDao.getRoleId( userid);
 	}
+
+	@Override
+	public void saveCustomer(Users user) {
+		userDao.saveCustomer(user);
+	}
+
+	@Override
+	public int deleteCustomer(String userId) {
+		 return userDao.deleteCustomer(userId);
+	}
+
+	@Override
+	public int SimpleUpdateUser(String uid, String uname, String pwd) {
+		return  userDao.SimpleUpdateUser(uid, uname,pwd);
+	}
 }

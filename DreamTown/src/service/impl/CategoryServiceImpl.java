@@ -29,4 +29,9 @@ public class CategoryServiceImpl implements ICategoryService {
 	public int deleteCategory(String categoryid) {
 		return categoryDao.delete(categoryid);
 	}
+
+	@Override
+	public int updateCategory(String cname, String uname) {
+		return categoryDao.updateCategory( cname,  uname);
+	}
 }

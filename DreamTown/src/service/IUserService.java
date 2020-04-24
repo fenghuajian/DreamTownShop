@@ -20,4 +20,10 @@ public interface IUserService {
     	Shop getshop(String usersId);
 
     String getRoleId(String userid);
+
+	void saveCustomer(Users user);
+
+	int deleteCustomer(String userId);
+
+	int SimpleUpdateUser(String uid, String uname, String pwd);
 }

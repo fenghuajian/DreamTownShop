@@ -11,4 +11,6 @@ public interface ICategoryService {
 	void saveCategory(Category category);
 
 	int deleteCategory(String categoryid);
+
+    int updateCategory(String cname, String uname);
 }

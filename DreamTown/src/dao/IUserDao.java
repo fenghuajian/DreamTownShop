@@ -13,4 +13,10 @@ public interface IUserDao extends IBaseDao<Users> {
 	Shop getShop(String userId);
 
     String getRoleId(String userid);
+
+    void saveCustomer(Users user);
+
+	int deleteCustomer(String userId);
+
+	int SimpleUpdateUser(String uid, String uname, String pwd);
 }

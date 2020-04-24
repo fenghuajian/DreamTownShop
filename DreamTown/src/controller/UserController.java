@@ -1,14 +1,16 @@
 package controller;
 
-import domain.*;
 import com.alibaba.fastjson.JSON;
-import service.ICustomerService;
+import domain.Permission;
+import domain.Roles;
+import domain.Shop;
+import domain.Users;
 import service.IRoleService;
 import service.IUserService;
-import service.impl.CustomerServiceImpl;
 import service.impl.RoleServiceImpl;
 import service.impl.UserServiceImpl;
 import util.PageModel;
+import util.UUIDString;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 /**
  * Servlet implementation class UserController
@@ -79,7 +80,10 @@ public class UserController extends HttpServlet {
 	 */
 	public String deleteUser(HttpServletRequest request, HttpServletResponse response) {
 		String userId=request.getParameter("userId");
-		if(userService.deleteUser(userId)==1){
+		//IUserService userService = new UserServiceImpl();
+		//IUserService userService1 = new UserServiceImpl();
+		//userService.deleteCustomer(userId);
+		if(userService.deleteCustomer(userId)==1){
 			return "user?method=viewUser";
 		}else{
 			request.setAttribute("errorMsg", "删除失败，请联系维护人员");
@@ -128,12 +132,14 @@ public class UserController extends HttpServlet {
 
 	public String saveUser(HttpServletRequest request, HttpServletResponse response) {
 		Users user = new Users();
-		user.setUsersId(UUID.randomUUID().toString().replace("-", ""));
+		user.setUsersId(UUIDString.getId());
+		//user.setUsersId(UUID.randomUUID().toString().replace("-", ""));
 		user.setUsername(request.getParameter("username"));
 		user.setPassword(request.getParameter("password"));
 		System.out.println(user);
 		IUserService userService = new UserServiceImpl();
-		userService.saveUser(user);
+		//userService.saveUser(user);
+		userService.saveCustomer(user);
 
 		// 保存用户完毕后，页面要跳转到“查看用户”
 		return "user?method=viewUser";
@@ -212,7 +218,31 @@ public class UserController extends HttpServlet {
 
 
 	}
-	//
+	public void  SimpleUpdateUser(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String uid=request.getParameter("uid");
+		String uname=request.getParameter("uname");
+		String pwd=request.getParameter("pwd");
+
+		System.out.println("uid:"+uid+"......"+"uname:"+uname+"pwd:"+pwd);
+		if(userService.SimpleUpdateUser(uid,uname,pwd)==1){
+			//System.out.println("1111");
+			out.print("OK");
+			out.flush();
+			out.close();
+
+		}else{
+			//System.out.println("00000");
+			out.print("NO");
+			out.flush();
+			out.close();
+		}
+	}
 	public void returnindex(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");

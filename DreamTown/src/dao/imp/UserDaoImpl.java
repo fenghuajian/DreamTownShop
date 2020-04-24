@@ -169,4 +169,112 @@ public class UserDaoImpl extends BaseDaoImpl<Users> implements IUserDao {
 		return roleid;
 
 	}
+
+	@Override
+	public void saveCustomer(Users user) {
+		try {
+			String sql="insert into customer(customerid,username,password) values(?,?,?)";
+			String sql1="insert into users(usersid,username,password) values(?,?,?)";
+			Connection conn=null;
+			PreparedStatement pstmt=null;
+			conn=DBConnection.getConn();
+			conn.setAutoCommit(false);
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,user.getUsersId());
+			pstmt.setString(2, user.getUsername());
+			pstmt.setString(3, user.getPassword());
+			pstmt.executeUpdate();
+
+			pstmt=conn.prepareStatement(sql1);
+			pstmt.setString(1,user.getUsersId());
+			pstmt.setString(2, user.getUsername());
+			pstmt.setString(3, user.getPassword());
+
+			pstmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+		DBConnection.closeConn(conn);
+	}
+
+	@Override
+	public int deleteCustomer(String userId) {
+		int flag=0;
+		if(userId !="")
+		{
+			try {
+				String sql="delete from customer where customerid=?";
+				String sql1="delete from users where usersid=?";
+				Connection conn=null;
+				PreparedStatement pstmt=null;
+				conn=DBConnection.getConn();
+				conn.setAutoCommit(false);
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1,userId);
+				pstmt.executeUpdate();
+
+				pstmt=conn.prepareStatement(sql1);
+				pstmt.setString(1,userId);
+				pstmt.executeUpdate();
+				conn.commit();
+				flag=1;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				try {
+					conn.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+			DBConnection.closeConn(conn);
+		}
+
+		return flag;
+	}
+
+	@Override
+	public int SimpleUpdateUser(String uid, String uname, String pwd) {
+		String sql="update users set username=?,password=? where usersid=?";
+		String sql1="update customer set username=?,password=? where customerid=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn= DBConnection.getConn();
+		int flag=0;
+		if(uid !="")
+		{
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, uname);
+				pstmt.setString(2, pwd);
+				pstmt.setString(3, uid);
+				pstmt.executeUpdate();
+
+				pstmt=conn.prepareStatement(sql1);
+				pstmt.setString(1, uname);
+				pstmt.setString(2, pwd);
+				pstmt.setString(3, uid);
+				pstmt.executeUpdate();
+				System.out.println(uid+"已经改成"+uname);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+
+			}
+			finally {
+
+				DBConnection.closeConn(conn);
+			}
+			flag=1;
+		}
+
+
+		return flag;
+	}
+
 }

@@ -1,32 +1,23 @@
 package controller;
 
 import domain.Category;
-import domain.Permission;
-import domain.Roles;
-import domain.Users;
-import com.alibaba.fastjson.JSON;
 import service.ICategoryService;
-import service.IRoleService;
 import service.IUserService;
 import service.impl.CategoryServiceImpl;
-import service.impl.RoleServiceImpl;
 import service.impl.UserServiceImpl;
 import util.PageModel;
+import util.UUIDString;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
 
 /**
  * Servlet implementation class UserController
@@ -75,6 +66,13 @@ public class CategoryController extends HttpServlet {
 		}
 
 	}
+
+	/**
+	 * 删除商品类别
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	public String deleteCategory(HttpServletRequest request, HttpServletResponse response) {
 		String categoryid=request.getParameter("categoryId");
 		if(categoryService.deleteCategory(categoryid)==1){
@@ -84,29 +82,50 @@ public class CategoryController extends HttpServlet {
 			return "error.jsp";
 		}
 	}
-	public String  saveGrant(HttpServletRequest request, HttpServletResponse response) {
-		String roleId=request.getParameter("roleId");
-		String userId=request.getParameter("userId");
-		IUserService userService = new UserServiceImpl();
-		userService.saveGrant(userId, roleId);
-		return "user?method=viewUser";
+
+	/**
+	 * 修改商品类别
+	 * @param request
+	 * @param response
+	 */
+	public void  updateCategory(HttpServletRequest request, HttpServletResponse response) {
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String cname=request.getParameter("cname");
+		String uname=request.getParameter("uname");
+		try {
+			cname=new String(cname.getBytes("ISO-8859-1"),"UTF-8");
+			uname=new String(uname.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		System.out.println("cname:"+cname+"......"+"uname:"+uname);
+		if(categoryService.updateCategory(cname,uname)==1){
+			//System.out.println("1111");
+			out.print("OK");
+			out.flush();
+			out.close();
+
+		}else{
+			//System.out.println("00000");
+			out.print("NO");
+			out.flush();
+			out.close();
+		}
+
 	}
-	public String grantUser(HttpServletRequest request, HttpServletResponse response) {
-		String username=request.getParameter("username");
-		String userId=request.getParameter("userId");
-		//i.所有权限（把所有角色查询出来，并且显示在授权页面中）
-		IRoleService roleService=new RoleServiceImpl();
-		List<Roles> roles=roleService.getAll();
-		request.setAttribute("roles", roles);
-		request.setAttribute("username", username);
-		request.setAttribute("userId", userId);
-		return "user/userGrant.jsp";
-		//拿到所有角色后，要把角色的集合放入request作用域
-
-		//ii.把被授权的用户名也要显示在页面上
 
 
-	}
+	/**
+	 * 显示类别
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 
 	public String viewCategory(HttpServletRequest request, HttpServletResponse response) {
 
@@ -119,7 +138,8 @@ public class CategoryController extends HttpServlet {
 		ICategoryService categoryService=new CategoryServiceImpl();
 
 		PageModel<Category> pm = categoryService.getAllCategory(Integer.parseInt(currentPage));
-
+		//System.out.println();
+		//int total=categoryService.gettotalPage();
 		request.setAttribute("pm", pm);// pm携带了两个数据：1、真实的数据；2、总页数
 		request.setAttribute("currentPage", currentPage);
 
@@ -127,22 +147,16 @@ public class CategoryController extends HttpServlet {
 
 	}
 
-	public String saveUser(HttpServletRequest request, HttpServletResponse response) {
-		Users user = new Users();
-		user.setUsersId(UUID.randomUUID().toString().replace("-", ""));
-		user.setUsername(request.getParameter("username"));
-		user.setPassword(request.getParameter("password"));
-		System.out.println(user);
-		IUserService userService = new UserServiceImpl();
-		userService.saveUser(user);
-
-		// 保存用户完毕后，页面要跳转到“查看用户”
-		return "user?method=viewUser";
-
-	}
+	/**
+	 * 保存类别
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	public String saveCategory(HttpServletRequest request, HttpServletResponse response) {
 		Category category=new Category();
-		category.setCategoryid(UUID.randomUUID().toString().replace("-", ""));
+		category.setCategoryid(UUIDString.getId());
+		//category.setCategoryid(UUID.randomUUID().toString().replace("-", ""));
 		String name=request.getParameter("name");
 		try {
 			name=new String(name.getBytes("ISO-8859-1"),"UTF-8");
@@ -159,47 +173,14 @@ public class CategoryController extends HttpServlet {
 
 	}
 
-	public String addUser(HttpServletRequest request, HttpServletResponse response) {
-
-		return "user/addUser.html";
-	}
 	public String addCategory(HttpServletRequest request, HttpServletResponse response) {
 
 		return "category/addCategory.html";
 	}
 
-	public String login(HttpServletRequest request, HttpServletResponse response) {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
 
-		IUserService userService = new UserServiceImpl();
-		Users user = userService.login(username, password);
-		System.out.println("USER:"+user);
 
-		// 放入session中
-		HttpSession session = request.getSession();
-		session.setAttribute("user", user);
 
-		return "index.jsp";
-	}
-
-	public void getMenu(HttpServletRequest request, HttpServletResponse response) {
-		try {
-			String username = request.getParameter("username");
-
-			IUserService userService = new UserServiceImpl();
-			Set<Permission> permission = userService.getPermission(username);
-
-			response.setContentType("application/json;charset=UTF-8");
-			System.out.println("json: " + JSON.toJSONString(permission));
-			PrintWriter out = response.getWriter();
-			out.print(JSON.toJSONString(permission));
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
