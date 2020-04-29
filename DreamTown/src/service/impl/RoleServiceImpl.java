@@ -14,7 +14,7 @@ public class RoleServiceImpl implements IRoleService {
 
 	IRoleDao roleDao=null;
 	public RoleServiceImpl(){
-		//���ģʽ֮���󹤳�ģʽ
+
 		roleDao=new RoleDaoImpl();
 	}
 
@@ -33,5 +33,15 @@ public class RoleServiceImpl implements IRoleService {
 	@Override
 	public void saveGrant(String roleId, String[] permissionIds) {
 		roleDao.saveGrant(roleId, permissionIds);
+	}
+
+	@Override
+	public int deleteRole(String roleid) {
+		return roleDao.deleteRole(roleid);
+	}
+
+	@Override
+	public int updateRoleName(String cname, String uname) {
+		return roleDao.updateRoleName(cname,uname);
 	}
 }

@@ -46,4 +46,50 @@ public class PermissionDaoImpl extends BaseDaoImpl<Permission> implements IPermi
 		DBConnection.closeConn(conn);
 		return null;
 	}
+
+	@Override
+	public void savePermission(Permission p) {
+		String sql="insert into permission(permissionid,pid,name,iconskin,url,isparent,target) values(?,?,?,?,?,?,?)";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, p.getPermissionid());
+			pstmt.setString(2, p.getPid());
+			pstmt.setString(3, p.getName());
+			pstmt.setString(4, p.getIconSkin());
+			pstmt.setString(5, p.getUrl());
+			pstmt.setString(6, p.getIsParent());
+			pstmt.setString(7, "center");
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBConnection.closeConn(conn);
+	}
+
+	@Override
+	public void updatePermission(Permission p) {
+		String sql="update permission set pid=?,name=?,iconskin=?,url=?,isparent=? where permissionid=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		conn=DBConnection.getConn();
+		try {
+			pstmt=conn.prepareStatement(sql);
+
+			pstmt.setString(1, p.getPid());
+			pstmt.setString(2, p.getName());
+			pstmt.setString(3, p.getIconSkin());
+			pstmt.setString(4, p.getUrl());
+			pstmt.setString(5, p.getIsParent());
+			pstmt.setString(6, p.getPermissionid());
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		DBConnection.closeConn(conn);
+	}
 }

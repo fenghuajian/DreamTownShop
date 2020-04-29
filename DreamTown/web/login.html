@@ -1,35 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/login1.css">
     <link rel="stylesheet" type="text/css" href="css/rstyle.css">
     <link rel="stylesheet" type="text/css" href="css/rstyle2.css">
+
+
+<link rel="stylesheet" type="text/css" href="css/loginModel.css" />
 <title>后台管理登录页面</title>
 </head>
+
 <body>
-<div class="header">
-    <div class="logo-con w">
-        <a href="" class="logo ">
-        </a>
-        <div class="logo-title">欢迎登录梦想小镇后台管理系统</div>
 
-        <div class="have-account">先逛逛？ <a href="index.html">小镇主页&gt;</a></div>
-    </div>
 
+
+
+<img class="bgone" src="img/login1.jpg" />
+<img class="pic" src="img/logina.png" />
+
+<div class="table">
+    <div class="have-account" id="web2">先逛逛？ <a href="index.html">小镇主页&gt;</a></div>
+	<div class="wel">梦想小镇后台登录</div>
+	<div class="wel1">MENG XIANG XIAO ZHEN HUO TAI DENG LU</div>
+
+	
+	<form action="user" method="POST">
+	 <input type="hidden" name="method" value="login"/>
+	<div class="user">
+		
+		<div id="yonghu" style=""><img src="img/yhm.png" /></div>
+		<input type="text" name="username" placeholder="username" />
+	</div>			
+	<div class="password">
+		<div id="yonghu"><img src="img/mm.png" /></div>
+		<input type="password" name="password" placeholder="password"/>
+	</div>
+	<input class="btn" type="submit" name="登录" value="登录" />
+	</form>
 
 </div>
 
-<br><br><br>
-<div id="login">
-    <form action="user" method="POST">
-
-        <input type="hidden" name="method" value="login"/>
-        <strong id="wz">用户名：</strong></strong用户名><input type="text" name="username" id="tex"><br><br><br>
-        <strong id="wz">密&nbsp&nbsp&nbsp码：</strong><input type="password" name="password" id="tex"><br><br><br>
-
-        <input type="submit" value="登录"  id="log">
-    </form>
-</div>
 </body>
 </html>

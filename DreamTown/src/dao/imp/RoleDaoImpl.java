@@ -45,4 +45,73 @@ public class RoleDaoImpl extends BaseDaoImpl<Roles> implements IRoleDao {
         }
         DBConnection.closeConn(conn);
     }
+
+    @Override
+    public int deleteRole(String roleid) {
+        String sql="delete roles  where rolesid=?";
+        String sql1="delete rolespermission  where rolesid=?";
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        conn= DBConnection.getConn();
+        int flag=0;
+        if(roleid !="")
+        {
+            try {
+
+                pstmt=conn.prepareStatement(sql1);
+                pstmt.setString(1, roleid);
+                pstmt.executeUpdate();
+
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1, roleid);
+                pstmt.executeUpdate();
+
+                System.out.println(roleid+"已经删除");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+
+            }
+            finally {
+
+                DBConnection.closeConn(conn);
+            }
+            flag=1;
+        }
+
+
+        return flag;
+    }
+
+    @Override
+    public int updateRoleName(String cname, String uname) {
+        String sql="update roles set rolename=? where rolename=?";
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        conn= DBConnection.getConn();
+        int flag=0;
+        if(uname !="" && cname!="")
+        {
+            try {
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1, uname);
+                pstmt.setString(2, cname);
+
+                pstmt.executeUpdate();
+                System.out.println(cname+"已经改成"+uname);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+
+            }
+            finally {
+
+                DBConnection.closeConn(conn);
+            }
+            flag=1;
+        }
+        return flag;
+    }
+
+
 }

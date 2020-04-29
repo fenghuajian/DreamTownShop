@@ -126,7 +126,8 @@
                     data: {"order": JSON.stringify(orderInfo)},
                     success: function (data) {
                         if (data == "OK") {
-                            alert("下单成功");
+                            //alert("下单成功");
+                            window.location.href="indexPay.jsp?url="+orderInfo.amount;
                         }
                     }
                 });

@@ -6,10 +6,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB18030">
 <title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+
 <style type="text/css">
 	table,tr,th,td{
 		border:1px solid black;
 		border-collapse:collapse;
+	}
+
+	#updateRole{
+		display: none;
+		margin-left: 500px;
+		margin-top: 100px;
+		width: 400px;
+		height:150px;
+
 	}
 </style>
 </head>
@@ -26,9 +40,71 @@
 				<td>${role.roleName}</td>
 				<td>
 					<a href="role?method=grantRole&roleId=${role.rolesId}&roleName=${role.roleName}">授权</a>
+					<a href="role?method=deleteRoLe&roleId=${role.rolesId}">删除</a>
+					<a href="javascript:void(0)" onclick="updateRole(this)">修改</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
+
+
+	<div id="updateRole">
+		<div class="easyui-panel" title="修改角色名" style="width: 100%; max-width: 400px; padding: 30px 60px;">
+			<form id="ff" method="post" action="category">
+				<div style="margin-bottom: 20px">
+
+					修改为：<input type="text" id="uname" width="100%">
+					<br>
+				</div>
+			</form>
+			<div style="text-align: center; padding: 5px 0">
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width: 80px">保存</a>
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width: 80px">重置</a>
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="qxForm()" style="width: 80px">取消</a>
+			</div>
+		</div>
+	</div>
 </body>
+
+
+<script type="text/javascript">
+
+    //点击"修改"按钮
+
+    function updateRole(e)
+    {
+        Cname=$(e).parent().parent().find("td").eq(1).text();
+       // alert(Cname);
+        $("#updateRole").show();
+
+
+    }
+    //修改类别功能
+    function submitForm() {
+        /*$('#ff').form('submit', {
+            ajax:false
+        });*/
+        Uname=$("#uname").val();
+        alert("UNAME:"+Uname+"cNAME:"+Cname);
+        $.ajax({
+            url:'role?method=updateRoleName',
+            data:{"uname":Uname,"cname":Cname},
+            success:function(data){
+                if(data=="OK")
+				{
+                    window.location.href="role?method=viewRole";
+				}
+
+            }
+        });
+    }
+    function qxForm() {
+        $('#updateRole').hide();
+    }
+    function clearForm() {
+        $('#ff').form('clear');
+    }
+
+
+</script>
 </html>

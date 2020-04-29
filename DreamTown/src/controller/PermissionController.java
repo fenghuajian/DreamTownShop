@@ -76,6 +76,12 @@ public class PermissionController extends HttpServlet {
 
 		return "permission/viewPermission.jsp";
 	}
+
+	public String addPermission(HttpServletRequest request, HttpServletResponse response) {
+
+		return "permission/addPermission.html";
+	}
+
 	public void getAllPermission(HttpServletRequest request, HttpServletResponse response){
 		try {
 			/**
@@ -127,7 +133,7 @@ public class PermissionController extends HttpServlet {
 			String pName=request.getParameter("pname");//
 			pName = new String(pName.getBytes("iso-8859-1"),"utf-8");
 			String isParent=request.getParameter("isParent");
-			String url=request.getParameter("url");
+			String url=request.getParameter("purl");
 			String pId=request.getParameter("pId");
 			//System.out.println("data:"+pName+""+pSkin+""+isParent+""+""+url+pId);
 			System.out.println("pname:"+pName);
@@ -150,9 +156,12 @@ public class PermissionController extends HttpServlet {
 
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out=response.getWriter();
-			out.write("保存成功");
-			out.flush();
-			out.close();
+			if(pName!=""){
+				out.write("OK");
+				out.flush();
+				out.close();
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -191,10 +200,11 @@ public class PermissionController extends HttpServlet {
 			//response.setContentType("text/html;charset=UTF-8");
 			//String pName=java.net.URLDecoder.decode((String)request.getParameter("pname"),"UTF-8");
 			String pSkin=request.getParameter("pSkin");//
+			String permissionid=request.getParameter("id");//
 			String pName=request.getParameter("pname");//
 			pName = new String(pName.getBytes("iso-8859-1"),"utf-8");
 			String isParent=request.getParameter("isParent");
-			String url=request.getParameter("url");
+			String url=request.getParameter("purl");
 			String pId=request.getParameter("pId");
 			//System.out.println("data:"+pName+""+pSkin+""+isParent+""+""+url+pId);
 			System.out.println("pname:"+pName);
@@ -204,22 +214,23 @@ public class PermissionController extends HttpServlet {
 			System.out.println("url:"+url);
 			System.out.println("isparent:"+isParent);
 			Permission p=new Permission();
-			p.setPermissionid(UUID.randomUUID().toString().replace("-", ""));
+			p.setPermissionid(permissionid);
 			p.setName(pName);
 			p.setIconSkin(pSkin);
 			p.setIsParent(isParent);
 			p.setUrl(url);
 			p.setPid(pId);
-
 			IPermissionService permissionService=new PermissionServiceImpl();
-			permissionService.updatePermission(p);
 			System.out.println(p);
-
-			/*response.setContentType("text/html;charset=UTF-8");
+			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out=response.getWriter();
-			out.write("保存成功");
-			out.flush();
-			out.close();*/
+			if(pName!="")
+			{
+				permissionService.updatePermission(p);
+				out.write("OK");
+				out.flush();
+				out.close();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

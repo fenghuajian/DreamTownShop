@@ -111,6 +111,49 @@ public class RoleController extends HttpServlet {
 
 	}
 
+	public String deleteRoLe(HttpServletRequest request, HttpServletResponse response) {
+		IRoleService roleService=new RoleServiceImpl();
+		String categoryid=request.getParameter("roleId");
+		if(roleService.deleteRole(categoryid)==1){
+			return "role?method=viewRole";
+		}else{
+			request.setAttribute("errorMsg", "删除失败，请联系维护人员");
+			return "error.jsp";
+		}
+	}
+
+	public void updateRoleName(HttpServletRequest request, HttpServletResponse response) {
+
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		IRoleService roleService=new RoleServiceImpl();
+		String cname=request.getParameter("cname");
+		String uname=request.getParameter("uname");
+		try {
+			cname=new String(cname.getBytes("ISO-8859-1"),"UTF-8");
+			uname=new String(uname.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		System.out.println("cname:"+cname+"......"+"uname:"+uname);
+		if(roleService.updateRoleName(cname,uname)==1){
+			out.print("OK");
+			out.flush();
+			out.close();
+
+		}else{
+			//System.out.println("00000");
+			out.print("NO");
+			out.flush();
+			out.close();
+		}
+
+	}
+
 	public String grantRole(HttpServletRequest request, HttpServletResponse response){
 
 		try {

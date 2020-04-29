@@ -6,20 +6,87 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
 	<title>Insert title here</title>
+
+	<%--<link href="css/reset1.css" rel="stylesheet" />
+	<link href="css/iconfont1.css" rel="stylesheet" />
+	<link href="css/index1.css" rel="stylesheet" />--%>
+
 	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<style type="text/css">
-		table,tr,th,td{
-			border:1px solid black;
-			border-collapse:collapse;
+		table{
+			margin-top: 5%;
+			margin-left: 10%;
+			padding: 0;
+
+
+		}
+		#but{
+			margin-top: 1%;
+			margin-left: 12%;
+			padding: 0;
+		}
+		td a{
+			text-decoration:none;
+		}
+		th {
+			font: bold 15px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+			color: #4f6b72;
+			border-right: 1px solid #C1DAD7;
+			border-bottom: 1px solid #C1DAD7;
+			border-top: 1px solid #C1DAD7;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			text-align: left;
+			padding: 6px 6px 6px 12px;
+			background: #CAE8EA no-repeat;
+
+			display: table-cell;
+			vertical-align: inherit;
+
+			/*text-align: -internal-center;*/
+		}
+		td {
+			border-right: 1px solid #C1DAD7;
+			border-bottom: 1px solid #C1DAD7;
+			background: #fff;
+			font-size:14px;
+			padding: 6px 6px 6px 12px;
+			color: #4f6b72;
+		}
+		table,tr,td{
+			/*border:1px solid black;
+			border-collapse:collapse;*/
+		}
+		/*a标签*/
+
+
+		td a{
+			/*display: block;*/
+			text-decoration: none;
+			color: #4cae4c;
+			/*background-color: blue;*/
+		}
+		 td a:hover{
+			background-color: #e8dfff;
 		}
 
+		/*按钮*/
+
+		/*.LeftArrow, .RightArrow { background:#dddddd ;font-size: 14px; padding: 5px 10px; color: #000000; padding: 0 12px; cursor: pointer; line-height: 30px; }
+		.LeftArrow { border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; border-top: 1px solid #fff; float: left; height: 30px; }
+		.RightArrow { border-left: 0px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; float: right; }
+		.LeftArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; }
+		.RightArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; border-left: 0; }*/
+		.LeftArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; }
+		.LeftArrow, .RightArrow { background: #eafff8;font-size: 14px; padding: 5px 10px;  padding: 0 12px; cursor: pointer; line-height: 30px; }
+		.LeftArrow { border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; border-top: 1px solid #fff; float: left; height: 30px; }
 		#updateUser{
 			display: none;
-			margin-left: 500px;
-			margin-top: 100px;
+			margin-left: 10%;
+			margin-top: 5%;
 			width: 400px;
 			height:150px;
 
@@ -40,17 +107,33 @@
 			<td>${user.username}</td>
 			<td>${user.role.roleName}</td>
 			<td>
-				<a href="user?method=deleteUser&userId=${user.usersId}">删除</a>
-				<a href="javascript:void(0)" onclick="updateUser(this)">修改</a>
-				<a href="user?method=grantUser&userId=${user.usersId}&username=${user.username}">授权</a>
+				<%--<div class="nav">
+					<ul>
+						<li><a href="user?method=deleteUser&userId=${user.usersId}">删除</a></li>
+						<li><a href="javascript:void(0)" onclick="updateUser(this)">修改</a></li>
+						<li><a href="user?method=grantUser&userId=${user.usersId}&username=${user.username}">授权</a></li>
+					</ul>
+				</div>--%>
+
+					<a href="user?method=deleteUser&userId=${user.usersId}">删除</a>
+					<a href="javascript:void(0)" onclick="updateUser(this)">修改</a>
+					<a href="user?method=grantUser&userId=${user.usersId}&username=${user.username}">授权</a>
+
+
+
+
+
+
 			</td>
 		</tr>
 	</c:forEach>
 </table>
-<input type="button" value="首页" onclick="goFirst()" id="first"/>
-<input type="button" value="上一页" onclick="goPrev()" id="prev"/>
-<input type="button" value="下一页" onclick="goNext()" id="next"/>
-<input type="button" value="最后一页" onclick="goLast()" id="last"/>
+<div id="but">
+<input  class="LeftArrow" type="button" value="首页" onclick="goFirst()" id="first"/>
+<input  class="LeftArrow" type="button" value="上一页" onclick="goPrev()" id="prev"/>
+<input   class="LeftArrow" type="button" value="下一页" onclick="goNext()" id="next"/>
+<input   class="LeftArrow" type="button" value="最后一页" onclick="goLast()" id="last"/>
+</div>
 <div id="updateUser">
 	<div class="easyui-panel" title="修改用户" style="width: 100%; max-width: 400px; padding: 30px 60px;">
 		<form id="ff" method="post" action="category">

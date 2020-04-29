@@ -7,6 +7,10 @@
 	<meta http-equiv="Content-Type"content="text/html;charset=UTF-8"/>
 
 	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
 	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
@@ -17,7 +21,22 @@ table, tr, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
+#addPer{
+	display: none;
+	margin-left: 500px;
+	margin-top: 100px;
+	width: 400px;
+	height:150px;
 
+}
+#updatePer{
+	display: none;
+	margin-left: 500px;
+	margin-top: 100px;
+	width: 400px;
+	height:150px;
+
+}
 .newPermission {
 	height: 200px;
 	width: 400px;
@@ -38,11 +57,11 @@ table, tr, th, td {
 <script src="js/jquery-1.4.4.min.js"></script>
 <script>
 	function showSaveP() {
-		$(".newPermission").show();
+		$("#addPer").show();
 	}
 	function savePermission() {
 	    //data=$('#fm').serialize();
-	    data1=params = decodeURIComponent($('#fm').serialize(),true);
+	    data1=params = decodeURIComponent($('#ff').serialize(),true);
 		$.ajax({
 			type : "POST",
 			url : "permission",
@@ -54,12 +73,17 @@ table, tr, th, td {
 				alert("Connection error");
 			},
 			success : function(data) {
-				console.log(data);
-				console.log(data1);
+				if(data=="OK")
+				{
+				    alert("权限添加成功！")
+				    goFirst();
+				}
 			}
 		});
 		$(".newPermission").hide();
 	}
+
+
 </script>
 </head>
 <body>
@@ -86,7 +110,7 @@ table, tr, th, td {
 				<td>${permission.iconSkin}</td>
 				<td>${permission.url}</td>
 				<td>
-					<a href="javascript:void(0)" >修改</a>
+					<a href="javascript:void(0)" onclick="modifyPermission(this)">修改</a>
 				<a href="javascript:void(0)" onclick="deletePermission(this)">删除</a>
 				<%--<a href="javascript:void(0)" onclick="modifyPermission(this)">修改</a>
 					--%>
@@ -100,8 +124,8 @@ table, tr, th, td {
 	<input type="button" value="下一页" onclick="goNext()" id="next" />
 	<input type="button" value="最后一页" onclick="goLast()" id="last" />
 
-	<div class="newPermission">
-		<form id="fm">
+	<%--<div class="newPermission">
+		<form id="fm1">
 			<input type="hidden" name="method" value="savePermission" /> 权限名称：
 			<input
 				type="text" name="pname" /> <br>
@@ -122,8 +146,9 @@ table, tr, th, td {
 			</select> <br>
 			<input type="button" value="保存" onclick="savePermission()" />
 		</form>
-	</div>
+	</div>--%>
 
+<%--
 <div class="modifyPermission">
 	<form id="fm1">
 		<input type="hidden" name="method" value="updatePermission" />
@@ -148,6 +173,75 @@ table, tr, th, td {
 		<input type="button" value="修改" onclick="updatePermission()" />
 	</form>
 </div>
+
+--%>
+
+
+
+<div id="addPer">
+	<div class="easyui-panel" title="添加权限" style="width: 100%; max-width: 400px; padding: 30px 60px;">
+		<form id="ff">
+			<input type="hidden" name="method" value="savePermission" /> 权限名称：
+			<input
+					type="text" name="pname" /> <br>
+			皮肤：<input type="text" name="pSkin" /><br>
+			url：<input type="text" name="purl" /> <br>
+			是否是父节点： <select
+				name="isParent">
+			<option value="true">是</option>
+			<option value="false">否</option>
+		</select> <br>
+			父菜单：
+			<select name="pId">
+				<c:forEach var="permission" items="${permissions}">
+					<c:if test="${permission.isParent eq 'true'}">
+						<option value="${permission.permissionid}">${permission.name}</option>
+					</c:if>
+				</c:forEach>
+			</select> <br>
+			<%--<input type="button" value="保存" onclick="savePermission()" />--%>
+		</form>
+		<div style="text-align: center; padding: 5px 0">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="savePermission()" style="width: 80px">保存</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width: 80px">重置</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="qxForm()" style="width: 80px">取消</a>
+		</div>
+	</div>
+</div>
+
+
+<div id="updatePer">
+	<div class="easyui-panel" title="修改权限" style="width: 100%; max-width: 400px; padding: 30px 60px;">
+		<form id="up">
+			<input type="hidden" id="ppid" name="id" value="" />
+			<input type="hidden" name="method" value="updatePermission" />
+			权限名称：
+			<input
+					type="text" name="pname" id="pn"/> <br>
+			皮肤：<input type="text" name="pSkin" id="ps"/><br>
+			url：<input type="text" name="purl" id="pu"/> <br>
+			是否是父节点： <select
+				name="isParent">
+			<option value="true">是</option>
+			<option value="false">否</option>
+		</select><br>
+			父菜单：
+			<select name="pId">
+				<c:forEach var="permission" items="${permissions}">
+					<c:if test="${permission.isParent eq 'true'}">
+						<option value="${permission.permissionid}">${permission.name}</option>
+					</c:if>
+				</c:forEach>
+			</select>
+
+		</form>
+		<div style="text-align: center; padding: 5px 0">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="updatePermission()" style="width: 80px">修改</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm1()" style="width: 80px">重置</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="qxForm1()" style="width: 80px">取消</a>
+		</div>
+	</div>
+</div>
 	<script type="text/javascript">
 
         function modifyPermission(e){
@@ -155,16 +249,19 @@ table, tr, th, td {
             permissionid=$(e).parent().parent().find("td").eq(0).text()
           //  console.log("权限id:"+productid);
            // alert(productid);
-            permissionurl=$(e).parent().parent().find("td").eq(4).text()
+            permissionurl=$(e).parent().parent().find("td").eq(4).text();
+             ppid=$(e).parent().parent().find("td:first").text();
            // alert(permissionurl);
            // alert(productid);
             permissionname=$(e).parent().parent().find("td").eq(1).text();
             permissionskin=$(e).parent().parent().find("td").eq(3).text();
            // alert(permissionname);
-            $(".modifyPermission").show();
+            $("#updatePer").show();
 			$("#pn").val(permissionname);
 			$("#ps").val(permissionskin);
             $("#pu").val(permissionurl);
+            $("#ppid").val(ppid);
+
 
 
            // $(".newPermission").show();
@@ -175,8 +272,11 @@ table, tr, th, td {
 
         }
        function updatePermission(){
-            alert($("#fm1").serialize());
-           data2=params = decodeURIComponent($('#fm1').serialize(),true);
+            alert($("#up").serialize());
+
+
+           data2=params = decodeURIComponent($('#up').serialize(),true);
+           //data2.permissionid= ppid;
            $.ajax({
                type : "POST",
                url : "permission",
@@ -188,11 +288,14 @@ table, tr, th, td {
                    alert("Connection error");
                },
                success : function(data) {
-                   console.log(data);
+                  if(data=="OK"){
+                      alert("修改成功！")
+                      goFirst();
+				  }
                    //console.log(data1);
                }
            });
-           $(".modifyPermission").hide();
+           //$(".modifyPermission").hide();
            //console.log($("#fm1").serialize());
 	   }
 
@@ -255,6 +358,20 @@ table, tr, th, td {
 			window.location.href = "permission?method=viewPermission&currentPage="
 					+ totalPage;
 		}
+
+
+        function qxForm() {
+            $('#addPer').hide();
+        }
+        function clearForm() {
+            $('#ff').form('clear');
+        }
+        function qxForm1() {
+            $('#updatePer').hide();
+        }
+        function clearForm() {
+            $('#up').form('clear');
+        }
 	</script>
 </body>
 </html>

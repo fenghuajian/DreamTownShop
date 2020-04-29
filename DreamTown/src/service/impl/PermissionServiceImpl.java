@@ -30,12 +30,12 @@ public class PermissionServiceImpl implements IPermissionService {
 	}
 	@Override
 	public void savePermission(Permission p) {
-		permissionDao.save(p);
+		permissionDao.savePermission(p);
 	}
 
 	@Override
 	public void updatePermission(Permission p) {
-		permissionDao.update(p);
+		permissionDao.updatePermission(p);
 	}
 
 	@Override
