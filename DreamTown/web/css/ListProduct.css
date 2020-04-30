@@ -43,7 +43,8 @@ tr{
 	color:black;
 }
 #sfmtop{
-	background:rgb(36,41,46);
+	background:#C1DAD7;
+
 	height:35px;
 }
 #sfmtop label{
@@ -55,7 +56,7 @@ tr{
 }
 #sfmouter{
 	height:35px;
-	border:1px solid black;
+	border: 1px solid #C1DAD7;
 }
 #sfminner{
 	margin:5px 0 0 3px;
@@ -71,6 +72,6 @@ tr{
     text-align: center;
     border-style: none;
     cursor: pointer;
-    font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", "sans-serif";
+    font-family: "Microsoft YaHei", "Î¢ï¿½ï¿½ï¿½Åºï¿½", "sans-serif";
     background: url(../img/btn.jpg) 0px 0px no-repeat;
 }

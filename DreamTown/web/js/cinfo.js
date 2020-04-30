@@ -178,7 +178,7 @@ function view(currentPage){
                 }
                 if (obj.status == '已收货' ) {
                     var tr = $("<tr>")
-                        .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/' + obj.pic + '"/>'))
+                        .append($("<td>").html('<img width="50" height="50" src="img/' + obj.pic + '"/>'))
                         .append($("<td>").text(obj.orderid))
                         .append($("<td>").text(obj.pname))
                         .append($("<td>").text(obj.price))
@@ -193,7 +193,7 @@ function view(currentPage){
                 }
                 else if (obj.status == '已发货' || obj.status == '商家已发货,并删除订单') {
                     var tr = $("<tr>")
-                        .append($("<td>").html('<img width="50" height="50" src="http://localhost:8080/DreamTown/img/' + obj.pic + '"/>'))
+                        .append($("<td>").html('<img width="50" height="50" src="img/' + obj.pic + '"/>'))
                         .append($("<td id='orderid'>").text(obj.orderid))
                         .append($("<td>").text(obj.pname))
                         .append($("<td>").text(obj.price))

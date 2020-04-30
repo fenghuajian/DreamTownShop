@@ -9,6 +9,14 @@
 	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
 	<script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+	<style type="text/css">
+		#out{
+			margin-left: 10%;
+		}
+		.LeftArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; }
+		.LeftArrow, .RightArrow { background: #a7c9ff;font-size: 14px; padding: 5px 10px;  padding: 0 12px; cursor: pointer; line-height: 30px; }
+		.LeftArrow { border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; border-top: 1px solid #fff; float: left; height: 30px; }
+	</style>
 	<script type="text/javascript">
 		var setting = {
 			check: {
@@ -66,11 +74,13 @@
 	</script>
 </head>
 <body>
+	<div id="out">
 	被授权的角色：${roleName}
 	<div>
 		<ul id="treeDemo" class="ztree"></ul>
 	</div>
 	
-	<input type="button" value="授权" onclick="grant()"/>
+	<input class="LeftArrow" type="button" value="授权" onclick="grant()"/>
+	</div>
 </body>
 </html>

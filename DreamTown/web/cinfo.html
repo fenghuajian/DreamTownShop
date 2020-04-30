@@ -16,12 +16,85 @@
 
     <link href="./css/index.chunk.css" rel="stylesheet">
 
-
-
-
-
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/cinfo.js"></script>
+    <style type="text/css">
+
+        input{
+            outline-style: none ;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+
+
+
+
+
+        table{
+
+            border: 1px solid #C1DAD7;
+            padding: 0;
+
+
+        }
+        #but{
+            margin-top: 1%;
+            margin-left: 12%;
+            padding: 0;
+        }
+        td a{
+            text-decoration:none;
+        }
+        th {
+            font: bold 15px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            color: #4f6b72;
+            border-left: 1px solid #C1DAD7;
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            border-top: 1px solid #C1DAD7;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 6px 6px 6px 12px;
+            background: #CAE8EA no-repeat;
+
+            display: table-cell;
+            vertical-align: inherit;
+
+            /*text-align: -internal-center;*/
+        }
+        td {
+            border-left: 1px solid #C1DAD7;
+            border-right: 1px solid #C1DAD7;
+            border-bottom: 1px solid #C1DAD7;
+            border-top: 1px solid #C1DAD7;
+            background: #fff;
+            font-size:14px;
+            padding: 6px 6px 6px 12px;
+            color: #4f6b72;
+        }
+        table,tr,td{
+            /*border:1px solid black;
+            border-collapse:collapse;*/
+        }
+        /*a标签*/
+
+
+        td a{
+            /*display: block;*/
+            text-decoration: none;
+            color: #4cae4c;
+            /*background-color: blue;*/
+        }
+        td a:hover{
+            background-color: #e8dfff;
+        }
+
+        .LeftArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; }
+        .LeftArrow, .RightArrow { background: #eafff8;font-size: 14px; padding: 5px 10px;  padding: 0 12px; cursor: pointer; line-height: 30px; }
+        .LeftArrow { border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; border-top: 1px solid #fff; float: left; height: 30px; }
+    </style>
 </head>
 <body>
 <div class="upper">
@@ -676,10 +749,10 @@
         </table>
 
         <div style="margin:3% 0 0 41% ;position:absolute">
-            <button type="button" onclick="goFirst()" id="first">首页</button>
-            <button type="button" onclick="goPrev()" id="prev">上一页</button>
-            <button type="button" onclick="goNext()" id="next">下一页</button>
-            <button type="button" onclick="goLast()" id="last">末页</button>
+            <button class="LeftArrow" type="button" onclick="goFirst()" id="first">首页</button>
+            <button class="LeftArrow" type="button" onclick="goPrev()" id="prev">上一页</button>
+            <button class="LeftArrow" type="button" onclick="goNext()" id="next">下一页</button>
+            <button class="LeftArrow" type="button" onclick="goLast()" id="last">末页</button>
         </div>
 
     </div>
@@ -700,17 +773,17 @@
         </table>
 
         <div style="margin:3% 0 0 41% ;position:absolute">
-            <button type="button" onclick="goFirst1()" id="first">首页</button>
-            <button type="button" onclick="goPrev1()" id="prev">上一页</button>
-            <button type="button" onclick="goNext1()" id="next">下一页</button>
-            <button type="button" onclick="goLast1()" id="last">末页</button>
+            <button class="LeftArrow" type="button" onclick="goFirst1()" id="first">首页</button>
+            <button class="LeftArrow" type="button" onclick="goPrev1()" id="prev">上一页</button>
+            <button class="LeftArrow" type="button" onclick="goNext1()" id="next">下一页</button>
+            <button class="LeftArrow" type="button" onclick="goLast1()" id="last">末页</button>
         </div>
 
     </div>
     <div id="center1" STYLE="background-color: white" ;>
         <table id="center11"  width=100%></table>
-        <div id="info">
-            <div id="grxx">
+        <div id="info" style="background: #f0f6e4">
+            <div id="grxx" >
                 <a href="#">个人信息</a>
             </div>
             <form id="table" method="POST"> <br><br>
@@ -739,7 +812,7 @@
             地址：<input id="addr" name="addr" type="text">
             <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <input id="updateInfo" type="button" value="修改个人信息">
+         <input style="margin-left: 20%" id="updateInfo" class="LeftArrow" type="button" value="修改个人信息">
             <br> <br>
             </form>
         </div>
@@ -752,9 +825,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             商店名：<input id="shopname" type="text">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="determine" type="button" value="确定">
+            <input class="LeftArrow" id="determine" type="button" value="确定">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="quxiao" type="button" value="取消">
+            <input class="LeftArrow" id="quxiao" type="button" value="取消">
             <div id="tishi">
 
             </div>

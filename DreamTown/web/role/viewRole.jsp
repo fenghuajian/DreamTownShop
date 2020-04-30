@@ -12,15 +12,66 @@
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 
 <style type="text/css">
-	table,tr,th,td{
-		border:1px solid black;
-		border-collapse:collapse;
-	}
+	table{
+		margin-top: 5%;
+		margin-left: 10%;
+		padding: 0;
 
+
+	}
+	#but{
+		margin-top: 1%;
+		margin-left: 12%;
+		padding: 0;
+	}
+	td a{
+		text-decoration:none;
+	}
+	th {
+		font: bold 15px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+		color: #4f6b72;
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+		border-top: 1px solid #C1DAD7;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: left;
+		padding: 6px 6px 6px 12px;
+		background: #CAE8EA no-repeat;
+
+		display: table-cell;
+		vertical-align: inherit;
+
+		/*text-align: -internal-center;*/
+	}
+	td {
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+		background: #fff;
+		font-size:14px;
+		padding: 6px 6px 6px 12px;
+		color: #4f6b72;
+	}
+	table,tr,td{
+		/*border:1px solid black;
+        border-collapse:collapse;*/
+	}
+	/*a±Í«©*/
+
+
+	td a{
+		/*display: block;*/
+		text-decoration: none;
+		color: #4cae4c;
+		/*background-color: blue;*/
+	}
+	td a:hover{
+		background-color: #e8dfff;
+	}
 	#updateRole{
 		display: none;
-		margin-left: 500px;
-		margin-top: 100px;
+		margin-left: 10%;
+		margin-top: 5%;
 		width: 400px;
 		height:150px;
 

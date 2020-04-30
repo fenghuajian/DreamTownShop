@@ -8,6 +8,84 @@
 <script type="text/javascript" src="../js/jquery.form.js"></script>
 <script type="text/javascript" src="../js/listProduct.js"></script>
 <script type="text/javascript" src="../js/Popup.js"></script>
+	<style type="text/css">
+
+		input{
+			outline-style: none ;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+		table{
+			margin-top: 5%;
+			/*margin-left: 2%;*/
+			padding: 0;
+
+
+		}
+		#but{
+			margin-top: 1%;
+			margin-left: 12%;
+			padding: 0;
+		}
+		#but1{
+			margin-top: 1%;
+			/*margin-left: 80%;*/
+			padding: 0;
+		}
+		#but2{
+
+			margin-left: 40%;
+			padding: 0;
+		}
+
+		th {
+			font: bold 15px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+			color: #4f6b72;
+			border-right: 1px solid #C1DAD7;
+			border-left: 1px solid #C1DAD7;
+			border-bottom: 1px solid #C1DAD7;
+			border-top: 1px solid #C1DAD7;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			text-align: left;
+			padding: 6px 6px 6px 12px;
+			background: #CAE8EA no-repeat;
+
+			display: table-cell;
+			vertical-align: inherit;
+
+			/*text-align: -internal-center;*/
+		}
+		td {
+			border-right: 1px solid #C1DAD7;
+			border-left: 1px solid #C1DAD7;
+			border-bottom: 1px solid #C1DAD7;
+			background: #fff;
+			font-size:14px;
+			padding: 6px 6px 6px 12px;
+			color: #4f6b72;
+		}
+		table,tr,td{
+			/*border:1px solid black;
+			border-collapse:collapse;*/
+		}
+		/*a标签*/
+
+
+		td a{
+			/*display: block;*/
+			text-decoration: none;
+			color: #4cae4c;
+			/*background-color: blue;*/
+		}
+		td a:hover{
+			background-color: #e8dfff;
+		}
+
+		.LeftArrow:hover { color: #fff; background: #fe7844; border: 1px solid #fe7844; }
+		.LeftArrow, .RightArrow { background: #eafff8;font-size: 14px; padding: 5px 10px;  padding: 0 12px; cursor: pointer; line-height: 30px; }
+		.LeftArrow { border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff; border-top: 1px solid #fff; float: left; height: 30px; }
+	</style>
 </head>
 <body>
 	<div style="height:80%;width:95%;margin:2.5% 0 0 2.5% ;position:relative">
@@ -19,8 +97,8 @@
 	        	</div>
 	        </div>
 	    </form>
-	    <div id="sbt">
-			<button onclick="search()">查询</button>&emsp;<button onclick="addProduct()">新增</button>
+	    <div id="but1">
+			<button class="LeftArrow" onclick="search()">查询</button>&emsp;<button class="LeftArrow" onclick="addProduct()">新增</button>
 		</div>
 	</div>
 	
@@ -38,15 +116,15 @@
 	            <th>操作</th>
 	        </tr>
 	    </table>
-	    <div style="margin:1% 0 0 41% ;position:absolute">
-		    <button type="button" onclick="goFirst()" id="first">首页</button>
-			<button type="button" onclick="goPrev()" id="prev">上一页</button>
-			<button type="button" onclick="goNext()" id="next">下一页</button>
-			<button type="button" onclick="goLast()" id="last">末页</button>
+	    <div id="but" style="margin:1% 0 0 41% ;position:absolute">
+		    <button class="LeftArrow" type="button" onclick="goFirst()" id="first">首页</button>
+			<button class="LeftArrow" type="button" onclick="goPrev()" id="prev">上一页</button>
+			<button class="LeftArrow" type="button" onclick="goNext()" id="next">下一页</button>
+			<button class="LeftArrow" type="button" onclick="goLast()" id="last">末页</button>
 		</div>
 	</div>
     <div class="bg"></div>
-    <div class="content">
+    <div class="content"  style="background: #d6eeff">
 		<form id="table" method="POST"> <br><br>
 			<input type="hidden" name="shopname" id="shopname">
 			<input type="hidden" name="productid" id="productid">
@@ -69,9 +147,11 @@
 						<option value="false">否</option>
 					</select>
 			<br><br>
-			<button type="button" id="insertbt">添加</button>
-			<button id="savebt" style="display:none">保存</button>
-			&nbsp;<button type="button" id="cancel">取消</button>	<br><br>
+			<div id="but2">
+			<button class="LeftArrow" type="button" id="insertbt">添加</button>
+			<button class="LeftArrow" id="savebt" style="display:none">保存</button>
+			&nbsp;<button class="LeftArrow" type="button" id="cancel">取消</button>	<br><br>
+	</div>
 		</form>
 	</div>
 </body>
