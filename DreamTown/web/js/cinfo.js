@@ -217,13 +217,9 @@ function view(currentPage){
 }
 //显示收藏
 function viewCollection(currentPage) {
-    $("#info").hide();
-    $("#shop").hide();
-    $("#stream1").hide();
-    $("#collection1").show();
+
     emptyForm();
-   // console.log(customerid);
-   // alert(customerid)
+
     $.ajax({
         type:"POST",
         url:"product?method=viewCollection",

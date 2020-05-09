@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐私政策</title>
+
+    <link href="./css/first-screen.chunk.css" rel="stylesheet">
+
+    <link href="./css/seckill.chunk.css" rel="stylesheet">
+
+    <link href="./css/index.chunk.css" rel="stylesheet">
+
+    <link href="./css/left.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <link href="./css/style2.css" rel="stylesheet">
+
+    <link href="./css/style3.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.js"></script>
+
+
+    <script>
+
+
+        //获取用户信息
+        $(function () {
+            customer=null;
+            customerid=null;
+            $.ajax({
+                type:"POST",
+                dataType:"json",
+                url:"customer?method=getInfo",
+                success:function(data){
+                    customer=data;
+                    customerid=data.customerId;
+                    username=customer.username;
+                    $("#r123,.user_login,.user_reg").hide();
+                    $("#loginbt").text(username+",梦想小镇欢迎您！");
+
+                    console.log("customerid:"+data.customerId)
+                    console.log("name:"+customer.username)
+                    //console.log(data)
+                }
+            })
+        })
+
+    </script>
+
+
+
+    <style>
+
+        p{
+            padding: 13px 13px 13px 13px;
+
+            text-indent: 2em;
+
+            line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102, 102, 102); font-size: 16px;}
+        .a1,.a2,.a3,.a4,.a5,.a6,.a7,.a8{
+
+         margin-left:10px;
+            margin-top:10px;
+
+            width: 260px;/*设置按钮宽度*/
+
+            height: 40px;/*设置按钮高度*/
+
+            color:white;/*字体颜色*/
+
+            background-color:cornflowerblue;/*按钮背景颜色*/
+
+            border-radius: 3px;/*让按钮变得圆滑一点*/
+
+            border-width: 0;/*消去按钮丑的边框*/
+
+
+
+            outline: none;/*取消轮廓*/
+
+            font-family: KaiTi;/*字体设置为楷体*/
+
+            font-size: 17px;/*设置字体大小*/
+
+            text-align: center;/*字体居中*/
+
+            cursor: pointer;/*设置鼠标箭头手势*/
+
+        }
+
+        button:hover{/*鼠标移动时的颜色变化*/
+
+            background-color: antiquewhite;
+
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+<div class="upper" style="background-color: #f0f6e4">
+
+    <!--shortcut start -->
+    <div id="shortcut">
+        <div class="top_nav" aria-label="顶部导航">
+            <!--address start-->
+            <ul class="fl">
+                <li class="shortcut_btn" id="location">
+                    <a href="" id="area" class="dt cw-icon" aria-label="地区">
+                        <img  class="iconfont iconfont-location" src="img/address.jpg">
+                        <span class="loc_nanme" data-id="20" title="广西">广西</span>
+                    </a>
+                    <div class="dd dropdown-layer" tabindex="-1">
+                        <div class="ui-area-content-list">
+                            <div class="item">
+                                <a data-id="1" href="" tabindex="-1">北京</a></div>
+                            <div class="item">
+                                <a data-id="2" href="" tabindex="-1">上海</a></div>
+                            <div class="item">
+                                <a data-id="3" href="" tabindex="-1">天津</a></div>
+                            <div class="item">
+                                <a data-id="4" href="" tabindex="-1">重庆</a></div>
+                            <div class="item">
+                                <a data-id="5" href="" tabindex="-1">河北</a></div>
+                            <div class="item">
+                                <a data-id="6" href="" tabindex="-1">山西</a></div>
+                            <div class="item">
+                                <a data-id="7" href="" tabindex="-1">河南</a></div>
+                            <div class="item">
+                                <a data-id="8" href="" tabindex="-1">辽宁</a></div>
+                            <div class="item">
+                                <a data-id="9" href="" tabindex="-1">吉林</a></div>
+                            <div class="item">
+                                <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
+                            <div class="item">
+                                <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
+                            <div class="item">
+                                <a data-id="12" href="" tabindex="-1">江苏</a></div>
+                            <div class="item">
+                                <a data-id="13" href="" tabindex="-1">山东</a></div>
+                            <div class="item">
+                                <a data-id="14" href="" tabindex="-1">安徽</a></div>
+                            <div class="item">
+                                <a data-id="15" href="" tabindex="-1">浙江</a></div>
+                            <div class="item">
+                                <a data-id="16" href="" tabindex="-1">福建</a></div>
+                            <div class="item">
+                                <a data-id="17" href="" tabindex="-1">湖北</a></div>
+                            <div class="item">
+                                <a data-id="18" href="" tabindex="-1">湖南</a></div>
+                            <div class="item">
+                                <a data-id="19" href="" tabindex="-1">广东</a></div>
+                            <div class="item">
+                                <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
+                            <div class="item">
+                                <a data-id="21" href="" tabindex="-1">江西</a></div>
+                            <div class="item">
+                                <a data-id="22" href="" tabindex="-1">四川</a></div>
+                            <div class="item">
+                                <a data-id="23" href="" tabindex="-1">海南</a></div>
+                            <div class="item">
+                                <a data-id="24" href="" tabindex="-1">贵州</a></div>
+                            <div class="item">
+                                <a data-id="25" href="" tabindex="-1">云南</a></div>
+                            <div class="item">
+                                <a data-id="26" href="" tabindex="-1">西藏</a></div>
+                            <div class="item">
+                                <a data-id="27" href="" tabindex="-1">陕西</a></div>
+                            <div class="item">
+                                <a data-id="28" href="" tabindex="-1">甘肃</a></div>
+                            <div class="item">
+                                <a data-id="29" href="" tabindex="-1">青海</a></div>
+                            <div class="item">
+                                <a data-id="30" href="" tabindex="-1">宁夏</a></div>
+                            <div class="item">
+                                <a data-id="31" href="" tabindex="-1">新疆</a></div>
+                            <div class="item">
+                                <a data-id="52993" href="" tabindex="-1">港澳</a></div>
+                            <div class="item">
+                                <a data-id="32" href="" tabindex="-1">台湾</a></div>
+                            <div class="item">
+                                <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
+                            <div class="item">
+                                <a data-id="53283" href="" tabindex="-1">海外</a></div>
+                        </div>
+                        <div class="area_inter">
+                            <div class="area_inter_split"></div>
+                            <p class="area_inter_desc">地区专享版本</p>
+                            <ul class="area_inter_list">
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
+                                        <div class="area_inter_name">中國港澳</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="area_inter">
+                            <div class="area_inter_split"></div>
+                            <p class="area_inter_desc">Available Sites</p>
+                            <ul class="area_inter_list">
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_global"></div>
+                                        <div class="area_inter_name">Global Site</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_russia"></div>
+                                        <div class="area_inter_name">Сайт России</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_indonesia"></div>
+                                        <div class="area_inter_name">Situs Indonesia</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_spain"></div>
+                                        <div class="area_inter_name">Sitio de España</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_thailand"></div>
+                                        <div class="area_inter_name">เว็บไซต์ประเทศไทย</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--address end-->
+
+            <!--menu start-->
+            <ul class="fr">
+                <li id="login" class="shortcut_btn fore1">
+                    <a href="customerLogin.html" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
+                    <a href="register.html" id="r123" class="link-regist style-red">免费注册</a>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore2">
+                    <div class="dt">
+                        <a target="_blank" href="cinfo.html" aria-label="个人主页">个人主页</a>
+                    </div>
+                </li>
+                <li class="shortcut_btn fore3">
+                    <div class="dt">
+                        <a target="_blank" href="" aria-label="我的订单">我的订单</a>
+                    </div>
+                </li>
+                <li class="shortcut_btn fore4">
+                    <div class="dt">
+                        <a target="_blank" href="order.html" aria-label="我的购物车">我的购物车</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+
+
+                <li class="spacer"></li>
+                <li id="serv" class="shortcut_btn fore6 dropdown">
+                    <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
+                        <img class="iconfont" src="img/dropdown.png">
+                    </div>
+                    <div class="dd dropdown-layer" tabindex="-1">
+
+                        <div class="item">
+                            <a href="" target="_blank" tabindex="-1">帮助中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank" tabindex="-1">售后服务</a>
+                        </div>
+
+                        <div class="item">
+                            <a href="" target="_blank" tabindex="-1">意见建议</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank" tabindex="-1">电话客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="" target="_blank" tabindex="-1">客服邮箱</a>
+                        </div>
+
+
+                    </div>
+                </li>
+
+
+            </ul>
+            <!--menu end-->
+        </div>
+    </div>
+    <!--shortcut 第一部分的头部结束end-->
+
+<!--四个导航部分-->
+    <div  style=" ;width: 20%;height:440px;margin-left: 10%;margin-top: 2%;background: #d6eeff; " >
+        <!--<a><div style="width: 150px;height: 35px;background-color: #f3b701; color: #fff;font-family: 'microsoft yahei';
+            font-size: 14px;
+                font-weight: normal;">
+            <strong align="center">交易条款</strong>
+
+        </div></a>-->
+        <div class="a1"> 我们如何收集和使用您的个人信息 </div>
+        <div class="a2" > 我们如何使用 Cookies 和同类技术  </div>
+        <div class="a3"> 我们如何共享、转让、公开披露您的个人信息 </div>
+        <div class="a4"> 我们如何保护和保存您的个人信息  </div>
+        <div class="a5"> 您如何管理个人信息 </div>
+        <div class="a6" > 未成年人的个人信息保护 </div>
+        <div class="a7"> 通知和修订 </div>
+        <div class="a8"> 如何联系我们 </div>
+       <!-- <button  onclick="showb1()">什么是快捷支付呢</button>
+        <button style="margin-left: 20px" onclick="showb2()"> 什么是组合支付呢</button>
+        <button  onclick="showb3()"style="margin-left: 20px">快捷支付有何好处</button>
+        <button  onclick="showb4()"style="margin-left: 20px">组合支付失败怎办</button>
+        <button  onclick="showb5()"style="margin-left: 20px">在线支付分期付款会有手续费吗</button>-->
+        <script>
+
+
+            $(function(){
+                $(".a1").mouseover(function(){
+                    $(".b1").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b5").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+
+
+                $(".a2").mouseover(function(){
+                    $(".b2").show();
+                    $(".b1").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b5").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a3").mouseover(function(){
+                    $(".b3").show();
+                    $(".b2").hide();
+                    $(".b1").hide();
+                    $(".b4").hide();
+                    $(".b5").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a4").mouseover(function(){
+                    $(".b4").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b1").hide();
+                    $(".b5").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a5").mouseover(function(){
+                    $(".b5").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b1").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a6").mouseover(function(){
+                    $(".b6").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b1").hide();
+                    $(".b5").hide();
+                    $(".b7").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a7").mouseover(function(){
+                    $(".b7").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b1").hide();
+                    $(".b6").hide();
+                    $(".b5").hide();
+                    $(".b8").hide();
+
+                })
+                $(".a8").mouseover(function(){
+                    $(".b8").show();
+                    $(".b2").hide();
+                    $(".b3").hide();
+                    $(".b4").hide();
+                    $(".b1").hide();
+                    $(".b6").hide();
+                    $(".b7").hide();
+                    $(".b5").hide();
+
+                })
+
+
+            })
+
+
+
+        </script>
+
+
+    </div>
+<!--购物流程部分-->
+    <div style="width: 60%;margin-left: 32%;margin-top: -30%;background: white; border: 1px solid rgb(249,255,229); " id="gwlc">
+
+        <div class="b1" >
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">一、我们如何收集和使用您的个人信息</strong></p>
+
+
+            <p>
+
+                个人信息是指以电子或者其他方式记录的能够单独或者与其他信息结合识别特定自然人身份或者反映特定自然人活动情况的各种信息。本隐私政策中涉及的个人信息包括：基本信息（包括个人姓名、生日、性别、住址、个人电话号码、电子邮箱）；个人身份信息（包括身份证、军官证、护照、驾驶证等）；面部特征；网络身份标识信息（包括系统账号、IP地址、邮箱地址及与前述有关的密码、口令、口令保护答案）；个人财产信息（交易和消费记录、以及余额\优惠券、游戏类兑换码等虚拟财产信息）；通讯录；个人上网记录（包括网站浏览记录、软件使用记录、点击记录）；个人常用设备信息（包括硬件型号、设备MAC地址、操作系统类型、软件列表唯一设备识别码（如IMEI/android ID/IDFA/OPENUDID/GUID、SIM卡IMSI信息等在内的描述个人常用设备基本情况的信息））；个人位置信息（包括行程信息、精准定位信息、住宿信息、经纬度等）；
+        </p>
+            <p>
+                个人敏感信息是指一旦泄露、非法提供或滥用可能危害人身和财产安全，极易导致个人名誉、身心健康受到损害或歧视性待遇等的个人信息，本隐私政策中涉及的个人敏感信息包括：您的财产信息（包括交易记录及余额、优惠券、E卡等虚拟财产信息）；面部识别特征；个人身份信息（包括身份证、军官证、护照、驾驶证、户口本）；网络身份识别信息（包括账号、邮箱地址及与前述有关的密码口令的组合）；其他信息（包括通讯录、行程信息、网页浏览记录、住宿信息、精准定位信息）。
+            </p>
+            <p>
+                我们仅会出于以下目的，收集和使用您的个人信息：
+            </p>
+            <p>
+                （一）您须授权我们收集和使用您个人信息
+            </p>
+            <p>
+                （二）您可自主选择提供的个人信息
+            </p>
+            <p>
+
+                （三）您充分知晓的情况下
+             </p>
+            <p>
+                （四）我们从第三方获得您个人信息的情形
+            </p>
+            <p>
+                （五）根据您个人信息使用的规则
+        </p>
+
+
+
+
+
+
+
+
+        </div>
+        <div class="b2" style="display: none">
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">二、我们如何使用 Cookies 和同类技术</strong></p>
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （一）Cookies的使用
+                </strong>
+
+
+            </p>
+            <p> 1、为实现您联机体验的个性化需求，使您获得更轻松的访问体验。我们会在您的计算机或移动设备上发送一个或多个名为Cookies的小数据文件，指定给您的Cookies 是唯一的，它只能被将Cookies发布给您的域中的Web服务器读取。我们向您发送Cookies是为了简化您重复登录的步骤、存储您的购物偏好或您购物车中的商品等数据进而为您提供购物的偏好设置、帮助您优化对广告的选择与互动、帮助判断您的登录状态以及账户或数据安全。</p>
+
+            <p>
+                2、我们不会将 Cookies 用于本隐私政策所述目的之外的任何用途。您可根据自己的偏好管理或删除 Cookies。您可以清除计算机上保存的所有 Cookies，大部分网络浏览器会自动接受Cookies，但您通常可根据自己的需要来修改浏览器的设置以拒绝 Cookies；另外，您也可以清除软件内保存的所有Cookies。但如果您这么做，您可能需要在每一次访问梦想小镇网站时亲自更改用户设置，而且您之前所记录的相应信息也均会被删除，并且可能会对您所使用服务的安全性有一定影响。
+            </p>
+
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （二）网络Beacon和同类技术的使用
+                </strong>
+
+            </p>
+            <p>
+                除Cookies 外，我们还会在网站上使用网络Beacon等其他同类技术。我们的网页上常会包含一些电子图像（称为"单像素" GIF 文件或 "网络 Beacon"）。我们使用网络Beacon的方式有：
+            </p>
+
+            <p>
+                1、通过在梦想小镇网站上使用网络Beacon，计算用户访问数量，并通过访问 Cookies 辨认注册的梦想小镇用户。
+            </p>
+            <p>
+                2、通过得到的Cookies信息，为您提供个性化服务。
+            </p>
+
+        </div>
+        <div class="b3" style="display: none">
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">三、我们如何共享、转让、公开披露您的个人信息</strong></p>
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （一）共享
+                </strong>
+
+            </p>
+           <p>
+               1、我们不会与阿里以外的任何公司、组织和个人共享您的个人信息，
+           </p>
+            <p>
+                2、我们可能会将您的个人信息与我们的关联方共享。但我们只会共享必要的个人信息，且受本隐私政策中所声明目的的约束。我们的关联方如要改变个人信息的处理目的，将再次征求您的授权同意。
+            </p>
+
+            <p>
+                3、我们可能会向合作伙伴等第三方共享您的订单信息、账户信息、设备信息以及位置信息，以保障为您提供的服务顺利完成。但我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享提供服务所必要的个人信息。我们的合作伙伴无权将共享的个人信息用于任何其他用途。
+            </p>
+
+            <p>
+                4、对我们与之共享个人信息的公司、组织和个人，我们会与其签署严格的保密协定，要求他们按照我们的说明、本隐私政策以及其他任何相关的保密和安全措施来处理个人信息。为了保障数据在第三方安全可控，我们推出了云鼎服务，在云端提供安全可靠的数据使用和存储环境，确保用户数据的安全性。在个人敏感数据使用上，我们要求第三方采用数据脱敏和加密技术，从而更好地保护用户数据。
+            </p>
+
+            <p>
+                5、为了遵守法律、执行或适用我们的使用条件和其他协议，或者为了保护小镇、您或其他小镇客户的权利及其财产或安全，比如为防止欺诈等违法活动和减少信用风险，而与其他公司和组织交换信息。不过,这并不包括违反本隐私政策中所作的承诺而为获利目的出售、出租、共享或以其它方式披露的个人信息。
+            </p>
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （二）转让
+                </strong>
+
+            </p>
+            <p>
+                我们不会将您的个人信息转让给任何公司、组织和个人，但以下情况除外：
+            </p>
+            <p>
+                1、事先获得您明确的同意或授权；
+            </p>
+            <p>
+                2、根据适用的法律法规、法律程序的要求、强制性的行政或司法要求所必须的情况进行提供；
+            </p>
+            <p>
+                3、符合与您签署的相关协议（包括在线签署的电子协议以及相应的平台规则）或其他的法律文件约定所提供；
+            </p>
+            <p>
+                4、在涉及合并、收购、资产转让或类似的交易时，如涉及到个人信息转让，我们会要求新的持有您个人信息的公司、组织继续受本隐私政策的约束，否则,我们将要求该公司、组织重新向您征求授权同意。
+            </p>
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （三）公开披露
+                </strong>
+
+            </p>
+            <p>
+                我们仅会在以下情况下，且采取符合业界标准的安全防护措施的前提下，才会公开披露您的个人信息：
+            </p>
+            <p>
+                1、根据您的需求，在您明确同意的披露方式下披露您所指定的个人信息；
+            </p>
+            <p>
+                2、根据法律、法规的要求、强制性的行政执法或司法要求所必须提供您个人信息的情况下，我们可能会依据所要求的个人信息类型和披露方式公开披露您的个人信息。在符合法律法规的前提下，当我们收到上述披露信息的请求时，我们会要求必须出具与之相应的法律文件，如传票或调查函。我们坚信，对于要求我们提供的信息，应该在法律允许的范围内尽可能保持透明。我们对所有的请求都进行了慎重的审查，以确保其具备合法依据，且仅限于执法部门因特定调查目的且有合法权利获取的数据。在法律法规许可的前提下，我们披露的文件均在加密密钥的保护之下。
+            </p>
+
+
+
+        </div>
+        <div class="b4" style="display: none">
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">四、我们如何保护和保存您的个人信息</strong></p>
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 18px;">
+                <strong style="font-weight: bold;">
+                    （一）我们保护您个人信息的技术与措施
+                </strong>
+
+            </p>
+            <p>
+                我们非常重视个人信息安全，并采取一切合理可行的措施，保护您的个人信息：
+            </p>
+            <p>
+                1、数据安全技术措施
+            </p>
+            <p>
+                2、梦想小镇为保护个人信息采取的其他安全措施
+            </p>
+            <p>
+                3、我们仅允许有必要知晓这些信息的阿里及梦想小镇关联方的员工、合作伙伴访问个人信息，并为此设置了严格的访问权限控制和监控机制。我们同时要求可能接触到您个人信息的所有人员履行相应的保密义务。如果未能履行这些义务，可能会被追究法律责任或被中止与梦想小镇的合作关系。
+        </p>
+
+            <p>
+                4、我们会采取一切合理可行的措施，确保未收集无关的个人信息。我们只会在达成本隐私政策所述目的所需的期限内保留您的个人信息，除非需要延长保留期或受到法律的允许。
+        </p>
+            <p>
+                5、我们还在用户数据保护上做了一些创造性工作
+            </p>
+            <p>
+                6、互联网并非绝对安全的环境，而且电子邮件、即时通讯、社交软件等与其他用户的交流方式无法确定是否完全加密，我们建议您使用此类工具时请使用复杂密码，并注意保护您的个人信息安全。
+            </p>
+            <p>
+                7、互联网环境并非百分之百安全，我们将尽力确保或担保您发送给我们的任何信息的安全性。如果我们的物理、技术、或管理防护设施遭到破坏，导致信息被非授权访问、公开披露、篡改、或毁坏，导致您的合法权益受损，我们将承担相应的法律责任。
+            </p>
+            <p>
+                8、安全事件处置
+            </p>
+            <p>
+                9、如果您对我们的个人信息保护有任何疑问，可通过本隐私政策中约定的联系方式联系我们。如您发现自己的个人信息泄密，尤其是您的账户及密码发生泄露，请您立即通过本隐私政策【八、如何联系我们】中约定的联系方式联络我们，以便我们采取相应措施。
+            </p>
+
+        </div>
+        <div class="b5" >
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">五、您如何管理您的个人信息</strong></p>
+
+<p>
+    1、访问和更正您的个人信息:您的账户信息：PC端您可以在“我的小镇”页面的“账户设置”菜单中查阅您提交给小镇的所有个人信息，你也可通过上述途径更新除实名认证信息之外的其他个人信息（您的实名认证信息是您通过实名认证时使用的姓名和身份证信息），如您需要变更您的实名认证信息，您可拨打95118服务热线申请变更。移动端具体路径为：账户名称、个人资料信息：首页--“我的”进入我的小镇--右上角“设置”或点击头像进入账号设置--个人信息；账户密码、电话号码、安全信息：首页--“我的”进入我的小镇--右上角“设置按钮”或点击头像进入账号设置--账户安全；兴趣爱好：首页--“我的”进入我的小镇--商品关注、店铺关注、内容关注、喜欢的活动（具体名称以网页内容为准）。
+</p>
+
+            <p>
+                2、删除您的个人信息:
+            </p>
+            <p>
+                您在我们的产品与/或服务页面中可以直接清除或删除的信息，包括订单信息、浏览信息、收货地址信息；
+                您可以向我们提出删除个人信息的请求。
+            </p>
+            <p>
+                若我们决定响应您的删除请求，我们还将同时通知从我们获得您的个人信息的实体，要求其及时删除，除非法律法规另有规定，或这些实体获得您的独立授权。若我们响应您的删除请求，我们不能保证立即从备份系统中删除相应的信息，但会在备份系统更新时删除这些信息。
+            </p>
+            <p>
+                3、改变您授权同意的范围或撤回您的授权：您可以通过删除信息、关闭设备功能、在小镇网站或软件中进行隐私设置等方式改变您授权我们继续收集个人信息的范围或撤回您的授权。您也可以通过注销账户的方式，撤回我们继续收集您个人信息的全部授权。
+                请您理解，每个业务功能需要一些基本的个人信息才能得以完成，当您撤回同意或授权后，我们无法继续为您提供撤回同意或授权所对应的服务，也不再处理您相应的个人信息。但您撤回同意或授权的决定，不会影响此前基于您的授权而开展的个人信息处理。
+        </p>
+
+            <p>
+                4、注销账户：您可以在我们的产品中直接申请注销账户。您可以通过移动端APP访问我的--账户设置-账户与安全-注销服务完成账户注销；您还可以通过PC端访问我的小镇-账户设置-账户安全-注销账号完成账户注销。关于您注销账户的方式以及您应满足的条件，请详见本隐私政策附件《梦想小镇账户注销须知》。您注销账户后，我们将停止为您提供产品与/或服务，并依据您的要求，除法律法规另有规定外，我们将删除您的个人信息。
+
+        </p>
+
+            <p>
+                5、如果您不想接受我们给您发送的促销信息，您随时可取消。
+            </p>
+            <p>
+                6、响应您的请求：如果您无法通过上述方式访问、更正或删除您的个人信息，或您需要访问、更正或删除您在使用我们产品与/或服务时所产生的其他个人信息，或您认为梦想小镇存在任何违反法律法规或与您关于个人信息的收集或使用的约定，您均可以发送电子邮件至privacy@xxxx或通过本隐私政策中的其他方式与我们联系。为了保障安全，我们可能需要您提供书面请求，或提供您的身份证明文件，我们将在收到您反馈并验证您的身份后的15天内答复您的请求。对于您合理的请求，我们原则上不收取费用，但对多次重复、超出合理限度的请求，我们将视情收取一定成本费用。对于那些无端重复、需要过多技术手段（例如，需要开发新系统或从根本上改变现行惯例）、给他人合法权益带来风险或者非常不切实际（例如，涉及备份磁带上存放的信息）的请求，我们可能会予以拒绝。
+            </p>
+            <p>
+
+
+
+
+
+        </div>
+        <div class="b6" >
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">六、未成年人的个人信息保护</strong></p>
+
+
+           <p>
+               1、梦想小镇非常重视对未成年人个人信息的保护。若您是18周岁以下的未成年人，在使用我们的产品与/或服务前，应事先取得您监护人的同意。梦想小镇根据国家相关法律法规的规定保护未成年人的个人信息。
+           </p>
+            <p>
+                2、我们不会主动直接向未成年人收集其个人信息。对于经监护人同意而收集未成年人个人信息的情况，我们只会在受到法律允许、监护人同意或者保护未成年人所必要的情况下使用、共享、转让或披露此信息。
+            </p>
+            <p>
+                3、如果有事实证明未成年人并未取得监护人同意的情况下注册使用了我们的产品与/或服务，我们会与相关监护人协商，并设法尽快删除相关个人信息。
+            </p>
+            <p>
+                4、对于可能涉及的不满14周岁的儿童个人信息，我们进一步采取以下措施予以保障：
+
+            </p>
+            <p>
+                （1）对于收集到的儿童个人信息，我们除遵守本隐私政策关于用户个人信息的约定外，还会秉持正当必要、知情同意、目的明确、安全保障、依法利用的原则，严格遵循《儿童个人信息网络保护规定》等法律法规的要求进行存储、使用、披露，且不会超过实现收集、使用目的所必须的期限，到期后我们会对儿童个人信息进行删除或匿名化处理。我们会指定专人负责儿童个人信息保护事宜，并设立了儿童个人信息保护的专门邮箱childprivacy@****。我们还会制定儿童个人信息保护的内部专门制度。
+            </p>
+            <p>
+                （2）当您作为监护人为被监护的儿童选择使用梦想小镇相关服务时，我们可能需要向您收集被监护的儿童个人信息，用于向您履行相关服务之必要。在具体服务中需要向您收集儿童个人信息的，我们会事先取得您的授权同意，并告知您收集的目的和用途。如果您不提供前述信息，您将无法享受我们提供的相关服务。此外，您在使用晒单、评价及问答功能分享商品相关信息时可能会主动向我们提供儿童个人信息，请您明确知悉并谨慎选择。您作为监护人应当正确履行监护职责，保护儿童个人信息安全。若儿童本人需要注册或使用我们的产品与/或服务，您应正确引导并予以监护。
+            </p>
+            <p>
+                （3）儿童或其监护人有权随时访问和更正儿童个人信息，还可以向我们提出更正和删除的请求。如您对儿童个人信息相关事宜有任何意见、建议或投诉、举报，请联系我们。我们会随时为您提供帮助。
+            </p>
+
+
+        </div>
+        <div class="b7" >
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">七、通知和修订</strong></p>
+
+<p>
+    1、为给您提供更好的服务以及随着梦想小镇业务的发展，本隐私政策也会随之更新。但未经您明确同意，我们不会削减您依据本隐私政策所应享有的权利。我们会通过在梦想小镇网站、梦想小镇移动端上发出更新版本并在生效前通过网站公告或以其他适当方式提醒您相关内容的更新，也请您访问梦想小镇以便及时了解最新的隐私政策。
+        </p>
+            <p>
+                2、对于重大变更，我们还会提供更为显著的通知（我们会通过包括但不限于邮件、短信或在浏览页面做特别提示等方式，说明隐私政策的具体变更内容）。
+            </p>
+            <p>
+                本隐私政策所指的重大变更包括但不限于：
+            </p>
+            <p>
+                （1）我们的服务模式发生重大变化。如处理个人信息的目的、处理的个人信息类型、个人信息的使用方式等；
+            </p>
+            <p>
+                （2）我们在所有权结构、组织架构等方面发生重大变化。如业务调整、破产并购等引起的所有者变更等；
+            </p>
+            <p>
+                （3）个人信息共享、转让或公开披露的主要对象发生变化；
+            </p>
+            <p>
+                （4）您参与个人信息处理方面的权利及其行使方式发生重大变化；
+            </p>
+            <p>
+                （5）我们负责处理个人信息安全的责任部门、联络方式及投诉渠道发生变化时；
+            </p>
+            <p>
+                （6）个人信息安全影响评估报告表明存在高风险时。
+            </p>
+            <p>
+                3、我们还会将本隐私政策的旧版本存档，供您查阅。
+            </p>
+
+
+        </div>
+        <div class="b8" >
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">八、如何联系我们</strong></p>
+
+
+           <p>
+               1、如您对本隐私政策或您个人信息的相关事宜有任何问题、意见或建议，请联系梦想小镇集团。
+           </p>
+
+            <p>
+                个人信息保护负责人邮箱：privacy@****；
+            </p>
+
+            <p>
+                联系地址：**************
+            </p>
+
+            <p>
+                您还可以随时通过访问https://baidu在线客服系统或拨打我们的任何一部客服电话等多种方式与我们联系。
+            </p>
+
+            <p>
+                2、一般情况下，我们将在15天内回复。如果您对我们的回复不满意，特别是我们的个人信息处理行为损害了您的合法权益，您还可以向网信、电信、公安及工商等监管部门进行投诉或举报。
+            </p>
+
+            <p>
+                注：本隐私政策版本更新日期为2019年12月9日，将于2019年12月9日正式生效。点击查阅旧版本《**隐私政策》。
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+
+            <p>
+
+            </p>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <!--最底部-->
+    <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
+        <div class="grid_c1 mod_help_inner">
+            <div class="mod_help_list">
+                <div class="mod_help_nav" >
+                    <h5 class="mod_help_nav_tit">购物指南</h5>
+                    <ul class="mod_help_nav_con">
+                        <li>
+                            <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
+                        </li>
+
+
+                        <li>
+                            <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
+                        </li>
+
+                        <li>
+                            <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mod_help_nav" style="margin-left: 65px">
+                    <h5 class="mod_help_nav_tit">配送方式</h5>
+                    <ul class="mod_help_nav_con">
+                        <li>
+                            <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
+                        </li>
+
+                        <li>
+                            <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                        </li>
+                        <li>
+                            <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="mod_help_nav" style="margin-left: 65px">
+                    <h5 class="mod_help_nav_tit">支付方式</h5>
+                    <ul class="mod_help_nav_con">
+                        <li>
+                            <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
+                        </li>
+                        <li>
+                            <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
+                        </li>
+                        <li>
+                            <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="mod_help_nav" style="margin-left: 65px;">
+                    <h5 class="mod_help_nav_tit">售后服务</h5>
+                    <ul class="mod_help_nav_con">
+                        <li>
+                            <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
+                        </li>
+                        <li>
+                            <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
+                        </li>
+                        <li>
+                            <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
+                        </li>
+
+                        <li>
+                            <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mod_help_cover">
+                    <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
+                    <div class="mod_help_cover_con">
+                        <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+                        <p class="mod_help_cover_more">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mod_copyright">
+        <div class="grid_c1 mod_copyright_inner">
+            <p class="mod_copyright_links">
+                <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
+" target="_blank" rel="noopener noreferrer">关于我们</a>
+                <span class="mod_copyright_split">|</span>
+
+                <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                <span class="mod_copyright_split">|</span>
+
+                <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
+                <span class="mod_copyright_split">|</span>
+                <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+                <span class="mod_copyright_split">|</span>
+                <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+
+            </p>
+
+            <p class="mod_copyright_auth">
+
+                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
+                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
+                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="elevator">
+    <svg class="svgcont" style="display: none;">
+        <defs>
+            <style>
+                path {
+                    fill: inherit
+                }
+            </style>
+        </defs>
+        <defs>
+            <symbol id="icon_timline" viewBox="0 0 16 16">
+                <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
+                </path>
+            </symbol>
+            <symbol id="icon_feedback" viewBox="0 0 16 16">
+                <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
+        <span class="elevator_totop_icon"></span>
+        <span class="elevator_totop_txt">顶部</span>
+    </a>
+</div>
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/js3.js"></script>
+<script type="text/javascript" src="js/js2.js"></script>
+
+
+</body>
+</html>

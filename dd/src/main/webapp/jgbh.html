@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分期付款</title>
+
+    <link href="./css/first-screen.chunk.css" rel="stylesheet">
+
+    <link href="./css/seckill.chunk.css" rel="stylesheet">
+
+    <link href="./css/index.chunk.css" rel="stylesheet">
+
+    <link href="./css/left.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <link href="./css/style2.css" rel="stylesheet">
+
+    <link href="./css/style3.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+
+
+        //获取用户信息
+        $(function () {
+            customer=null;
+            customerid=null;
+            $.ajax({
+                type:"POST",
+                dataType:"json",
+                url:"customer?method=getInfo",
+                success:function(data){
+                    customer=data;
+                    customerid=data.customerId;
+                    username=customer.username;
+                    $("#r123,.user_login,.user_reg").hide();
+                    $("#loginbt").text(username+",梦想小镇欢迎您！");
+
+                    console.log("customerid:"+data.customerId)
+                    console.log("name:"+customer.username)
+                    //console.log(data)
+                }
+            })
+        })
+
+    </script>
+
+
+
+    <style>
+
+        p{
+            padding: 20px 20px 20px 20px;
+
+            text-indent: 2em;
+
+            line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102, 102, 102); font-size: 16px;}
+        button{
+
+            width: 130px;/*设置按钮宽度*/
+
+            height: 40px;/*设置按钮高度*/
+
+            color:white;/*字体颜色*/
+
+            background-color:cornflowerblue;/*按钮背景颜色*/
+
+            border-radius: 3px;/*让按钮变得圆滑一点*/
+
+            border-width: 0;/*消去按钮丑的边框*/
+
+            margin: 0;
+
+            outline: none;/*取消轮廓*/
+
+            font-family: KaiTi;/*字体设置为楷体*/
+
+            font-size: 17px;/*设置字体大小*/
+
+            text-align: center;/*字体居中*/
+
+            cursor: pointer;/*设置鼠标箭头手势*/
+
+        }
+
+        button:hover{/*鼠标移动时的颜色变化*/
+
+            background-color: antiquewhite;
+
+        }
+
+    </style>
+
+
+
+</head>
+<body style="background-color: #f9ffe5">
+
+<div class="upper"style="background-color: #d6eeff">
+
+    <!--shortcut start -->
+    <div id="shortcut">
+        <div class="top_nav" aria-label="顶部导航">
+            <!--address start-->
+            <ul class="fl">
+                <li class="shortcut_btn" id="location">
+                    <a href="" id="area" class="dt cw-icon" aria-label="地区">
+                        <img  class="iconfont iconfont-location" src="img/address.jpg">
+                        <span class="loc_nanme" data-id="20" title="广西">广西</span>
+                    </a>
+                    <div class="dd dropdown-layer" tabindex="-1">
+                        <div class="ui-area-content-list">
+                            <div class="item">
+                                <a data-id="1" href="" tabindex="-1">北京</a></div>
+                            <div class="item">
+                                <a data-id="2" href="" tabindex="-1">上海</a></div>
+                            <div class="item">
+                                <a data-id="3" href="" tabindex="-1">天津</a></div>
+                            <div class="item">
+                                <a data-id="4" href="" tabindex="-1">重庆</a></div>
+                            <div class="item">
+                                <a data-id="5" href="" tabindex="-1">河北</a></div>
+                            <div class="item">
+                                <a data-id="6" href="" tabindex="-1">山西</a></div>
+                            <div class="item">
+                                <a data-id="7" href="" tabindex="-1">河南</a></div>
+                            <div class="item">
+                                <a data-id="8" href="" tabindex="-1">辽宁</a></div>
+                            <div class="item">
+                                <a data-id="9" href="" tabindex="-1">吉林</a></div>
+                            <div class="item">
+                                <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
+                            <div class="item">
+                                <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
+                            <div class="item">
+                                <a data-id="12" href="" tabindex="-1">江苏</a></div>
+                            <div class="item">
+                                <a data-id="13" href="" tabindex="-1">山东</a></div>
+                            <div class="item">
+                                <a data-id="14" href="" tabindex="-1">安徽</a></div>
+                            <div class="item">
+                                <a data-id="15" href="" tabindex="-1">浙江</a></div>
+                            <div class="item">
+                                <a data-id="16" href="" tabindex="-1">福建</a></div>
+                            <div class="item">
+                                <a data-id="17" href="" tabindex="-1">湖北</a></div>
+                            <div class="item">
+                                <a data-id="18" href="" tabindex="-1">湖南</a></div>
+                            <div class="item">
+                                <a data-id="19" href="" tabindex="-1">广东</a></div>
+                            <div class="item">
+                                <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
+                            <div class="item">
+                                <a data-id="21" href="" tabindex="-1">江西</a></div>
+                            <div class="item">
+                                <a data-id="22" href="" tabindex="-1">四川</a></div>
+                            <div class="item">
+                                <a data-id="23" href="" tabindex="-1">海南</a></div>
+                            <div class="item">
+                                <a data-id="24" href="" tabindex="-1">贵州</a></div>
+                            <div class="item">
+                                <a data-id="25" href="" tabindex="-1">云南</a></div>
+                            <div class="item">
+                                <a data-id="26" href="" tabindex="-1">西藏</a></div>
+                            <div class="item">
+                                <a data-id="27" href="" tabindex="-1">陕西</a></div>
+                            <div class="item">
+                                <a data-id="28" href="" tabindex="-1">甘肃</a></div>
+                            <div class="item">
+                                <a data-id="29" href="" tabindex="-1">青海</a></div>
+                            <div class="item">
+                                <a data-id="30" href="" tabindex="-1">宁夏</a></div>
+                            <div class="item">
+                                <a data-id="31" href="" tabindex="-1">新疆</a></div>
+                            <div class="item">
+                                <a data-id="52993" href="" tabindex="-1">港澳</a></div>
+                            <div class="item">
+                                <a data-id="32" href="" tabindex="-1">台湾</a></div>
+                            <div class="item">
+                                <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
+                            <div class="item">
+                                <a data-id="53283" href="" tabindex="-1">海外</a></div>
+                        </div>
+                        <div class="area_inter">
+                            <div class="area_inter_split"></div>
+                            <p class="area_inter_desc">地区专享版本</p>
+                            <ul class="area_inter_list">
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
+                                        <div class="area_inter_name">中國港澳</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="area_inter">
+                            <div class="area_inter_split"></div>
+                            <p class="area_inter_desc">Available Sites</p>
+                            <ul class="area_inter_list">
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_global"></div>
+                                        <div class="area_inter_name">Global Site</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_russia"></div>
+                                        <div class="area_inter_name">Сайт России</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_indonesia"></div>
+                                        <div class="area_inter_name">Situs Indonesia</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_spain"></div>
+                                        <div class="area_inter_name">Sitio de España</div>
+                                    </a>
+                                </li>
+                                <li class="area_inter_item">
+                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                        <div class="area_inter_ico area_inter_ico_thailand"></div>
+                                        <div class="area_inter_name">เว็บไซต์ประเทศไทย</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--address end-->
+
+            <!--menu start-->
+            <ul class="fr">
+                <li id="login" class="shortcut_btn fore1">
+                    <a href="customerLogin.html" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
+                    <a href="register.html" id="r123" class="link-regist style-red">免费注册</a>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore2">
+                    <div class="dt">
+                        <a target="_blank" href="index.html" aria-label="商城首页">商城首页</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore3">
+                    <div class="dt">
+                        <a target="_blank" href="cinfo.html" aria-label="个人主页">个人主页</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore4">
+                    <div class="dt">
+                        <a target="_blank" href="MyOrder.html" aria-label="我的订单">我的订单</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore5">
+                    <div class="dt">
+                        <a target="_blank" href="MyCollection.html" aria-label="我的收藏">我的收藏</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="shortcut_btn fore6">
+                    <div class="dt">
+                        <a target="_blank" href="order.html" aria-label="我的购物车">我的购物车</a>
+                    </div>
+                </li>
+
+                <li class="spacer"></li>
+                <li id="serv" class="shortcut_btn fore7 dropdown">
+                    <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
+                        <img class="iconfont" src="img/dropdown.png">
+                    </div>
+                    <div class="dd dropdown-layer" tabindex="-1">
+
+
+                        <div class="item">
+                            <a href="shfw.html" target="_blank" tabindex="-1">售后服务</a>
+                        </div>
+
+                        <div class="item">
+                            <a href="zkf.html" target="_blank" tabindex="-1">意见建议</a>
+                        </div>
+                        <div class="item">
+                            <a href="zkf.html" target="_blank" tabindex="-1">电话客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="zkf.html" target="_blank" tabindex="-1">客服邮箱</a>
+                        </div>
+
+
+                    </div>
+                </li>
+
+            </ul>
+            <!--menu end-->
+        </div>
+    </div>
+    <!--shortcut 第一部分的头部结束end-->
+
+<!--四个导航部分-->
+
+        <!--<a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
+                font-weight: normal;"><strong style="color: #00ee00"></strong></a>
+        <a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
+                font-weight: normal;"><strong style="color: #00ee00"></strong></a>
+        <a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
+                font-weight: normal;"><strong style="color: #00ee00"></strong></a>-->
+
+    </div>
+<!--购物流程部分-->
+    <div style="width: 50%;margin-left: 25%;margin-top: 2%;background: white; border: 1px solid rgb(249,255,229); " id="gwlc">
+
+       <!-- <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
+            font-family: 'microsoft yahei';color: #00ee00">
+
+            梦想小镇购物流程
+        </div>
+        <div style="margin-left: 29%;width:50%;margin-top: 5%;height: 60%; ">
+            
+            <img src="img/gwlc.PNG"style="height: 100%;width: 100%">
+        </div>
+
+        <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
+
+            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
+        </div>
+-->
+        <div id="b1" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229); ">
+
+            <p style="text-indent: 2em;top:10px;text-align: center;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(0,0,0);font-size: 25px;">
+                <strong style="font-weight: bold;">价格保护</strong></p>
+
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                <strong style="font-weight: bold;">
+                    1、什么价格保护？
+                </strong>
+
+            </p>
+            <p>
+                价格保护：为了更好的提升您的购物体验，即如您在梦想小镇商城购物，如商品出现降价（不包括支付方式的相关优惠），在价保规则范围内，将赠送您与差额部分等值的款项、或优惠券。
+            </p>
+
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                <strong style="font-weight: bold;">2、支持价格保护的商品品类：</strong>
+
+            </p>
+           <p>
+               支持价保的品类主要有家用电器、食品饮料、电脑/办公、母婴、手机通讯、家庭清洁/纸品、数码、个人护理、美妆护肤、医药保健、厨具、酒类、家装建材、汽车用品、运动户外、生鲜、家纺、服饰内衣、玩具乐器、家居日用、箱包皮具、家具、钟表、鞋靴、宠物生活、礼品、图书、珠宝首饰（不包含黄金/投资金银品类）、农资园艺、文娱、工业品，其他品类均不支持价保服务。
+           </p>
+
+
+
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                <strong style="font-weight: bold;">3、申请价格保护的条件：</strong>
+
+            </p>
+            <p>
+                (1)家用电器:您可在订单商品签收之前或签收30天内申请价保。如申请成功，选择货到付款支付方式但未付款的订单，您可按照申请通过后的商品价格支付；已付款订单，将赠送您与差额部分等值的款项或优惠券。
+            </p>
+            <p>
+                （2）食品饮料、电脑/办公、母婴、手机通讯、家庭清洁/纸品、数码、个人护理、美妆护肤、医药保健、厨具、酒类、家装建材、汽车用品、运动户外、家纺、服饰内衣、玩具乐器、家居日用、箱包皮具、家具、钟表、鞋靴、宠物生活、礼品、珠宝首饰（不包含黄金/投资金银品类）、农资园艺、文娱、工业品、图书：
+                您可在订单商品签收之前或签收7天内申请价保。如申请成功，选择货到付款支付方式但未付款的订单，您可按照申请通过后的商品价格支付；已付款的订单，将赠送您与差额部分等值的款项、或优惠券。
+
+            </p>
+            <p>
+                (3)生鲜：您可在订单商品签收之前或签收之后48小时之内申请价保。如申请成功，选择货到付款支付方式但未付款的订单，将默认在您订单完成后赠送您与差额部分等值的限生鲜品类优惠券或者您可自主选择按照申请通过后的商品价款支付；已付款订单，将默认赠送您与差额部分等值的限生鲜品类优惠券或您可自主选择赠送等额的款项。
+            </p>
+
+            <p style="text-indent: 2em;top:10px;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                <strong style="font-weight: bold;">4、价格保护的注意事项：</strong>
+
+            </p>
+           <p>
+                (1)非梦想小镇购买的商品不支持价保；
+           </p>
+            <p>
+                （2）无效订单不支持价保，如已申请取消或已删除的订单等；
+            </p>
+            <p>
+                （3）已经申请售后的订单不支持价保；
+            </p>
+            <p>
+               （4） 售后返新订单、拼购订单、商采订单不支持价保；
+            </p>
+            <p>
+                （5）在线支付订单未支付的，不支持价保；使用限品类东券支付的订单将扣除限品类东券支付的部分计算差价；
+            </p>
+            <p>
+                （6）申请价保时，商品无货、正在参与秒杀、限购的商品，不支持价保；
+            </p>
+            <p>
+                （7）套装商品、商品本身为赠品的商品不支持价保；
+            </p>
+            <p>
+                （8）超过价保周期或商品价格未发生变化的不支持价保；
+            </p>
+            <p>
+                （9）订单“等待打印”状态之前、订单锁定状态不支持价保；
+            </p>
+            <p>
+                （10）购买前无赠品，购买后有赠品，商品本身未降价，不支持价保（原订单含赠品申请价保时需扣除赠品金额）；
+            </p>
+            <p>
+                （11）其他网页有特殊说明的商品不支持价保；
+            </p>
+            <p>
+                （12）目前商品直降、满减、折扣、买M免N可支持价保；
+            </p>
+        </div>
+
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<!--最底部-->
+<div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
+    <div class="grid_c1 mod_help_inner">
+        <div class="mod_help_list">
+            <div class="mod_help_nav" >
+                <h5 class="mod_help_nav_tit">购物指南</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
+                    </li>
+
+
+                    <li>
+                        <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
+                    </li>
+
+                    <li>
+                        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mod_help_nav" style="margin-left: 65px">
+                <h5 class="mod_help_nav_tit">配送方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
+                    </li>
+
+                    <li>
+                        <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                    </li>
+                    <li>
+                        <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="mod_help_nav" style="margin-left: 65px">
+                <h5 class="mod_help_nav_tit">支付方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
+                    </li>
+                    <li>
+                        <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
+                    </li>
+                    <li>
+                        <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="mod_help_nav" style="margin-left: 65px;">
+                <h5 class="mod_help_nav_tit">售后服务</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
+                    </li>
+                    <li>
+                        <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
+                    </li>
+                    <li>
+                        <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
+                    </li>
+
+                    <li>
+                        <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mod_help_cover">
+                <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
+                <div class="mod_help_cover_con">
+                    <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+                    <p class="mod_help_cover_more">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mod_copyright">
+    <div class="grid_c1 mod_copyright_inner">
+        <p class="mod_copyright_links">
+            <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
+" target="_blank" rel="noopener noreferrer">关于我们</a>
+            <span class="mod_copyright_split">|</span>
+
+            <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+            <span class="mod_copyright_split">|</span>
+
+            <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
+            <span class="mod_copyright_split">|</span>
+            <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+            <span class="mod_copyright_split">|</span>
+            <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+
+        </p>
+
+        <p class="mod_copyright_auth">
+
+            <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
+            <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
+            <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+            <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+        </p>
+    </div>
+</div>
+</div>
+<div class="elevator">
+    <svg class="svgcont" style="display: none;">
+        <defs>
+            <style>
+                path {
+                    fill: inherit
+                }
+            </style>
+        </defs>
+        <defs>
+            <symbol id="icon_timline" viewBox="0 0 16 16">
+                <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
+                </path>
+            </symbol>
+            <symbol id="icon_feedback" viewBox="0 0 16 16">
+                <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+
+    <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
+        <span class="elevator_totop_icon"></span>
+        <span class="elevator_totop_txt">顶部</span>
+    </a>
+</div>
+</div>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/js3.js"></script>
+<script type="text/javascript" src="js/js2.js"></script>
+
+
+</body>
+</html>

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../DreamShop/DreamShop.iml" filepath="$PROJECT_DIR$/../DreamShop/DreamShop.iml" />
       <module fileurl="file://$PROJECT_DIR$/DreamTown.iml" filepath="$PROJECT_DIR$/DreamTown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dd/dd.iml" filepath="$PROJECT_DIR$/../dd/dd.iml" />
     </modules>
   </component>
 </project>

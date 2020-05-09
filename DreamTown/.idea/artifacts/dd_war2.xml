@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dd:war2">
+    <output-path>D:/ideaProjectOut/artifacts/dd_war2</output-path>
+    <root id="archive" name="dd_war.war">
+      <element id="artifact" artifact-name="dd:war exploded" />
+    </root>
+  </artifact>
+</component>
