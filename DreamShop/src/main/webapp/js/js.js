@@ -168,7 +168,7 @@ $(".c-banner .jumpBtn ul li").each(function(){
   //动态数据加载的时候不要直接点击demo.html运行否则可能请求不到本地json数据
 // function dynamicData(){
 //  $.ajax({
-//    url:"js/test.json",
+//    url:"js/cn.guet.test.json",
 //    type:"get",
 //    dataType:"json",
 //    success:function(data){

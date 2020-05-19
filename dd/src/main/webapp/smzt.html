@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>上门自提</title>
+    <!--    bootstrap-->
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!--    bootstrap-->
     <link href="./css/first-screen.chunk.css" rel="stylesheet">
 
     <link href="./css/seckill.chunk.css" rel="stylesheet">
@@ -17,8 +28,13 @@
     <link href="./css/style2.css" rel="stylesheet">
 
     <link href="./css/style3.css" rel="stylesheet">
-    <script src="js/jquery-3.3.1.js"></script>
+
     <style>
+
+        .mod_help li{
+            padding: 5px 0;
+        }
+
 
         p{
             padding: 10px 10px 10px 20px;
@@ -26,6 +42,21 @@
             text-indent: 2em;
 
             line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102, 102, 102); font-size: 16px;}
+
+        .collapse,.card-header{
+            background-image: url(img/baise.jpg); background-size: 100% 100%;
+            background-position: center center;
+            overflow: auto;
+
+        }
+
+
+        .card-header{
+            background-image: url(img/tk.jpg); background-size: 100% 100%;
+            background-position: center center;
+            overflow: auto;
+
+        }
     </style>
 
     <script>
@@ -57,13 +88,13 @@
 
 
 </head>
-<body>
+<body class="bg-white" style="background-image: url(img/baise.jpg); background-size: 100% 100%;
+                background-position: center center;
+                overflow: auto;">
 
-<div class="upper">
-
-    <!--shortcut start -->
+<div class="upper" >
     <div id="shortcut">
-        <div class="top_nav" aria-label="顶部导航">
+        <div class="top_nav container" aria-label="顶部导航">
             <!--address start-->
             <ul class="fl">
                 <li class="shortcut_btn" id="location">
@@ -268,134 +299,103 @@
 
 <!--上门自提-->
 
-    <div style="height: 400px;width: 20%;margin-top:3%;margin-left:10%; border: 1px solid rgb(249,255,229);background-color: white">
+    <div class="container " style="margin-top: 3%">
+        <div class="accordion" id="accordionExample">
 
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-            如何自提
-        </div>
+            <div class="card">
+                <div class="card-header " id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            什么是自提
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>自提是梦想小镇为方便客户收货（比如上班时不方便签收快递等情况），为客户提供的一种固定地点提货的模式。您可以在提交订单页面“收货人信息”一栏选择附近自提点信息，配送方式显示“上门自提”（如无可选自提点则说明该地址暂不支持自提，请选择其他配送方式），当订单到达自提点后，系统会以短信形式通知您取货。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo2">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
+                            如何自提
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
 
-        <p>下单时，配送方式选择“上门自提”（请选择离您最近的自提点或自提柜），自提订单提交成功后，订单到达指定自提点或自提柜，系统会向收货人手机发送自提码，然后到自提点或自提柜通过自提码提货即可。</p>
-        <p>2020-03-03</p>
-        <div style="margin-left: 20%;width:60%;margin-top: 5%;height: 30%; ">
+                        <p>下单时，配送方式选择“上门自提”（请选择离您最近的自提点或自提柜），自提订单提交成功后，订单到达指定自提点或自提柜，系统会向收货人手机发送自提码，然后到自提点或自提柜通过自提码提货即可。</p>
+                    </div>
+                </div>
+            </div>
 
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-        </div>
-
-
-
-    </div>
-
-
-
-    <!--什么是自提-->
-
-    <div style="height: 400px;width: 20%;position:absolute;top:80px;left:600px; border: 1px solid rgb(249,255,229);background-color: white">
-
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-            什么是自提
-        </div>
-
-        <p>自提是梦想小镇为方便客户收货（比如上班时不方便签收快递等情况），为客户提供的一种固定地点提货的模式。您可以在提交订单页面“收货人信息”一栏选择附近自提点信息，配送方式显示“上门自提”（如无可选自提点则说明该地址暂不支持自提，请选择其他配送方式），当订单到达自提点后，系统会以短信形式通知您取货。</p>
-        <p>2020-06-13</p>
-        <div style="margin-left: 20%;width:60%;margin-top: 2%;height: 26%; ">
-
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-        </div>
-
-    </div>
-
-    <!--自提柜可以保留几天-->
-
-    <div style="height: 400px;width: 20%;position:absolute;top:80px;left:1050px; border: 1px solid rgb(249,255,229);background-color: white">
-
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-            自提柜可以保留几天
-        </div>
-
-        <p>货物到达自提点后可以保留三个自然日。收到自提短信后，请尽快前去提取您的货物。</p>
-        <p>2020-03-13</p>
-        <div style="margin-left: 20%;width:60%;margin-top: 8%;height: 30%; ">
-
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-        </div>
-
-    </div>
-
-    <!--自提位置查询-->
-
-    <div style="height: 400px;width: 20%;margin-top:3%;margin-left:10%; border: 1px solid rgb(249,255,229);background-color: white">
-
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-            自提位置查询
-        </div>
-
-        <p>请您在输入地址信息时，尽量输入精确地址，以便搜索到距离您更近、更为精准的自提点信息。例如：四川省 成都市 武侯区 一环路南一段24号）</p>
-        <p>2020-03-16</p>
-        <div style="margin-left: 20%;width:60%;margin-top: 5%;height: 30%; ">
-
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            自提柜可以保留几天
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>货物到达自提点后可以保留三个自然日。收到自提短信后，请尽快前去提取您的货物。</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
-
-    </div>
- <!--   自提注意事项
--->
-
-    <!--什么是自提-->
-
-    <div style="height: 400px;width: 20%;position:absolute;top:530px;left:600px; border: 1px solid rgb(249,255,229);background-color: white">
-
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-           自提注意事项
+        <div class="card">
+            <div class="card-header" id="headingTwo11">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo11" aria-expanded="true" aria-controls="collapseTwo11">
+                        自提位置查询
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo11" class="collapse show" aria-labelledby="headingTwo11" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>请您在输入地址信息时，尽量输入精确地址，以便搜索到距离您更近、更为精准的自提点信息。例如：四川省 成都市 武侯区 一环路南一段24号）</p></div>
+            </div>
         </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo1">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1">
+                        自提注意事项
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo1" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>1、下单时，在支付与配送方式一栏选择“上门自提”，在配送方式中选择相应自助提货柜并保存；</p>
 
-       <p>1、下单时，在支付与配送方式一栏选择“上门自提”，在配送方式中选择相应自助提货柜并保存；</p>
-
-        <p>2、订单提交后，请关注订单状态，并注意查收短信；</p>
-
-
-        <p>3、当订单状态显示为“上门自提”或您收到“提货短信”后，请凭借订单号和提货码到相应自助提货柜提货；</p>
-
-
-        <p>4、到达自助提货柜后，请输入订单号和提货码或者直接扫描提货二维码进行身份验证；</p>
-
-
-
-
-    </div>
+                    <p>2、订单提交后，请关注订单状态，并注意查收短信；</p>
 
 
-    <div style="height: 400px;width: 20%;position:absolute;top:530px;left:1050px; border: 1px solid rgb(249,255,229);background-color: white">
+                    <p>3、当订单状态显示为“上门自提”或您收到“提货短信”后，请凭借订单号和提货码到相应自助提货柜提货；</p>
 
-        <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-            自提注意事项
-        </div>
 
-        <p>5、验证无误后，请按照系统提示在POS机刷借记卡完成支付；</p>
+                    <p>4、到达自助提货柜后，请输入订单号和提货码或者直接扫描提货二维码进行身份验证；</p>
 
-        <p>6、支付完成后，系统自动开箱提货。</p>
+
+                    <p>5、验证无误后，请按照系统提示在POS机刷借记卡完成支付；</p>
+
+                    <p>6、支付完成后，系统自动开箱提货。</p>
 
 
 
-        <p>7、当自助提货柜已满时，将不能选择相应的自助提货柜下单；</p>
-        <p>2020-03-16</p>
-
-        <div style="margin-left: 20%;width:60%;margin-top: 5%;height: 30%; ">
-
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
+                    <p>7、当自助提货柜已满时，将不能选择相应的自助提货柜下单；</p>
+                </div>
+            </div>
         </div>
 
 
     </div>
-
-
 
 
 
@@ -406,151 +406,121 @@
     <!--最后部分-->
     <br>
     <br>
-    <br>
-    <!--最底部-->
-    <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
-        <div class="grid_c1 mod_help_inner">
-            <div class="mod_help_list">
-                <div class="mod_help_nav" >
-                    <h5 class="mod_help_nav_tit">购物指南</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
-                        </li>
+
+    <div class="mod_help container" clstag="h|keycount|btm|btmnavi_null02">
+
+        <div class="row justify-content-around">
+            <div class="col-2 text-left " >
+                <h5 class="mod_help_nav_tit">购物指南</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
+                    </li>
 
 
-                        <li>
-                            <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
-                        </li>
+                    <li>
+                        <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
+                    </li>
 
-                        <li>
-                            <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">配送方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
-                        </li>
-
-                        <li>
-                            <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
-                        </li>
-                        <li>
-                            <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">支付方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
-                        </li>
-                        <li>
-                            <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
-                        </li>
-                        <li>
-                            <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px;">
-                    <h5 class="mod_help_nav_tit">售后服务</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
-                        </li>
-                        <li>
-                            <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
-                        </li>
-                        <li>
-                            <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
-                        </li>
-
-                        <li>
-                            <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="mod_help_cover">
-                    <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
-                    <div class="mod_help_cover_con">
-                        <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
-                        <p class="mod_help_cover_more">
-
-                        </p>
-                    </div>
-                </div>
+                    <li>
+                        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                    </li>
+                </ul>
             </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">配送方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
+                    </li>
+
+                    <li>
+                        <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                    </li>
+                    <li>
+                        <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">支付方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
+                    </li>
+                    <li>
+                        <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
+                    </li>
+                    <li>
+                        <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">售后服务</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
+                    </li>
+                    <li>
+                        <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
+                    </li>
+                    <li>
+                        <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
+                    </li>
+
+                    <li>
+                        <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-2 text-center" >
+                <h5 >小镇自营覆盖区县</h5>
+                <br>
+                <div style="padding: 5px">
+                    梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
-    <div class="mod_copyright">
-        <div class="grid_c1 mod_copyright_inner">
-            <p class="mod_copyright_links">
-                <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
+</div>
+</div>
+<div class="container justify-content-between" style="margin-top: 1%;margin-bottom: 1%">
+
+    <p class="text-center">
+        <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
 " target="_blank" rel="noopener noreferrer">关于我们</a>
-                <span class="mod_copyright_split">|</span>
+        <span class="mod_copyright_split">|</span>
 
-                <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                <span class="mod_copyright_split">|</span>
+        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+        <span class="mod_copyright_split">|</span>
 
-                <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+        <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
 
-            </p>
+    </p>
 
-            <p class="mod_copyright_auth">
+    <p class="text-center">
 
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
-            </p>
-        </div>
-    </div>
-</div>
-<div class="elevator">
-    <svg class="svgcont" style="display: none;">
-        <defs>
-            <style>
-                path {
-                    fill: inherit
-                }
-            </style>
-        </defs>
-        <defs>
-            <symbol id="icon_timline" viewBox="0 0 16 16">
-                <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
-                </path>
-            </symbol>
-            <symbol id="icon_feedback" viewBox="0 0 16 16">
-                <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
-                </path>
-            </symbol>
-        </defs>
-    </svg>
-
-    <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
-        <span class="elevator_totop_icon"></span>
-        <span class="elevator_totop_txt">顶部</span>
-    </a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+    </p>
 </div>
 </div>
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/js3.js"></script>
-<script type="text/javascript" src="js/js2.js"></script>
+</div>
 
-
+</div>
 </body>
-
 </html>

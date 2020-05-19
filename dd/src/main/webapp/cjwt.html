@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>常见问题</title>
 
+
+<!--    bootstrap-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!--    bootstrap-->
+
     <link href="./css/first-screen.chunk.css" rel="stylesheet">
 
     <link href="./css/seckill.chunk.css" rel="stylesheet">
@@ -49,44 +60,23 @@
 
     <style>
 
+
+        .mod_help li{
+            padding: 5px 0;
+        }
+
+
         p{
             padding: 10px 10px 10px 20px;
 
             text-indent: 2em;
 
             line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102, 102, 102); font-size: 16px;}
-        button{
+        #cjwt{
 
-            width: 100px;/*设置按钮宽度*/
-
-            height: 40px;/*设置按钮高度*/
-
-            color:white;/*字体颜色*/
-
-            background-color:cornflowerblue;/*按钮背景颜色*/
-
-            border-radius: 3px;/*让按钮变得圆滑一点*/
-
-            border-width: 0;/*消去按钮丑的边框*/
-
-            margin: 0;
-
-            outline: none;/*取消轮廓*/
-
-            font-family: KaiTi;/*字体设置为楷体*/
-
-            font-size: 17px;/*设置字体大小*/
-
-            text-align: center;/*字体居中*/
-
-            cursor: pointer;/*设置鼠标箭头手势*/
-
-        }
-
-        button:hover{/*鼠标移动时的颜色变化*/
-
-            background-color: antiquewhite;
-
+            background-image: url(img/baise.jpg); background-size: 100% 100%;
+            background-position: center center;
+            overflow: auto;
         }
 
     </style>
@@ -94,226 +84,240 @@
 
 
 </head>
-<body>
+<body class="bg-white" style="background-image: url(img/baise.jpg); background-size: 100% 100%;
+                background-position: center center;
+                overflow: auto;">
 
-<div class="upper">
+<div class="upper" >
+<div id="shortcut">
+    <div class="top_nav container " aria-label="顶部导航">
+        <!--address start-->
 
-    <!--shortcut start -->
-    <div id="shortcut">
-        <div class="top_nav" aria-label="顶部导航">
-            <!--address start-->
-            <ul class="fl">
-                <li class="shortcut_btn" id="location">
-                    <a href="" id="area" class="dt cw-icon" aria-label="地区">
-                        <img  class="iconfont iconfont-location" src="img/address.jpg">
-                        <span class="loc_nanme" data-id="20" title="广西">广西</span>
-                    </a>
-                    <div class="dd dropdown-layer" tabindex="-1">
-                        <div class="ui-area-content-list">
-                            <div class="item">
-                                <a data-id="1" href="" tabindex="-1">北京</a></div>
-                            <div class="item">
-                                <a data-id="2" href="" tabindex="-1">上海</a></div>
-                            <div class="item">
-                                <a data-id="3" href="" tabindex="-1">天津</a></div>
-                            <div class="item">
-                                <a data-id="4" href="" tabindex="-1">重庆</a></div>
-                            <div class="item">
-                                <a data-id="5" href="" tabindex="-1">河北</a></div>
-                            <div class="item">
-                                <a data-id="6" href="" tabindex="-1">山西</a></div>
-                            <div class="item">
-                                <a data-id="7" href="" tabindex="-1">河南</a></div>
-                            <div class="item">
-                                <a data-id="8" href="" tabindex="-1">辽宁</a></div>
-                            <div class="item">
-                                <a data-id="9" href="" tabindex="-1">吉林</a></div>
-                            <div class="item">
-                                <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
-                            <div class="item">
-                                <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
-                            <div class="item">
-                                <a data-id="12" href="" tabindex="-1">江苏</a></div>
-                            <div class="item">
-                                <a data-id="13" href="" tabindex="-1">山东</a></div>
-                            <div class="item">
-                                <a data-id="14" href="" tabindex="-1">安徽</a></div>
-                            <div class="item">
-                                <a data-id="15" href="" tabindex="-1">浙江</a></div>
-                            <div class="item">
-                                <a data-id="16" href="" tabindex="-1">福建</a></div>
-                            <div class="item">
-                                <a data-id="17" href="" tabindex="-1">湖北</a></div>
-                            <div class="item">
-                                <a data-id="18" href="" tabindex="-1">湖南</a></div>
-                            <div class="item">
-                                <a data-id="19" href="" tabindex="-1">广东</a></div>
-                            <div class="item">
-                                <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
-                            <div class="item">
-                                <a data-id="21" href="" tabindex="-1">江西</a></div>
-                            <div class="item">
-                                <a data-id="22" href="" tabindex="-1">四川</a></div>
-                            <div class="item">
-                                <a data-id="23" href="" tabindex="-1">海南</a></div>
-                            <div class="item">
-                                <a data-id="24" href="" tabindex="-1">贵州</a></div>
-                            <div class="item">
-                                <a data-id="25" href="" tabindex="-1">云南</a></div>
-                            <div class="item">
-                                <a data-id="26" href="" tabindex="-1">西藏</a></div>
-                            <div class="item">
-                                <a data-id="27" href="" tabindex="-1">陕西</a></div>
-                            <div class="item">
-                                <a data-id="28" href="" tabindex="-1">甘肃</a></div>
-                            <div class="item">
-                                <a data-id="29" href="" tabindex="-1">青海</a></div>
-                            <div class="item">
-                                <a data-id="30" href="" tabindex="-1">宁夏</a></div>
-                            <div class="item">
-                                <a data-id="31" href="" tabindex="-1">新疆</a></div>
-                            <div class="item">
-                                <a data-id="52993" href="" tabindex="-1">港澳</a></div>
-                            <div class="item">
-                                <a data-id="32" href="" tabindex="-1">台湾</a></div>
-                            <div class="item">
-                                <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
-                            <div class="item">
-                                <a data-id="53283" href="" tabindex="-1">海外</a></div>
-                        </div>
-                        <div class="area_inter">
-                            <div class="area_inter_split"></div>
-                            <p class="area_inter_desc">地区专享版本</p>
-                            <ul class="area_inter_list">
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
-                                        <div class="area_inter_name">中國港澳</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="area_inter">
-                            <div class="area_inter_split"></div>
-                            <p class="area_inter_desc">Available Sites</p>
-                            <ul class="area_inter_list">
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
-                                        <div class="area_inter_ico area_inter_ico_global"></div>
-                                        <div class="area_inter_name">Global Site</div>
-                                    </a>
-                                </li>
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
-                                        <div class="area_inter_ico area_inter_ico_russia"></div>
-                                        <div class="area_inter_name">Сайт России</div>
-                                    </a>
-                                </li>
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
-                                        <div class="area_inter_ico area_inter_ico_indonesia"></div>
-                                        <div class="area_inter_name">Situs Indonesia</div>
-                                    </a>
-                                </li>
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
-                                        <div class="area_inter_ico area_inter_ico_spain"></div>
-                                        <div class="area_inter_name">Sitio de España</div>
-                                    </a>
-                                </li>
-                                <li class="area_inter_item">
-                                    <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
-                                        <div class="area_inter_ico area_inter_ico_thailand"></div>
-                                        <div class="area_inter_name">เว็บไซต์ประเทศไทย</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <!--address end-->
-
-            <!--menu start-->
-            <ul class="fr">
-                <li id="login" class="shortcut_btn fore1">
-                    <a href="customerLogin.html" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
-                    <a href="register.html" id="r123" class="link-regist style-red">免费注册</a>
-                </li>
-                <li class="spacer"></li>
-                <li class="shortcut_btn fore2">
-                    <div class="dt">
-                        <a target="_blank" href="index.html" aria-label="商城首页">商城首页</a>
-                    </div>
-                </li>
-                <li class="spacer"></li>
-                <li class="shortcut_btn fore3">
-                    <div class="dt">
-                        <a target="_blank" href="cinfo.html" aria-label="个人主页">个人主页</a>
-                    </div>
-                </li>
-                <li class="spacer"></li>
-                <li class="shortcut_btn fore4">
-                    <div class="dt">
-                        <a target="_blank" href="MyOrder.html" aria-label="我的订单">我的订单</a>
-                    </div>
-                </li>
-                <li class="spacer"></li>
-                <li class="shortcut_btn fore5">
-                    <div class="dt">
-                        <a target="_blank" href="MyCollection.html" aria-label="我的收藏">我的收藏</a>
-                    </div>
-                </li>
-                <li class="spacer"></li>
-                <li class="shortcut_btn fore6">
-                    <div class="dt">
-                        <a target="_blank" href="order.html" aria-label="我的购物车">我的购物车</a>
-                    </div>
-                </li>
-
-                <li class="spacer"></li>
-                <li id="serv" class="shortcut_btn fore7 dropdown">
-                    <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
-                        <img class="iconfont" src="img/dropdown.png">
-                    </div>
-                    <div class="dd dropdown-layer" tabindex="-1">
-
-
+        <ul class="fl">
+            <li class="shortcut_btn" id="location">
+                <a href="" id="area" class="dt cw-icon" aria-label="地区">
+                    <img  class="iconfont iconfont-location" src="img/address.jpg">
+                    <span class="loc_nanme" data-id="20" title="广西">广西</span>
+                </a>
+                <div class="dd dropdown-layer" tabindex="-1">
+                    <div class="ui-area-content-list">
                         <div class="item">
-                            <a href="shfw.html" target="_blank" tabindex="-1">售后服务</a>
-                        </div>
-
+                            <a data-id="1" href="" tabindex="-1">北京</a></div>
                         <div class="item">
-                            <a href="zkf.html" target="_blank" tabindex="-1">意见建议</a>
-                        </div>
+                            <a data-id="2" href="" tabindex="-1">上海</a></div>
                         <div class="item">
-                            <a href="zkf.html" target="_blank" tabindex="-1">电话客服</a>
-                        </div>
+                            <a data-id="3" href="" tabindex="-1">天津</a></div>
                         <div class="item">
-                            <a href="zkf.html" target="_blank" tabindex="-1">客服邮箱</a>
-                        </div>
-
-
+                            <a data-id="4" href="" tabindex="-1">重庆</a></div>
+                        <div class="item">
+                            <a data-id="5" href="" tabindex="-1">河北</a></div>
+                        <div class="item">
+                            <a data-id="6" href="" tabindex="-1">山西</a></div>
+                        <div class="item">
+                            <a data-id="7" href="" tabindex="-1">河南</a></div>
+                        <div class="item">
+                            <a data-id="8" href="" tabindex="-1">辽宁</a></div>
+                        <div class="item">
+                            <a data-id="9" href="" tabindex="-1">吉林</a></div>
+                        <div class="item">
+                            <a data-id="10" href="" tabindex="-1">黑龙江</a></div>
+                        <div class="item">
+                            <a data-id="11" href="" tabindex="-1">内蒙古</a></div>
+                        <div class="item">
+                            <a data-id="12" href="" tabindex="-1">江苏</a></div>
+                        <div class="item">
+                            <a data-id="13" href="" tabindex="-1">山东</a></div>
+                        <div class="item">
+                            <a data-id="14" href="" tabindex="-1">安徽</a></div>
+                        <div class="item">
+                            <a data-id="15" href="" tabindex="-1">浙江</a></div>
+                        <div class="item">
+                            <a data-id="16" href="" tabindex="-1">福建</a></div>
+                        <div class="item">
+                            <a data-id="17" href="" tabindex="-1">湖北</a></div>
+                        <div class="item">
+                            <a data-id="18" href="" tabindex="-1">湖南</a></div>
+                        <div class="item">
+                            <a data-id="19" href="" tabindex="-1">广东</a></div>
+                        <div class="item">
+                            <a data-id="20" href="" tabindex="-1" class="selected">广西</a></div>
+                        <div class="item">
+                            <a data-id="21" href="" tabindex="-1">江西</a></div>
+                        <div class="item">
+                            <a data-id="22" href="" tabindex="-1">四川</a></div>
+                        <div class="item">
+                            <a data-id="23" href="" tabindex="-1">海南</a></div>
+                        <div class="item">
+                            <a data-id="24" href="" tabindex="-1">贵州</a></div>
+                        <div class="item">
+                            <a data-id="25" href="" tabindex="-1">云南</a></div>
+                        <div class="item">
+                            <a data-id="26" href="" tabindex="-1">西藏</a></div>
+                        <div class="item">
+                            <a data-id="27" href="" tabindex="-1">陕西</a></div>
+                        <div class="item">
+                            <a data-id="28" href="" tabindex="-1">甘肃</a></div>
+                        <div class="item">
+                            <a data-id="29" href="" tabindex="-1">青海</a></div>
+                        <div class="item">
+                            <a data-id="30" href="" tabindex="-1">宁夏</a></div>
+                        <div class="item">
+                            <a data-id="31" href="" tabindex="-1">新疆</a></div>
+                        <div class="item">
+                            <a data-id="52993" href="" tabindex="-1">港澳</a></div>
+                        <div class="item">
+                            <a data-id="32" href="" tabindex="-1">台湾</a></div>
+                        <div class="item">
+                            <a data-id="84" href="" tabindex="-1">钓鱼岛</a></div>
+                        <div class="item">
+                            <a data-id="53283" href="" tabindex="-1">海外</a></div>
                     </div>
-                </li>
+                    <div class="area_inter">
+                        <div class="area_inter_split"></div>
+                        <p class="area_inter_desc">地区专享版本</p>
+                        <ul class="area_inter_list">
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" data-ver-id="2" data-area="52993" tabindex="-1">
+                                    <div class="area_inter_name">中國港澳</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="area_inter">
+                        <div class="area_inter_split"></div>
+                        <p class="area_inter_desc">Available Sites</p>
+                        <ul class="area_inter_list">
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" ctabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_global"></div>
+                                    <div class="area_inter_name">Global Site</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_russia"></div>
+                                    <div class="area_inter_name">Сайт России</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_indonesia"></div>
+                                    <div class="area_inter_name">Situs Indonesia</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_spain"></div>
+                                    <div class="area_inter_name">Sitio de España</div>
+                                </a>
+                            </li>
+                            <li class="area_inter_item">
+                                <a class="area_inter_lk" href="" target="_blank" tabindex="-1">
+                                    <div class="area_inter_ico area_inter_ico_thailand"></div>
+                                    <div class="area_inter_name">เว็บไซต์ประเทศไทย</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--address end-->
 
-            </ul>
-            <!--menu end-->
-        </div>
+        <!--menu start-->
+        <ul class="fr">
+            <li id="login" class="shortcut_btn fore1">
+                <a href="customerLogin.html" class="link-login" id="loginbt">你好，请登录</a>&nbsp;&nbsp;
+                <a href="register.html" id="r123" class="link-regist style-red">免费注册</a>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore2">
+                <div class="dt">
+                    <a target="_blank" href="index.html" aria-label="商城首页">商城首页</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore3">
+                <div class="dt">
+                    <a target="_blank" href="cinfo.html" aria-label="个人主页">个人主页</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore4">
+                <div class="dt">
+                    <a target="_blank" href="MyOrder.html" aria-label="我的订单">我的订单</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore5">
+                <div class="dt">
+                    <a target="_blank" href="MyCollection.html" aria-label="我的收藏">我的收藏</a>
+                </div>
+            </li>
+            <li class="spacer"></li>
+            <li class="shortcut_btn fore6">
+                <div class="dt">
+                    <a target="_blank" href="order.html" aria-label="我的购物车">我的购物车</a>
+                </div>
+            </li>
+
+            <li class="spacer"></li>
+            <li id="serv" class="shortcut_btn fore7 dropdown">
+                <div id="shortcutService" class="dt cw-icon" tabindex="0" aria-label="客户服务">客户服务
+                    <img class="iconfont" src="img/dropdown.png">
+                </div>
+                <div class="dd dropdown-layer" tabindex="-1">
+
+
+                    <div class="item">
+                        <a href="shfw.html" target="_blank" tabindex="-1">售后服务</a>
+                    </div>
+
+                    <div class="item">
+                        <a href="zkf.html" target="_blank" tabindex="-1">意见建议</a>
+                    </div>
+                    <div class="item">
+                        <a href="zkf.html" target="_blank" tabindex="-1">电话客服</a>
+                    </div>
+                    <div class="item">
+                        <a href="zkf.html" target="_blank" tabindex="-1">客服邮箱</a>
+                    </div>
+
+
+                </div>
+            </li>
+
+        </ul>
+        <!--menu end-->
     </div>
-    <!--shortcut 第一部分的头部结束end-->
+</div>
 
 <!--四个导航部分-->
-    <div  style=" ;width: 50%;height: 40px;margin-left: 25%;margin-top: 2%;background: #eafff8; border: 1px solid rgb(201,243,255); " >
+   <!-- <div  style=" ;width: 50%;height: 50px;margin-left: 25%;margin-top: 2%;background: #eafff8; border: 1px solid rgb(201,243,255); " >-->
         <!--<a><div style="width: 150px;height: 35px;background-color: #f3b701; color: #fff;font-family: 'microsoft yahei';
             font-size: 14px;
                 font-weight: normal;">
             <strong align="center">交易条款</strong>
 
         </div></a>-->
-        <button onclick="showb1()">交易条款</button>
-        <button style="margin-left: 20px" onclick="showb2()"> 价格说明</button>
-        <button  onclick="showb3()"style="margin-left: 20px">生活出行</button>
-        <button  onclick="showb4()"style="margin-left: 20px">购买须知</button>
+
+
+
+        <div class="container bg-primary " style="margin-top: 3%" >
+            <div class="btn-group btn-group-lg d-flex justify-content-center">
+               <!-- <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+                <button type="button" class="btn btn-primary">Sony</button>-->
+
+
+                <button type="button" class="btn btn-primary"onclick="showb1()">交易条款</button>
+                <button type="button" class="btn btn-primary" onclick="showb2()"> 价格说明</button>
+                <button  type="button" class="btn btn-primary"onclick="showb3()">生活出行</button>
+                <button  type="button" class="btn btn-primary"onclick="showb4()">购买须知</button>
+            </div>
+
+       <!-- </div>-->
+
         <script>
             function showb1() {
                 $("#b1").show();
@@ -350,8 +354,14 @@
                 font-weight: normal;"><strong style="color: #00ee00"></strong></a>-->
 
     </div>
+
+
+
+
+
+
 <!--购物流程部分-->
-    <div style="width: 50%;height: 700px;margin-left: 25%;margin-top: 2%;background: white; border: 1px solid rgb(249,255,229); " id="gwlc">
+   <!-- <div style="width: 50%;height: 700px;margin-left: 25%;margin-top: 2%;background: white; border: 1px solid rgb(249,255,229); " id="gwlc">-->
 
        <!-- <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
             font-family: 'microsoft yahei';color: #00ee00">
@@ -360,7 +370,7 @@
         </div>
         <div style="margin-left: 29%;width:50%;margin-top: 5%;height: 60%; ">
             
-            <img src="img/gwlc.PNG"style="height: 100%;width: 100%">
+            <img src="img/gwlc1.PNG"style="height: 100%;width: 100%">
         </div>
 
         <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
@@ -368,7 +378,13 @@
             <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
         </div>
 -->
-        <div id="b1" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229); ">
+
+
+
+
+
+    <div id="cjwt"class="container" style="background-color: white;margin-top: 2%">
+        <div id="b1" style="width: 99%;height: 99%; ">
 
             <p style="text-indent: 2em;
                 line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
@@ -391,7 +407,7 @@
 
 
         </div>
-        <div id="b2" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229);display: none;">
+        <div id="b2" style="width: 99%;height: 99%;display: none;">
             <p style="text-indent: 2em;
                 line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
                 <strong style="font-weight: bold;">价格说明</strong></p>
@@ -414,12 +430,9 @@
                 2020-02-04
             </p>
 
-            <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
 
-                <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
             </div>
-            </div>
-        <div id="b3" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229);display: none;">
+        <div id="b3" class="text-center" style="width: 99%;height: 99%;display: none;">
             <p style="text-indent: 2em;
                 line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
                 <strong style="font-weight: bold;">机票购买流程</strong></p>
@@ -431,10 +444,7 @@
             <p>第四步：在线支付</p>
             <p>第五步：查询出票</p>
             <p>2020-09-27</p>
-            <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 20%; ">
 
-                <img src="img/jjwt2.PNG"style="height: 100%;width: 100%">
-            </div>
 
 
 
@@ -464,20 +474,18 @@
             <p>洗衣机：放置点应确定平衡，长期不使用时应清理筒内残渣废渍，拔掉电源。</p>
             <p>注意事项：建议您对所购商品包装箱保留3个月，以免影响退换货；建议您购买商品开具发票明细与所购商品明细一致，以免影响您享受商品安装和保修服务。</p>
             <p>2020-05-16</p>
-            <div style="margin-left: 35%;width:30%;margin-top: 2%;height: 15%; ">
 
-                <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-            </div>
 
         </div>
     </div>
 
+<br>
+    <br>
 
+    <div class="mod_help container" clstag="h|keycount|btm|btmnavi_null02">
 
-    <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
-        <div class="grid_c1 mod_help_inner">
-            <div class="mod_help_list">
-                <div class="mod_help_nav" >
+            <div class="row justify-content-around">
+                <div class="col-2 text-left " >
                     <h5 class="mod_help_nav_tit">购物指南</h5>
                     <ul class="mod_help_nav_con">
                         <li>
@@ -494,7 +502,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
+                <div class="col-2 text-center" >
                     <h5 class="mod_help_nav_tit">配送方式</h5>
                     <ul class="mod_help_nav_con">
                         <li>
@@ -510,7 +518,7 @@
 
                     </ul>
                 </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
+                <div class="col-2 text-center" >
                     <h5 class="mod_help_nav_tit">支付方式</h5>
                     <ul class="mod_help_nav_con">
                         <li>
@@ -525,7 +533,7 @@
 
                     </ul>
                 </div>
-                <div class="mod_help_nav" style="margin-left: 65px;">
+                <div class="col-2 text-center" >
                     <h5 class="mod_help_nav_tit">售后服务</h5>
                     <ul class="mod_help_nav_con">
                         <li>
@@ -544,21 +552,23 @@
                     </ul>
                 </div>
 
-                <div class="mod_help_cover">
-                    <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
-                    <div class="mod_help_cover_con">
-                        <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
-                        <p class="mod_help_cover_more">
+                <div class="col-2 text-center" >
+                    <h5 >小镇自营覆盖区县</h5>
+                    <br>
+                    <div style="padding: 5px">
+                        梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。
 
-                        </p>
                     </div>
+
                 </div>
+
+            </div>
             </div>
         </div>
     </div>
-    <div class="mod_copyright">
-        <div class="grid_c1 mod_copyright_inner">
-            <p class="mod_copyright_links">
+    <div class="container justify-content-between" style="margin-bottom: 1%">
+
+            <p class="text-center">
                 <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
 " target="_blank" rel="noopener noreferrer">关于我们</a>
                 <span class="mod_copyright_split">|</span>
@@ -574,7 +584,7 @@
 
             </p>
 
-            <p class="mod_copyright_auth">
+            <p class="text-center">
 
                 <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
                 <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
@@ -611,3 +621,5 @@
     </a>
 </div>
 </div>
+</body>
+</html>

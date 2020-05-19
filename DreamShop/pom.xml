@@ -61,7 +61,7 @@
     <!--单元测试-->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
+      <artifactId>spring-cn.guet.test</artifactId>
       <version>${spring.version}</version>
     </dependency>
     <!--事务-->
@@ -245,7 +245,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
-      <scope>test</scope>
+      <scope>cn.guet.test</scope>
     </dependency>
     <!--  短信验证码依赖 -->
 

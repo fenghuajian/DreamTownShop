@@ -1,4 +1,4 @@
-package test;
+package cn.guet.test;
 
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;

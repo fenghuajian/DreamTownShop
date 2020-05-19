@@ -438,7 +438,7 @@ jQuery.extend({
 		}
 	},
 
-	// See test/unit/core.js for details concerning isFunction.
+	// See cn.guet.test/unit/core.js for details concerning isFunction.
 	// Since version 1.3, DOM methods and functions like alert
 	// aren't supported. They return false on IE (#2968).
 	isFunction: function( obj ) {
@@ -1505,7 +1505,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<10
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programatically-set names,
-	// so use a roundabout getElementsByName test
+	// so use a roundabout getElementsByName cn.guet.test
 	support.getById = assert(function( div ) {
 		docElem.appendChild( div ).id = expando;
 		return !doc.getElementsByName || !doc.getElementsByName( expando ).length;
@@ -1594,7 +1594,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Regex strategy adopted from Diego Perini
 		assert(function( div ) {
 			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
+			// This is to cn.guet.test IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
@@ -2327,7 +2327,7 @@ Expr = Sizzle.selectors = {
 		"text": function( elem ) {
 			var attr;
 			// IE6 and 7 will map elem.type to 'text' for new HTML5 types (search, etc)
-			// use getAttribute instead to test this case
+			// use getAttribute instead to cn.guet.test this case
 			return elem.nodeName.toLowerCase() === "input" &&
 				elem.type === "text" &&
 				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === elem.type );
@@ -3502,7 +3502,7 @@ jQuery.support = (function( support ) {
 		div.innerHTML = "";
 		div.style.cssText = "box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;padding:1px;border:1px;display:block;width:4px;margin-top:1%;position:absolute;top:1%;";
 
-		// Workaround failing boxSizing test due to offsetWidth returning wrong value
+		// Workaround failing boxSizing cn.guet.test due to offsetWidth returning wrong value
 		// with some non-1 values of body zoom, ticket #13543
 		jQuery.swap( body, body.style.zoom != null ? { zoom: 1 } : {}, function() {
 			support.boxSizing = div.offsetWidth === 4;
@@ -5022,7 +5022,7 @@ jQuery.event = {
 				jQuery.acceptData( elem ) ) {
 
 				// Call a native DOM method on the target with the same name name as the event.
-				// Can't use an .isFunction() check here because IE6/7 fails that test.
+				// Can't use an .isFunction() check here because IE6/7 fails that cn.guet.test.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && elem[ type ] && !jQuery.isWindow( elem ) ) {
 
@@ -7375,7 +7375,7 @@ if ( !jQuery.support.opacity ) {
 	};
 }
 
-// These hooks cannot be added until DOM ready because the support test
+// These hooks cannot be added until DOM ready because the support cn.guet.test
 // for it is not run until after DOM ready
 jQuery(function() {
 	if ( !jQuery.support.reliableMarginRight ) {
@@ -7624,7 +7624,7 @@ var
 	allTypes = "*/".concat("*");
 
 // #8138, IE may throw an exception when accessing
-// a field from window.location if document.domain has been set
+// a field from window.location if document.cn.guet.domain has been set
 try {
 	ajaxLocation = location.href;
 } catch( e ) {
@@ -7882,7 +7882,7 @@ jQuery.extend({
 		// Force options to be an object
 		options = options || {};
 
-		var // Cross-domain detection vars
+		var // Cross-cn.guet.domain detection vars
 			parts,
 			// Loop variable
 			i,
@@ -8006,7 +8006,7 @@ jQuery.extend({
 		// Extract dataTypes list
 		s.dataTypes = jQuery.trim( s.dataType || "*" ).toLowerCase().match( core_rnotwhite ) || [""];
 
-		// A cross-domain request is in order when we have a protocol:host:port mismatch
+		// A cross-cn.guet.domain request is in order when we have a protocol:host:port mismatch
 		if ( s.crossDomain == null ) {
 			parts = rurl.exec( s.url.toLowerCase() );
 			s.crossDomain = !!( parts &&
@@ -8468,7 +8468,7 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function(s) {
 
-	// This transport only deals with cross domain requests
+	// This transport only deals with cross cn.guet.domain requests
 	if ( s.crossDomain ) {
 
 		var script,
@@ -8652,7 +8652,7 @@ xhrSupported = jQuery.support.ajax = !!xhrSupported;
 if ( xhrSupported ) {
 
 	jQuery.ajaxTransport(function( s ) {
-		// Cross domain only allowed if supported through XMLHttpRequest
+		// Cross cn.guet.domain only allowed if supported through XMLHttpRequest
 		if ( !s.crossDomain || jQuery.support.cors ) {
 
 			var callback;
@@ -8685,15 +8685,15 @@ if ( xhrSupported ) {
 					}
 
 					// X-Requested-With header
-					// For cross-domain requests, seeing as conditions for a preflight are
+					// For cross-cn.guet.domain requests, seeing as conditions for a preflight are
 					// akin to a jigsaw puzzle, we simply never set it to be sure.
 					// (it can always be set on a per-request basis or even using ajaxSetup)
-					// For same-domain requests, won't change header if already provided.
+					// For same-cn.guet.domain requests, won't change header if already provided.
 					if ( !s.crossDomain && !headers["X-Requested-With"] ) {
 						headers["X-Requested-With"] = "XMLHttpRequest";
 					}
 
-					// Need an extra try/catch for cross domain requests in Firefox 3
+					// Need an extra try/catch for cross cn.guet.domain requests in Firefox 3
 					try {
 						for ( i in headers ) {
 							xhr.setRequestHeader( i, headers[ i ] );
@@ -8746,7 +8746,7 @@ if ( xhrSupported ) {
 									}
 
 									// Firefox throws an exception when accessing
-									// statusText for faulty cross-domain requests
+									// statusText for faulty cross-cn.guet.domain requests
 									try {
 										statusText = xhr.statusText;
 									} catch( e ) {

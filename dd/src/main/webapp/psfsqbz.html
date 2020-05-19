@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>配送费收取标准</title>
 
+    <!--    bootstrap-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!--    bootstrap-->
+
     <link href="./css/first-screen.chunk.css" rel="stylesheet">
 
     <link href="./css/seckill.chunk.css" rel="stylesheet">
@@ -49,12 +63,25 @@
 
     <style>
 
+        #ps{
+
+       background-size: 100% 100%;
+            background-position: center center;
+            overflow: auto;
+        }
+        .mod_help li{
+            padding: 5px 0;
+        }
+
+
         p{
             padding: 10px 10px 10px 20px;
 
             text-indent: 2em;
 
             line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102, 102, 102); font-size: 16px;}
+
+
         button{
 
             width: 130px;/*设置按钮宽度*/
@@ -94,13 +121,13 @@
 
 
 </head>
-<body>
+<body class="bg-white" style="background-image: url(img/baise.jpg); background-size: 100% 100%;
+background-position: center center;
+overflow: auto;">
 
-<div class="upper">
-
-    <!--shortcut start -->
+<div class="upper" >
     <div id="shortcut">
-        <div class="top_nav" aria-label="顶部导航">
+        <div class="top_nav container" aria-label="顶部导航">
             <!--address start-->
             <ul class="fl">
                 <li class="shortcut_btn" id="location">
@@ -303,13 +330,8 @@
     <!--shortcut 第一部分的头部结束end-->
 
 <!--四个导航部分-->
-    <div  style=" ;width: 10%;height: 700px;position: absolute;left:310px;top:100px;background: #eafff8; border: 1px solid rgb(167,201,255); " >
-        <!--<a><div style="width: 150px;height: 35px;background-color: #f3b701; color: #fff;font-family: 'microsoft yahei';
-            font-size: 14px;
-                font-weight: normal;">
-            <strong align="center">交易条款</strong>
+<!--    <div  style=" ;width: 10%;height: 700px;position: absolute;left:310px;top:100px;background: #eafff8; border: 1px solid rgb(167,201,255); " >
 
-        </div></a>-->
         <button style="margin-top: 5%;margin-left: 5%" onclick="showb1()">梦想小镇自营商品运费规则</button>
         <button style="margin-top: 5%;margin-left: 5%" onclick="showb2()">第三方卖家商品运费规则</button>
         <button  onclick="showb3()"style="margin-top: 5%;margin-left: 5%">沃尔玛自营官方旗舰店商品运费规则</button>
@@ -342,267 +364,199 @@
 
 
         </script>
-        <!--<a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
-                font-weight: normal;"><strong style="color: #00ee00"></strong></a>
-        <a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
-                font-weight: normal;"><strong style="color: #00ee00"></strong></a>
-        <a style="line-height:38px; margin-left1:10%;margin-left:10%;font-size: 14px;
-                font-weight: normal;"><strong style="color: #00ee00"></strong></a>-->
 
-    </div>
+
+    </div>-->
 <!--购物流程部分-->
-    <div style="width: 50%;height: 700px;margin-left: 31%;margin-top: 5%;background: white; border: 1px solid rgb(249,255,229); " id="gwlc">
-
-       <!-- <div style="margin-top: 2%;margin-left: 30%;    font-size: 20px;
-            font-family: 'microsoft yahei';color: #00ee00">
-
-            梦想小镇购物流程
-        </div>
-        <div style="margin-left: 29%;width:50%;margin-top: 5%;height: 60%; ">
-            
-            <img src="img/gwlc.PNG"style="height: 100%;width: 100%">
-        </div>
-
-        <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
-
-            <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-        </div>
--->
-        <div id="b1" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229); ">
-
-            <p style="text-indent: 2em;
-                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
-                <strong style="font-weight: bold;">（1）基础运费收取规则</strong></p>
-            <p>1）非生鲜类商品</p>
-            <p>①订单中仅含图书类商品：</p>
-            <p>订单金额＜49，收取基础运费6元；订单金额≥49，收取基础运费0元</p>
-            <p>②订单包含图书类和其他非生鲜类商品：</p>
-            <p>订单金额＜49元，收取基础运费8元；</p>
-            <p>49元≤订单金额＜99元，收取基础运费6元；</p>
-            <p>订单金额≥99元，不收取基础运费</p>
-            <p style="text-indent: 2em;
-                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
-                <strong style="font-weight: bold;">（2）续重运费</strong></p>
-            <p>①订单中仅含图书类商品：</p>
-            <p>订单金额＜49，收取基础运费6元；订单金额≥49，收取基础运费0元</p>
-            <p>②订单包含图书类和其他非生鲜类商品：</p>
-            <p>订单金额＜49元，收取基础运费5元；</p>
-            <p>49元≤订单金额＜99元，收取基础运费8元；</p>
-
-            <p style="    padding: 10px 10px 10px 15px; ">2020-05-1</p>
-
-
-
-        </div>
-        <div id="b2" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229);display: none;">
-            <p style="text-indent: 2em;
-                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
-                <strong style="font-weight: bold;">第三方卖家商品运费规则</strong></p>
-
-            <p>用户购买入梦想小镇的第三方卖家商品，则按卖家在商品详情页公示的运费标准收取，不同的卖家店铺收取的标准各异，一般存在情形如下：</p>
-            <p>1) 同一店铺内商品，每单固定运费；</p>
-            <p>2) 同一店铺内商品，每单满一定金额免运费，不满则收取一定运费；</p>
-            <p>3）按订单中不同商品类型分别收取运费；</p>
-            <p>4）部分店铺商品参与京东自营商品免运费凑单，具体收取费用以提交订单时的运费信息为准；</p>
-            <p>5）其他由卖家公示的运费标准。</p>
-            <p>
-                2020-02-04
-            </p>
-
-            <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
-
-                <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-            </div>
-            </div>
-        <div id="b3" style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229);display: none;">
-            <p style="text-indent: 2em;
-                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
-                <strong style="font-weight: bold;">沃尔玛自营官方旗舰店商品运费规则</strong></p>
-            <p>
-           <p>订单金额＜99元，收取基础运费7元，重量超10kg的，超出重量按1元/kg另外加收续重运费；</p>
-            <p>订单金额≥99元，免基础运费，重量超出10kg的，超出重量按1元/kg加收续重运费；</p>
-            <p>订单金额≥199元，免基础运费，重量超出20kg的，超出重量按1元/kg加收续重运费；</p>
-            <p>订单金额≥299元，免基础运费，重量超出30kg的，超出重量按1元/kg加收续重运费；</p>
-            <p>订单金额≥399元，免基础运费，重量超出40kg的，超出重量按1元/kg加收续重运费；</p>
-            <p>订单金额≥499元，免基础运费，重量超出50kg的，超出重量按1元/kg加收续重运费。</p>
-
-            <p>2020-09-27</p>
-            <div style="margin-left: 35%;width:30%;margin-top: 5%;height: 15%; ">
-
-                <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-            </div>
-
-
-
-        </div>
-        <div id="b4"style="width: 99%;height: 99%;border: 1px solid rgb(249,255,229);display: none;">
-            <p style="text-indent: 2em;
-                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
-                <strong style="font-weight: bold;">特别说明</strong></p>
-            <p>1、 订单金额为减去优惠促销的金额。（优惠促销含满减、使用优惠券等促销形式）</p>
-            <p>2、 订单中非生鲜商品最终实际支付金额为单笔订单中消费者就非生鲜商品实付的金额；订单中生鲜商品最终实际支付金额为单笔订单中消费者就生鲜商品实付的金额。</p>
-            <p>3、 商品重量以毛重计算（含商品销售包装的重量）。</p>
-            <p>4、当自营订单被拆分为两个或两个以上的子单，用户取消/拒收其中子单后，剩余子单支付的运费少于用户应支付的运费，系统将自动扣除相应的京豆，用户账户内京豆数额不足以扣除时，订单会联动取消。若部分或全部剩余子单已被签收，导致订单无法联动取消的，则京东有权随时扣除用户账户内已有及新获得的京豆，以补偿相应运费。</p>
-            <p>5、中小件商品与大件商品的划分由自营销售商自行确认，商品所应支付的运费以提交订单时的运费信息为准。</p>
-            <p>6、运费的收取标准可能进行相应调整，具体以商品详情页及结算页公示的运费为准。</p>
-            <p>7、计算运费的订单金额以订单最终实际支付金额为准。</p>
-            <p>2020-05-16</p>
-            <div style="margin-left: 35%;width:30%;margin-top: 2%;height: 15%; ">
-
-                <img src="img/jjwt.PNG"style="height: 100%;width: 100%">
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <br>
-    <br>
-    <br>
-    <!--最底部-->
-    <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
-        <div class="grid_c1 mod_help_inner">
-            <div class="mod_help_list">
-                <div class="mod_help_nav" >
-                    <h5 class="mod_help_nav_tit">购物指南</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
-                        </li>
-
-
-                        <li>
-                            <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
-                        </li>
-
-                        <li>
-                            <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                        </li>
-                    </ul>
+    <div id="ps"class="container bg-white" style="margin-top: 3%;margin-bottom: 3%;background-image: url(img/baise.jpg)">
+        <div class="row justify-content-center" style="margin: 3%;margin-bottom: 3%">
+            <div class="col-3" style="margin-top: 3%;">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">梦想小镇自营商品运费规则</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">第三方卖家商品运费规则</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">沃尔玛自营官方旗舰店商品运费规则</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">特别说明</a>
                 </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">配送方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
-                        </li>
+            </div>
+            <div class="col-8 " style="margin-top: 3%;margin-bottom:  3%;margin-left: 3%">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
 
-                        <li>
-                            <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
-                        </li>
-                        <li>
-                            <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
-                        </li>
+                        <p style="text-indent: 2em;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                            <strong style="font-weight: bold;">（1）基础运费收取规则</strong></p>
+                        <p>1）非生鲜类商品</p>
+                        <p>①订单中仅含图书类商品：</p>
+                        <p>订单金额＜49，收取基础运费6元；订单金额≥49，收取基础运费0元</p>
+                        <p>②订单包含图书类和其他非生鲜类商品：</p>
+                        <p>订单金额＜49元，收取基础运费8元；</p>
+                        <p>49元≤订单金额＜99元，收取基础运费6元；</p>
+                        <p>订单金额≥99元，不收取基础运费</p>
+                        <p style="text-indent: 2em;
+                line-height: 21px;font-family: 微软雅黑,Microsoft YaHei;color: rgb(102,229,58);font-size: 16px;">
+                            <strong style="font-weight: bold;">（2）续重运费</strong></p>
+                        <p>①订单中仅含图书类商品：</p>
+                        <p>订单金额＜49，收取基础运费6元；订单金额≥49，收取基础运费0元</p>
+                        <p>②订单包含图书类和其他非生鲜类商品：</p>
+                        <p>订单金额＜49元，收取基础运费5元；</p>
+                        <p>49元≤订单金额＜99元，收取基础运费8元；</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
 
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">支付方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
-                        </li>
-                        <li>
-                            <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
-                        </li>
-                        <li>
-                            <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
-                        </li>
 
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px;">
-                    <h5 class="mod_help_nav_tit">售后服务</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
-                        </li>
-                        <li>
-                            <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
-                        </li>
-                        <li>
-                            <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
-                        </li>
+                        <p>用户购买入梦想小镇的第三方卖家商品，则按卖家在商品详情页公示的运费标准收取，不同的卖家店铺收取的标准各异，一般存在情形如下：</p>
+                        <p>1) 同一店铺内商品，每单固定运费；</p>
+                        <p>2) 同一店铺内商品，每单满一定金额免运费，不满则收取一定运费；</p>
+                        <p>3）按订单中不同商品类型分别收取运费；</p>
+                        <p>4）部分店铺商品参与京东自营商品免运费凑单，具体收取费用以提交订单时的运费信息为准；</p>
+                        <p>5）其他由卖家公示的运费标准。</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        <p>订单金额＜99元，收取基础运费7元，重量超10kg的，超出重量按1元/kg另外加收续重运费；</p>
+                        <p>订单金额≥99元，免基础运费，重量超出10kg的，超出重量按1元/kg加收续重运费；</p>
+                        <p>订单金额≥199元，免基础运费，重量超出20kg的，超出重量按1元/kg加收续重运费；</p>
+                        <p>订单金额≥299元，免基础运费，重量超出30kg的，超出重量按1元/kg加收续重运费；</p>
+                        <p>订单金额≥399元，免基础运费，重量超出40kg的，超出重量按1元/kg加收续重运费；</p>
+                        <p>订单金额≥499元，免基础运费，重量超出50kg的，超出重量按1元/kg加收续重运费。</p>
 
-                        <li>
-                            <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
-                        </li>
-                    </ul>
-                </div>
 
-                <div class="mod_help_cover">
-                    <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
-                    <div class="mod_help_cover_con">
-                        <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
-                        <p class="mod_help_cover_more">
+                    </div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
 
-                        </p>
+                        <p>1、 订单金额为减去优惠促销的金额。（优惠促销含满减、使用优惠券等促销形式）</p>
+                        <p>2、 订单中非生鲜商品最终实际支付金额为单笔订单中消费者就非生鲜商品实付的金额；订单中生鲜商品最终实际支付金额为单笔订单中消费者就生鲜商品实付的金额。</p>
+                        <p>3、 商品重量以毛重计算（含商品销售包装的重量）。</p>
+                        <p>4、当自营订单被拆分为两个或两个以上的子单，用户取消/拒收其中子单后，剩余子单支付的运费少于用户应支付的运费，系统将自动扣除相应的京豆，用户账户内京豆数额不足以扣除时，订单会联动取消。若部分或全部剩余子单已被签收，导致订单无法联动取消的，则京东有权随时扣除用户账户内已有及新获得的京豆，以补偿相应运费。</p>
+                        <p>5、中小件商品与大件商品的划分由自营销售商自行确认，商品所应支付的运费以提交订单时的运费信息为准。</p>
+                        <p>6、运费的收取标准可能进行相应调整，具体以商品详情页及结算页公示的运费为准。</p>
+                        <p>7、计算运费的订单金额以订单最终实际支付金额为准。</p>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-    <div class="mod_copyright">
-        <div class="grid_c1 mod_copyright_inner">
-            <p class="mod_copyright_links">
-                <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
-" target="_blank" rel="noopener noreferrer">关于我们</a>
-                <span class="mod_copyright_split">|</span>
 
-                <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                <span class="mod_copyright_split">|</span>
+    <br>
+    <br>
+    <br>
 
-                <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+    <div class="mod_help container" clstag="h|keycount|btm|btmnavi_null02">
 
-            </p>
+        <div class="row justify-content-around">
+            <div class="col-2 text-left " >
+                <h5 class="mod_help_nav_tit">购物指南</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
+                    </li>
 
-            <p class="mod_copyright_auth">
 
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
-            </p>
+                    <li>
+                        <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
+                    </li>
+
+                    <li>
+                        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">配送方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
+                    </li>
+
+                    <li>
+                        <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                    </li>
+                    <li>
+                        <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">支付方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
+                    </li>
+                    <li>
+                        <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
+                    </li>
+                    <li>
+                        <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">售后服务</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
+                    </li>
+                    <li>
+                        <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
+                    </li>
+                    <li>
+                        <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
+                    </li>
+
+                    <li>
+                        <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-2 text-center" >
+                <h5 >小镇自营覆盖区县</h5>
+                <br>
+                <div style="padding: 5px">
+                    梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 </div>
-<div class="elevator">
-    <svg class="svgcont" style="display: none;">
-        <defs>
-            <style>
-                path {
-                    fill: inherit
-                }
-            </style>
-        </defs>
-        <defs>
-            <symbol id="icon_timline" viewBox="0 0 16 16">
-                <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
-                </path>
-            </symbol>
-            <symbol id="icon_feedback" viewBox="0 0 16 16">
-                <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
-                </path>
-            </symbol>
-        </defs>
-    </svg>
+</div>
+<div class="container justify-content-between" style="margin-top: 1%;margin-bottom: 1%">
 
-    <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
-        <span class="elevator_totop_icon"></span>
-        <span class="elevator_totop_txt">顶部</span>
-    </a>
+    <p class="text-center">
+        <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
+" target="_blank" rel="noopener noreferrer">关于我们</a>
+        <span class="mod_copyright_split">|</span>
+
+        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+        <span class="mod_copyright_split">|</span>
+
+        <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+
+    </p>
+
+    <p class="text-center">
+
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+    </p>
 </div>
 </div>
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/slide.js"></script>
-<script type="text/javascript" src="js/js3.js"></script>
-<script type="text/javascript" src="js/js2.js"></script>
+</div>
 
-
+</div>
 </body>
 </html>

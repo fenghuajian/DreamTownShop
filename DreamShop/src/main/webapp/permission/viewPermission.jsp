@@ -115,7 +115,7 @@ table, tr, th, td {
 			父菜单：
 			<select name="pId">
 				<c:forEach var="permission" items="${permissions}">
-					<c:if test="${permission.isParent eq 'true'}">
+					<c:if cn.guet.test="${permission.isParent eq 'true'}">
 						<option value="${permission.permissionid}">${permission.name}</option>
 					</c:if>
 				</c:forEach>
@@ -140,7 +140,7 @@ table, tr, th, td {
 		父菜单：
 		<select name="pId">
 			<c:forEach var="permission" items="${permissions}">
-				<c:if test="${permission.isParent eq 'true'}">
+				<c:if cn.guet.test="${permission.isParent eq 'true'}">
 					<option value="${permission.permissionid}">${permission.name}</option>
 				</c:if>
 			</c:forEach>

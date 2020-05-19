@@ -79,7 +79,7 @@ function settle(){
 				"order":JSON.stringify(order)
 			},
 			success:function(){
-				window.location.href="pay.html";
+				window.location.href="cn.guet.pay.html";
 			}
 		});
 	}else{

@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <title>总客服</title>
 
+    <!--    bootstrap-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!--    bootstrap-->
+
     <link href="./css/first-screen.chunk.css" rel="stylesheet">
 
     <link href="./css/seckill.chunk.css" rel="stylesheet">
@@ -19,6 +32,11 @@
     <link href="./css/style3.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <style type="">
+
+        .mod_help li{
+            padding: 5px 0;
+        }
+
 
 
         textarea{
@@ -123,13 +141,13 @@
     </script>
 
 </head>
-<body>
+<body class="bg-white" style="background-image: url(img/baise.jpg); background-size: 100% 100%;
+                background-position: center center;
+                overflow: auto;">
 
-<div class="upper"style="background-color: #f9ffe5">
-
-    <!--shortcut start -->
+<div class="upper" >
     <div id="shortcut">
-        <div class="top_nav" aria-label="顶部导航">
+        <div class="top_nav container" aria-label="顶部导航">
             <!--address start-->
             <ul class="fl">
                 <li class="shortcut_btn" id="location">
@@ -332,9 +350,9 @@
     <!--shortcut 第一部分的头部结束end-->
 
 
-<!--联系客服-->
+    <!--联系客服-->
     <div style="    margin-top: 2%;margin-left: 20%;font-size: 18px;font-family: 'microsoft yahei';color: #333;">
-       <h3 style="font-weight: bold;">联系我们</h3>
+        <h3 style="font-weight: bold;">联系我们</h3>
     </div>
     <div style=" background: #f9f9f9 url(img/jjr.PNG) no-repeat -2px -2px;margin-top: 2%;margin-left: 20%;width: 60%; height:135px;border: 3px solid rgb(232,223,255);">
 
@@ -343,7 +361,7 @@
     <div id="ll" style="margin-top: 2.5%;margin-left: 20%;width: 60%; height:165px;border: 3px solid rgb(232,223,255);">
         <ul style="list-style:none;display:inline;">
             <li>
-                    <div style="font-size: 16px;
+                <div style="font-size: 16px;
                     font-family: 'microsoft yahei';
                    position: absolute;
                  top: 316px;
@@ -432,153 +450,136 @@
         <button id="fb"style="margin-top: -5%">发布</button>
     </div>
     <script>
-       $(function () {
-           $("#fb").click(function () {
-               var ly=$("#nr").val();
-               alert("留言成功："+ly)
+        $(function () {
+            $("#fb").click(function () {
+                var ly=$("#nr").val();
+                alert("留言成功："+ly)
 
-               $("#nr").val('');
+                $("#nr").val('');
 
-           })
-       })
+            })
+        })
     </script>
 
 
     <!--最底部-->
-    <div class="mod_help" clstag="h|keycount|btm|btmnavi_null02">
-        <div class="grid_c1 mod_help_inner">
-            <div class="mod_help_list">
-                <div class="mod_help_nav" >
-                    <h5 class="mod_help_nav_tit">购物指南</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
-                        </li>
+    <br>
+    <br>
+
+    <div class="mod_help container" clstag="h|keycount|btm|btmnavi_null02">
+
+        <div class="row justify-content-around">
+            <div class="col-2 text-left " >
+                <h5 class="mod_help_nav_tit">购物指南</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="gwzn.html" target="_blank" rel="noopener noreferrer">购物流程</a>
+                    </li>
 
 
-                        <li>
-                            <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
-                        </li>
+                    <li>
+                        <a href="cjwt.html" target="_blank" rel="noopener noreferrer">常见问题</a>
+                    </li>
 
-                        <li>
-                            <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">配送方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
-                        </li>
-
-                        <li>
-                            <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
-                        </li>
-                        <li>
-                            <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px">
-                    <h5 class="mod_help_nav_tit">支付方式</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
-                        </li>
-                        <li>
-                            <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
-                        </li>
-                        <li>
-                            <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="mod_help_nav" style="margin-left: 65px;">
-                    <h5 class="mod_help_nav_tit">售后服务</h5>
-                    <ul class="mod_help_nav_con">
-                        <li>
-                            <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
-                        </li>
-                        <li>
-                            <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
-                        </li>
-                        <li>
-                            <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
-                        </li>
-
-                        <li>
-                            <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="mod_help_cover">
-                    <h5 class="mod_help_cover_tit">小镇自营覆盖区县</h5>
-                    <div class="mod_help_cover_con">
-                        <p class="mod_help_cover_info">梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
-                        <p class="mod_help_cover_more">
-
-                        </p>
-                    </div>
-                </div>
+                    <li>
+                        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+                    </li>
+                </ul>
             </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">配送方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="smzt.html" target="_blank" rel="noopener noreferrer">上门自提</a>
+                    </li>
+
+                    <li>
+                        <a href="psfwcx.html" target="_blank" rel="noopener noreferrer">配送服务查询</a>
+                    </li>
+                    <li>
+                        <a href="psfsqbz.html" target="_blank" rel="noopener noreferrer">配送费收取标准</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">支付方式</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="hdfk.html" target="_blank" rel="noopener noreferrer">货到付款</a>
+                    </li>
+                    <li>
+                        <a href="zxzf.html" target="_blank" rel="noopener noreferrer">在线支付</a>
+                    </li>
+                    <li>
+                        <a href="fqfk.html" target="_blank" rel="noopener noreferrer">分期付款</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2 text-center" >
+                <h5 class="mod_help_nav_tit">售后服务</h5>
+                <ul class="mod_help_nav_con">
+                    <li>
+                        <a href="shfw.html" target="_blank" rel="noopener noreferrer">售后政策</a>
+                    </li>
+                    <li>
+                        <a href="jgbh.html" target="_blank" rel="noopener noreferrer">价格保护</a>
+                    </li>
+                    <li>
+                        <a href="tksm.html" target="_blank" rel="noopener noreferrer">退款说明</a>
+                    </li>
+
+                    <li>
+                        <a href="qxdd.html" target="_blank" rel="noopener noreferrer">取消订单</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-2 text-center" >
+                <h5 >小镇自营覆盖区县</h5>
+                <br>
+                <div style="padding: 5px">
+                    梦想小镇已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。
+
+                </div>
+
+            </div>
+
+
         </div>
     </div>
-    <div class="mod_copyright">
-        <div class="grid_c1 mod_copyright_inner">
-            <p class="mod_copyright_links">
-                <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
+</div>
+</div>
+<div class="container justify-content-between" style="margin-top: 1%;margin-bottom: 1%">
+
+    <p class="text-center">
+        <a href="https://www.alibabagroup.com/cn/global/home?spm=875.7931836/B.a2226n1.35.a6034265O7hbaW
 " target="_blank" rel="noopener noreferrer">关于我们</a>
-                <span class="mod_copyright_split">|</span>
+        <span class="mod_copyright_split">|</span>
 
-                <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
-                <span class="mod_copyright_split">|</span>
+        <a href="lxkf.html" target="_blank" rel="noopener noreferrer">联系客服</a>
+        <span class="mod_copyright_split">|</span>
 
-                <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
-                <span class="mod_copyright_split">|</span>
-                <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
+        <a href="fxjc.html" target="_blank" rel="noopener noreferrer">风险监测</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="yszc.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+        <span class="mod_copyright_split">|</span>
+        <a href="https://pages.tmall.com/wow/gy/act/gongyi?wh_biz=tm" target="_blank" rel="noopener noreferrer">小镇公益</a>
 
-            </p>
+    </p>
 
-            <p class="mod_copyright_auth">
+    <p class="text-center">
 
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
-                <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
-            </p>
-        </div>
-    </div>
-</div>
-<div class="elevator">
-    <svg class="svgcont" style="display: none;">
-        <defs>
-            <style>
-                path {
-                    fill: inherit
-                }
-            </style>
-        </defs>
-        <defs>
-            <symbol id="icon_timline" viewBox="0 0 16 16">
-                <path d="M12.986 5.582a.505.505 0 0 0 .25-.063c.34-.188.364-.738.056-1.252-.235-.391-.59-.643-.905-.643a.511.511 0 0 0-.251.063c-.338.188-.363.738-.055 1.252.234.391.59.643.905.643m-9.975 0c.317 0 .674-.252.91-.643.31-.514.286-1.064-.056-1.253a.52.52 0 0 0-.252-.062c-.317 0-.674.252-.91.643-.31.514-.285 1.064.056 1.252.076.042.16.063.252.063m10.779.956a.372.372 0 0 0-.295-.024.387.387 0 0 0-.225.201c-.013.025-.315.609-1.062 1.191-.738.573-2.062 1.26-4.185 1.279h-.075c-2.076 0-3.384-.653-4.116-1.2-.779-.581-1.094-1.177-1.097-1.182a.395.395 0 0 0-.23-.199.371.371 0 0 0-.293.031.42.42 0 0 0-.161.549c.039.077.413.772 1.316 1.45.826.622 2.29 1.363 4.573 1.363l.089-.001c2.331-.019 3.81-.793 4.641-1.439.862-.672 1.225-1.345 1.292-1.475a.419.419 0 0 0-.172-.544m-5.848-.124c1.092 0 2.268-.218 2.268-.697S9.034 5.02 7.942 5.02c-1.071 0-2.152.216-2.152.697s1.081.697 2.152.697m4.086 4.647c-1.004.574-1.052 1.597-1.015 2.223a.098.098 0 0 1-.113.104c-.693-.096-1.161-.407-1.757-.943a1.343 1.343 0 0 0-.933-.351l-.21.003c-3.809 0-6.897-2.458-6.897-5.489 0-3.032 3.088-5.489 6.897-5.489 3.808 0 6.896 2.457 6.896 5.489 0 1.834-1.129 3.461-2.868 4.453M8 0C3.589 0 0 2.931 0 6.533c0 3.603 3.589 6.533 8 6.533l.224-.002c.102 0 .204.033.272.099 1.239 1.205 2.568 1.323 3.303 1.336a.3.3 0 0 0 .303-.342c-.087-.613-.318-1.813.477-2.263C14.722 10.684 16 8.677 16 6.533 16 2.931 12.411 0 8 0">
-                </path>
-            </symbol>
-            <symbol id="icon_feedback" viewBox="0 0 16 16">
-                <path d="M1.4,15l0-1l14,0v1H1.4z M2.5,13H2l0-0.5c0-0.1,0-0.2,0-0.3c0-0.3,0.1-0.8,0.2-1.3c0.1-0.7,0.4-1.7,0.4-2 C2.7,8.7,2.8,8.4,3,8.3l8-8c0.3-0.3,0.8-0.3,1.1,0l2.7,2.7c0.3,0.3,0.3,0.8,0,1.1l0,0l-8,8c-0.1,0.1-0.4,0.3-0.6,0.4 c-0.7,0.2-1.4,0.3-2.1,0.4c-0.5,0.1-1,0.2-1.3,0.2C2.7,13,2.6,13,2.5,13z M11.6,1.1L3.7,9c0,0.1-0.1,0.1-0.1,0.2 c-0.1,0.2-0.3,1.1-0.4,1.9c-0.1,0.3-0.1,0.6-0.1,0.9c0.3,0,0.6-0.1,0.9-0.1c0.7-0.1,1.3-0.2,2-0.4c0,0,0.1-0.1,0.2-0.1L14,3.5 L11.6,1.1z M14.1,3.3C14.1,3.3,14.1,3.3,14.1,3.3L14.1,3.3z M11.4,0.9C11.4,0.9,11.4,0.9,11.4,0.9L11.4,0.9z">
-                </path>
-            </symbol>
-        </defs>
-    </svg>
-
-    <a class="elevator_totop" href="javascript: void(0);" tabindex="-1">
-        <span class="elevator_totop_icon"></span>
-        <span class="elevator_totop_txt">顶部</span>
-    </a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="http://www.cyberpolice.cn/wfjb/" target="_blank">网络警察提醒你</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="https://credit.cecdc.com/CX20160715023573390688.html?spm=a21bo.2017.1997523009.54.4c3511d9Tf0DlI" target="_blank">诚信网站</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_5" href="https://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_6" href="https://www.12377.cn/node_548446.htm" target="_blank">网络举报APP下载</a>
+    </p>
 </div>
 </div>
+</div>
+
+</div>
+</body>
+</html>
